@@ -1,0 +1,74 @@
+{
+    "gender" : "Giới Tính",
+    "Male": "Nam",
+    "Female": "Nữ",
+
+
+    "email": "Tên Email",
+    "logout" : "Đăng Xuất",
+    "name": "Họ Tên",
+    "password": "Mật Khẩu",
+    "phone": "Số điện thoại",
+    "address" : "Địa Chỉ",
+    "confirmpass" : "Nhập lại mật khẩu",
+    "forgotpass": "Quên mật khẩu ?",
+    "register": "Đăng Ký",
+    "noaccount": "Bạn chưa có tài khoản?",
+    "haveaccount": "Bạn đã có sẵn tài khoản?",
+
+
+    "namehotel": "Khách Sạn MoonLight",
+    "wellcome" : "Chào mừng tới khách sạn MoonLight",
+    "tel": "Tel : (+84)0389769239",
+    "hoteladdress": "90B Nguyễn Hữu Huân,Phố Cổ,Hoàn Kiếm ,Hà Nội",
+    "hotelfax": "Fax: +84 243 8315010",
+    "hotelemail": "Email: reservation@moonlighthotel.com",
+    "copyright": "Bản quyền website thuôc về © Khách sạn MoonLight 2021",
+
+
+    "info": "Thông tin cá nhân",
+    "booked": "Phòng đã đặt",
+    "readmore": "Xem thêm",
+
+
+    "home": "Trang Chủ",
+    "service": "Dịch Vụ",
+    "serviceDetail": "Chi Tiết Dịch Vụ",
+    "room": "Phòng",
+    "new": "Tin Tức",
+    "contact": "Liên Hệ",
+    "login" : "Đăng Nhập",
+    "profile" : "Tài Khoản",
+    "blog" : "Bài Viết",
+    "blogDetail" : "Chi Tiết Bài Viết",
+
+
+    "arrive" : "Ngày đến",
+    "depart" : "Ngày đi",
+    "category": "Loại phòng",
+    "people" : "Số người",
+    "booking": "Đặt phòng ngay",
+    "book": "Đặt phòng bạn muốn",
+    "filter": "Lọc Phòng",
+
+
+    "about" : "Về chúng tôi..",
+    "contactUs": "Đừng ngần ngại liên hệ với chúng tôi",
+    "relex":"Tận hưởng cuộc sống",
+    "relexDes":"Bạn có thể tận hưởng sự tiện lợi của các tiện nghi hiện đại như truy cập internet băng thông rộng không dây, dịch vụ giặt thường và giặt hấp, v.v.",
+    "serviceDes": "Cung cấp các dịch vụ độc quyền tại MoonLight Hotel",
+    "introduce" : "Tại sao là khách sạn MoonLight ?",
+    "introduceDes" : "Khách sạn MoonLight là khách sạn quốc tế hàng đầu tại Hà Nội. Với số lượng phòng lớn,sang trọng đối diện với Hồ Gươm, khách sạn tọa lạc ngay trung tâm Hà Nội này là nơi lý tưởng cho bạn dịp công tác hoặc nghỉ dưỡng. Các phòng nghỉ sang trọng được bài trí trang nhã và trang bị một loạt các tiện nghi cao cấp. Khách sạn MoonLight nổi tiếng với đầy đủ các hoạt động giải trí buổi tối và ẩm thực Trung Hoa ngon nhất trong thành phố. Kỳ nghỉ của bạn với chúng tôi được đảm bảo sẽ là một kỳ nghỉ thú vị và đáng nhớ nhất.",
+    "Quicklinks" : "Truy cập nhanh",
+    "security" : "Hệ thống bảo mật cao",
+    "security_des" : "An ninh của khách, nhân viên và bất kỳ ai đến khách sạn là điều quan trọng đối với ngành khách sạn, làm cho hệ thống an ninh trở thành một công cụ có giá trị",
+    "Dining" : "Ẩm Thực : Từ đặc sản địa phương tới phong vị quốc tế",
+    "Dining_Des" : "Hệ thống ba nhà hàng với ẩm thực đặc trưng riêng có, lounge trên tầng cao đầy phong cách và một quầy bánh ngọt đưa tại Hà Nội Daewoo đưa thực khách bước vào hành trình khám phá ẩm thực đúng điệu với món Hoa trứ danh, món Việt truyền thống hay thực đơn hiện đại mang sắc màu phương Tây.\n\nCác loại bánh ngọt cao cấp và thức uống tinh tế luôn sẵn sàng cho thực khách tại nhà hàng Palm Court ngay tầng 1 khách sạn vào bất kỳ thời điểm nào trong ngày.",
+
+
+    "text01": "Lựa chọn tinh tế giữa trung tâm thủ đô",
+    "text02a": "Khách sạn hiện đại ",
+    "text02b": "Cuộc sống sang trọng",
+    "text03": "Chúng tôi rất sẵn lòng hỗ trợ bạn bất cứ lúc nào để tận hưởng sự thoải mái và bầu không khí độc đáo của khách sạn với sự cân bằng và hài hòa !!"
+
+}

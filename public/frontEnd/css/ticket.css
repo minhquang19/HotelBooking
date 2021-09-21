@@ -1,0 +1,141 @@
+
+.nav-pills-custom .nav-link {
+    color: #aaa;
+    background: #fff;
+    position: relative;
+    margin: 0 !important;
+}
+
+.nav-pills-custom .nav-link.active {
+    color: #45b649;
+    background: #fff;
+}
+
+
+/* Add indicator arrow for the active tab */
+@media (min-width: 992px) {
+    .nav-pills-custom .nav-link::before {
+        content: '';
+        display: block;
+        border-top: 8px solid transparent;
+        border-left: 10px solid #fff;
+        border-bottom: 8px solid transparent;
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+}
+
+.nav-pills-custom .nav-link.active::before {
+    opacity: 1;
+}
+
+
+
+
+
+/*
+*
+* ==========================================
+*   AVATAR
+* ==========================================
+*/
+body {
+    min-height: 100vh;
+    background: linear-gradient(to left, #dce35b, #45b649);
+}
+.circle {
+    background: conic-gradient(from 220deg, #FD648E 0deg, #884CB2 90deg, #FD648E);
+    border-radius: 100%;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.image {
+    border-radius: 100%;
+    border: 7px solid #fff;
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+}
+
+.infoaccount input{
+    width: 70%;
+}
+.infoaccount label{
+    text-align: left;
+    width: 20%;
+}
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.button {
+    border: 2px solid #fea116;
+    color: #fea116;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.upload-btn-wrapper input:hover{
+    background: #0f172b;
+    color: white;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.infoaccount input{
+    height: 60px !important;
+}
+/*
+*
+* ==========================================
+*   RADIO BUTTON GENDER
+* ==========================================
+*/
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    z-index: 10;
+    margin: 0 10px 10px 0;
+    position: relative;
+    color: #ced4da;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    background-color: #ffffff;
+    border: 2px solid #ced4da;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+input[type="radio"]:checked + label {
+    color: #0f172b;
+    background-color: #fea116;
+}
+
+input[type="radio"] + label {
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+.table tr th{
+    background: #0f172b;
+    color: white;
+}

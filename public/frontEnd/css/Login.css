@@ -1,0 +1,74 @@
+.global-container{
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.label{
+    font-weight: 600;
+    font-size: 20px;
+}
+.form-group input{
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    border-bottom: 2px solid #fea116;
+}
+
+.global-container form{
+    padding-top: 10px;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.global-container .card-title{ font-weight:500; }
+
+.btn-login{
+    font-size: 15px;
+    font-weight: 600;
+    margin-top:40px;
+    height: 50px;
+    border-radius: 20px;
+    background: #fea116;
+    border:1px black solid;
+    color: #0f172b;
+
+}
+.btn-login:hover{
+    background: #0f172b;
+    color: white;
+}
+.login-form{
+    width:50%;
+    margin: 35px auto ;
+}
+
+.sign-up{
+    text-align:center;
+    font-weight: 600;
+    padding:20px 20px 0 0;
+}
+
+.alert{
+    margin-bottom:-30px;
+    font-size: 13px;
+    margin-top:20px;
+}
+.text-login {
+    font-family: 'Baloo Tamma', cursive;
+    text-align: center;
+    width: 100%;
+    margin: 0px auto;
+    font-size: 60px;
+    letter-spacing: 5px;
+    top: 50%;
+}
+
+

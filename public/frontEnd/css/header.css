@@ -1,0 +1,326 @@
+.header-top-area {
+    padding: 10px 0;
+}
+
+.header-top-area a {
+    color: #666565;
+}
+
+.header-top-area a:hover {
+    color: #fea116;
+}
+
+.header-top-area .top-contact-info li {
+    margin-right: 30px;
+}
+
+.header-top-area .top-contact-info i {
+    font-size: 20px;
+    color: #fea116;
+    margin-right: 10px;
+}
+
+.header-top-area .top-social-icon {
+    margin-left: 40px;
+}
+
+.header-top-area .top-social-icon li,
+.header-top-area .top-menu li {
+    margin-left: 18px;
+}
+
+.header-menu-area {
+    background-color: #0f172b;
+}
+
+.header-menu-area .logo {
+    padding-left: 80px;
+    position: relative;
+    margin-top: -60px;
+}
+
+.header-menu-area.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.header-menu-area.sticky .logo {
+    margin-top: 0;
+}
+
+.header-menu-area.sticky .logo img {
+    max-width: 250px;
+}
+
+.menu-right-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.menu-right-area a {
+    color: #fff;
+}
+
+.menu-right-area a:hover {
+    color: #fea116 !important;
+}
+
+.menu-right-area .main-menu li {
+    position: relative;
+}
+
+.menu-right-area .main-menu li.have-submenu {
+    padding-right: 15px;
+}
+
+.menu-right-area .main-menu li.have-submenu::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
+    content: '▼';
+    font-size: 15px;
+    color: #fff;
+    line-height: 85px;
+}
+
+.menu-right-area .main-menu li.active-page > a, .menu-right-area .main-menu li.active-page.have-submenu::after, .menu-right-area .main-menu li.have-submenu:hover::after {
+    color: #fea116;
+}
+
+.menu-right-area .main-menu li a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 20px;
+    line-height: 88px;
+}
+
+.menu-right-area .main-menu li .submenu {
+    position: absolute;
+    left: 0;
+    top: 115%;
+    width: 200px;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    z-index: 99;
+    -webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.menu-right-area .main-menu li .submenu li {
+    display: block;
+    text-align: left;
+    position: relative;
+}
+
+.menu-right-area .main-menu li .submenu li a {
+    color: #666565;
+    padding: 8px 18px;
+    line-height: 30px;
+    margin: 0;
+    display: block;
+}
+
+.menu-right-area .main-menu li .submenu li a:hover {
+    background-color: #0f172b;
+    color: #fff;
+}
+
+.menu-right-area .main-menu li .submenu li.have-submenu {
+    padding-right: 0;
+}
+
+.menu-right-area .main-menu li .submenu li.have-submenu::after {
+    color: #666565;
+    content: '\f105';
+    right: 15px;
+    top: -20px;
+}
+
+.menu-right-area .main-menu li .submenu li.have-submenu:hover::after {
+    color: #fff;
+}
+
+.menu-right-area .main-menu li .submenu li .submenu {
+    left: auto;
+    right: -200px;
+    top: 100%;
+}
+
+.menu-right-area .main-menu li .submenu li:hover .submenu {
+    top: 0;
+}
+
+.menu-right-area .main-menu li:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}
+
+.menu-right-area .btn {
+    height: 90px;
+    line-height: 90px;
+    padding: 0 70px;
+}
+
+.menu-right-area .btn:hover {
+    color: #fff;
+}
+
+@media (min-width: 1400px) and (max-width: 1700px) {
+    .menu-right-area .btn {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+.menu-right-area .search-wrap {
+    position: relative;
+}
+
+.menu-right-area .search-wrap .search-icon {
+    height: 90px;
+    line-height: 87px;
+    padding: 0 40px;
+    display: inline-block;
+    -webkit-transition: all 400ms ease-out 0s;
+    transition: all 400ms ease-out 0s;
+}
+
+.menu-right-area .search-wrap .search-icon.icon-close {
+    display: none;
+}
+
+.menu-right-area .search-wrap .search-form {
+    position: absolute;
+    height: 100%;
+    width: 500px;
+    z-index: 2;
+    right: 0;
+    top: 120%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 400ms ease-out 0s;
+    transition: all 400ms ease-out 0s;
+}
+
+.menu-right-area .search-wrap .search-form input,
+.menu-right-area .search-wrap .search-form form {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.menu-right-area .search-wrap.search-active .search-icon {
+    display: none;
+}
+
+.menu-right-area .search-wrap.search-active .search-icon.icon-close {
+    display: inline-block;
+}
+
+.menu-right-area .search-wrap.search-active .search-form {
+    top: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu-right-area .quote-btn {
+    margin-right: -70px;
+}
+
+.menu-right-area .lag-select .nice-select {
+    border: none;
+    background: #0f172b;
+    color: #fff;
+    width: auto;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+.menu-right-area .lag-select .nice-select::after {
+    right: 0;
+    color: #fff;
+}
+
+.menu-right-area .lag-select .nice-select .list {
+    color: #666565;
+    background-color: #fff;
+    width: 200px;
+    border-radius: 0;
+}
+
+.menu-right-area .lag-select .nice-select .list li:hover {
+    color: #fff;
+    background-color: #0f172b;
+}
+
+.menu-right-area .lag-select .lag-img {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.menu-right-area .lag-select .lag-option {
+    position: absolute;
+    left: 65px;
+    top: 5px;
+    background: #0f172b;
+    color: white;
+}
+
+.header-two .menu-right-area a, .header-two .menu-right-area,
+.header-two .menu-right-area .main-menu li.have-submenu::after {
+    color: #0f172b;
+}
+
+.header-two .menu-right-area .main-menu li.have-submenu::after,
+.header-two .menu-right-area .main-menu li a {
+    line-height: 98px;
+}
+
+.header-two .menu-right-area .btn {
+    color: #fff;
+    height: 100px;
+    line-height: 100px;
+}
+
+.header-two .menu-right-area .search-wrap a {
+    line-height: 97px;
+}
+
+.header-two .phone-num i {
+    color: #fea116;
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.header-two.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    background: #fff;
+    border-bottom: 1px solid #fea116;
+}
+select{
+    background: #0f172b;
+    color: white;
+    border: none;
+}
