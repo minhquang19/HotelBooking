@@ -47,7 +47,8 @@ body {
     background: linear-gradient(to left, #dce35b, #45b649);
 }
 .circle {
-    background: conic-gradient(from 220deg, #FD648E 0deg, #884CB2 90deg, #FD648E);
+    background-color: #f5df2e;
+    background-image: linear-gradient(315deg, #f5df2e 0%, #f07654 74%);
     border-radius: 100%;
     width: 280px;
     height: 280px;
@@ -138,4 +139,45 @@ input[type="radio"] + label {
 .table tr th{
     background: #0f172b;
     color: white;
+}
+/*
+*
+* ==========================================
+*   UPDATE AVATAR
+* ==========================================
+*/
+.file-upload{display:block;font-family: Helvetica, Arial, sans-serif;font-size: 12px;}
+.file-upload .file-select{display:block;border: 2px solid #0f172b;border-radius: 10px;color: #0f172b;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select .file-select-button{background:#0f172b;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+.file-upload .file-select:hover{border-color:#fff;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select:hover .file-select-button{background:#0f172b;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select{border-color:#fea116;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select .file-select-button{background:#fea116;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select input[type=file]{z-index:100;cursor:pointer;position:absolute;height:100%;width:100%;top:0;left:0;opacity:0;filter:alpha(opacity=0);}
+.file-upload .file-select.file-select-disabled{opacity:0.65;}
+.file-upload .file-select.file-select-disabled:hover{cursor:default;display:block;border: 2px solid #dce4ec;color: #0f172b;cursor:pointer;height:40px;line-height:40px;margin-top:5px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#0f172b;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+
+/*
+*
+* ==========================================
+*   Button
+* ==========================================
+*/
+.button{
+    background: white !important;
+    border: 2px solid #fea116 !important;
+    color: #fea116 !important; ;
+    font-size: 13px;
+    border-radius: 36px !important;
+    width: 220px;
+    height: 50px;
+    line-height: 50px;
+}
+.button:hover{
+    background-color: #0f172b !important;
+    color: #fff !important;
+    border:1px solid #0f172b !important; ;
 }

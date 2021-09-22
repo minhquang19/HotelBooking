@@ -2,6 +2,7 @@
 @section('title', 'Login')
 @section('style')
     <link rel="stylesheet" href="/frontEnd/css/register.css" />
+
 @endsection
 @section('content')
     <div class="global-container container">
@@ -32,13 +33,19 @@
                             <input name="phonenumber" type="text" class="form-control form-control-sm" id="phonenumber">
                         </div>
                         <div class="form-group">
-                            <label class="label" for="address">{{__('gender')}}</label>
+                            <label class="label" for="address">{{__('address')}}</label>
 
                             <input type="text" name="address" class="form-control form-control-sm" id="address">
                         </div>
                             <div class="form-group">
-                                <label class="label" for="sex">{{__('address')}}</label>
-                                <input type="text" name="sex" class="form-control form-control-sm" id="sex">
+                                <label class="label" for="sex">{{__('gender')}}</label>
+                                <div class="gender">
+                                    <input type='radio' id='male' checked='' name='sex' value="male">
+                                    <label for='male'>{{__('Male')}}</label>
+                                    <input type='radio' id='female' name='sex' value="female">
+                                    <label for='female'>{{__('Female')}}</label>
+                                </div>
+
                             </div>
                         <div class="form-group">
                             <label class="label" for="password">{{__('password')}}</label>

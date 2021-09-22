@@ -8,12 +8,14 @@ use App\Models\Booking;
 use App\Models\BookingDetail;
 use App\Models\room;
 use App\Models\roomPrice;
+use App\Models\User;
 use Card;
 use DB;
 use Illuminate\Database\Eloquent\Model;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Image;
 
 class bookingController extends Controller
 {
@@ -56,7 +58,7 @@ class bookingController extends Controller
                     'session_id' => $session_id,
                     'room_name' => $data['name'],
                     'room_id' => $data['id'],
-                    'image' => $room->coverImage,
+                    'image' => $room->coverImages,
                     'area' => $room->area,
                     'checkin' => $data['checkin'],
                     'checkout' => $data['checkout'],
@@ -73,7 +75,7 @@ class bookingController extends Controller
                 'session_id' => $session_id,
                 'room_name' => $data['name'],
                 'room_id' => $data['id'],
-                'image' => $room->image,
+                'image' => $room->coverImages,
                 'area' => $room->area,
                 'checkin' => $data['checkin'],
                 'checkout' => $data['checkout'],
@@ -139,6 +141,20 @@ class bookingController extends Controller
 
         }else{
             return redirect()->back()->with('error','Xóa sản phẩm thất bại');
+        }
+
+    }
+    public function updateAvatar(Request $request){
+        $file =$request->avatar;
+        $original_name = strtolower(trim($file->getClientOriginalName()));
+        $file_name = $request->email.rand(100,999).$original_name;
+        $image_resize = Image::make($file->getRealPath());
+        $image_resize->save('upload/avatar/'.$file_name);
+        $rs = User::where('id',$request->id)->update(array('avatar'=>$file_name));
+        if($rs){
+            return redirect()->back()->with('success','Update Avatar Success');
+        }else{
+            return redirect()->back()->with('error','Update Avatar Unsuccess');
         }
 
     }

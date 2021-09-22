@@ -73,4 +73,33 @@
 #dateofbirth{
     height: 40px;
 }
+input[type="radio"] {
+    display: none;
+}
 
+input[type="radio"] + label {
+    z-index: 10;
+    margin: 0 10px 10px 0;
+    position: relative;
+    color: #ced4da;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    background-color: #ffffff;
+    border: 2px solid #ced4da;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+input[type="radio"]:checked + label {
+    color: #0f172b;
+    background-color: #fea116;
+}
+
+input[type="radio"] + label {
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+.table tr th{
+    background: #0f172b;
+    color: white;
+}

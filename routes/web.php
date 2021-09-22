@@ -28,6 +28,7 @@ Route::prefix('')->group(function(){
     Route::get('lang/{locale}',[langController::class,'index'])->name('lang');
     Route::resource('/booking',bookingController::class)->only(['index','store', 'destroy'])->middleware('auth:web');
     Route::get('booking/add',[bookingController::class,'add'])->name('booking.add');
+    Route::post('booking/updateAvatar',[bookingController::class,'updateAvatar']);
     Route::get('/contact',[contactController::class,'index'])->name('contact.index');
 });
 

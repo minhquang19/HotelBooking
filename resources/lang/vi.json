@@ -37,6 +37,7 @@
     "room": "Phòng",
     "new": "Tin Tức",
     "contact": "Liên Hệ",
+    "roomDetail": "Chi Tiết Phòng",
     "login" : "Đăng Nhập",
     "profile" : "Tài Khoản",
     "blog" : "Bài Viết",
@@ -50,6 +51,8 @@
     "booking": "Đặt phòng ngay",
     "book": "Đặt phòng bạn muốn",
     "filter": "Lọc Phòng",
+    "changeavt": "Thay đổi avatar",
+    "updateinfo": "Thay đổi thông tin",
 
 
     "about" : "Về chúng tôi..",

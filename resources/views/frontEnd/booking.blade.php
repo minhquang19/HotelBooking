@@ -27,11 +27,22 @@
                             <div class="row ">
                                 <div class="col-lg-3 col-md-6">
                                     <div class="circle">
-                                        <img class="image" src="https://media.istockphoto.com/photos/smiling-businesswoman-looking-at-camera-webcam-make-conference-call-picture-id1129638608?k=6&m=1129638608&s=612x612&w=0&h=8OhKQCq_elLsW_PAWA4n8pzQy3mlkf5a_ztp2Nbv8Y8=">
+                                        <img class="image" src="/upload/avatar/{{Auth::user()->avatar}}">
                                     </div>
                                     <div class="upload-btn-wrapper">
-                                        <button class="button">{{__('ChangeAvatar')}}</button>
-                                        <input type="file" name="myfile" />
+                                        <form action="booking/updateAvatar" enctype="multipart/form-data" method="POST">
+                                            @csrf
+                                            @method('POST')
+                                            <input type="hidden" name="id" value="{{Auth::user()->id}}">
+                                            <div class="form-group file-upload" style="margin-top: 26px">
+                                                <div class="file-select">
+                                                    <div class="file-select-button" id="fileName" style="color: white">Choose File</div>
+                                                    <div class="file-select-name" id="noFile">No file chosen...</div>
+                                                    <input type="file" name="avatar" id="chooseFile">
+                                                </div>
+                                            </div>
+                                            <button class="btn button" type="submit">{{__('changeavt')}}</button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="col-lg-9  col-md-6 widget fillter-widget">
@@ -64,7 +75,7 @@
                                                 <label for='female'>{{__('Female')}}</label>
                                             </div>
                                         </div>
-                                        <button class="button">Update</button>
+                                        <button class="btn button">{{__('updateinfo')}}</button>
                                     </form>
                                 </div>
                             </div>
@@ -100,7 +111,7 @@
                                                     <td>{{$loop->index+1}}</td>
                                                     <td>{{$item['room_name']}}</td>
                                                     <td><img class="img-thumbnail" style="max-width: 120px !important;"
-                                                             src="upload/cover/{{$item['image']}}"></img></td>
+                                                             src="upload/cover/{{$item['image']}}"/></td>
                                                     <td>{{$item['checkin']}}</td>
                                                     <td>{{$item['checkout']}}</td>
                                                     <td>{{$item['date']}}</td>
@@ -133,7 +144,7 @@
                                     Total Price : {{$totalPrice}}
                                     <div id="paypal-button"></div>
                                     <a href="/booking/add" onclick="return confirm('Are you sure?')" type="submit"
-                                       style="height: 50px;line-height: 50px;" class="btn filled-btn btn-block">Booking
+                                       style="height: 50px;line-height: 50px;" class="book filled-btn btn-block">Booking
                                         <i class="fas fa-long-arrow-alt-right"></i></a>
                                 </div>
                             </div>
@@ -219,6 +230,7 @@
             toastr.error("{{ session("error") }}")
         </script>
     @endif
+
     <script src="{{ asset('frontEnd/css/tab/js/cbpFWTabs.js') }}"></script>
     <script>
         (function() {
@@ -227,28 +239,22 @@
             });
         })();
     </script>
-    <script>
-        $(function()
-        {
-            var checkbox = $('#checkbox'), path = $('#path'), bow = $('#bow'), male = $('#male');
 
-            checkbox.on('change',function()
-            {
-                if( $(this).is(':checked') )
-                {
-                    male.removeClass('ma');
-                    setTimeout(function(){ path.addClass('fe'); male.addClass('fe'); bow.addClass('fe'); },390);
-                }
-                else
-                {
-                    male.addClass('ma');
-                    setTimeout(function(){ path.removeClass('fe'); male.removeClass('fe'); bow.removeClass('fe'); },390);
-                }
-            });
+    <script>
+        $('#chooseFile').bind('change', function () {
+            var filename = $("#chooseFile").val();
+            if (/^\s*$/.test(filename)) {
+                $(".file-upload").removeClass('active');
+                $("#noFile").text("No file chosen...");
+            }
+            else {
+                $(".file-upload").addClass('active');
+                $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+            }
         });
     </script>
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-{{--    --------------------------PayPal---------------------------}}
+{{----------------------------PayPal---------------------------}}
     <script>
         paypal.Button.render({
             // Configure environment
@@ -269,7 +275,7 @@
             commit: true,
 
             // Set up a payment
-            payment: function(data, actions) {
+            payment: function (data, actions) {
                 return actions.payment.create({
                     transactions: [{
                         amount: {
@@ -280,8 +286,8 @@
                 });
             },
             // Execute the payment
-            onAuthorize: function(data, actions) {
-                return actions.payment.execute().then(function() {
+            onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function () {
                     // Show a confirmation message to the buyer
                     window.alert('Thank you for your purchase!');
                 });

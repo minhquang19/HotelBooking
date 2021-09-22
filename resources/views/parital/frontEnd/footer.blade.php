@@ -36,7 +36,7 @@
                            @if(App()->getLocale() =='en')
                                 <h6><a href="">{{$item->title}}</a></h6>
                            @else
-                                <h6><a href="">{{$item->title}}</a></h6>
+                                <h6><a href="">{{$item->title_vi}}</a></h6>
                            @endif
                            <span class="recent-post-date">{{$item->created_at}}</span>
                         </li>

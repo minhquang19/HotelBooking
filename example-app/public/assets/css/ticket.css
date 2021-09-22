@@ -1,0 +1,148 @@
+
+.cardWrap {
+    width: 100%;
+    color: #fff;
+    font-family: sans-serif;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    /*height: 100%;*/
+}
+.card {
+    background: linear-gradient(to bottom, #fea116 0%, #fea116 26%, #ecedef 26%, #ecedef 100%);
+    float: left;
+    position: relative;
+    padding: 1em;
+    margin-top: 50px;
+}
+
+.cardLeft {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: 70%;
+    height: 100%;
+}
+
+.cardRight {
+    width: 30%;
+    border-left: 0.18em dashed #fff;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 100%;
+}
+.cardRight:before, .cardRight:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.9em;
+    height: 0.9em;
+    background: #fff;
+    border-radius: 50%;
+    left: -0.5em;
+}
+.cardRight:before {
+    top: -0.4em;
+}
+.cardRight:after {
+    bottom: -0.4em;
+}
+
+h1 {
+    font-size: 1.1em !important;
+    margin-top: 0 !important;
+}
+h1 span {
+    font-weight: normal;
+}
+
+.title,
+.name,
+.seat,
+.time {
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.title h2,
+.name h2,
+.seat h2,
+.time h2 {
+    font-size: 0.9em;
+    color: #525252;
+    margin: 0;
+}
+.title span,
+.name span,
+.seat span,
+.time span {
+    font-size: 0.7em;
+    color: #a2aeae;
+}
+
+.title {
+    margin: 2em 0 0 0;
+}
+
+.name,
+.seat {
+    margin: 0.7em 0 0 0;
+}
+
+.time {
+    margin: 0.7em 0 0 1em;
+}
+
+.seat,
+.time {
+    float: left;
+}
+
+.eye {
+    position: relative;
+    width: 2em;
+    height: 1.5em;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 1em/0.6em;
+    z-index: 1;
+}
+.eye:before, .eye:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+}
+.eye:before {
+    width: 1em;
+    height: 1em;
+    background: #e84c3d;
+    z-index: 2;
+    left: 8px;
+    top: 4px;
+}
+.eye:after {
+    width: 0.5em !important;
+    height: 0.5em !important;
+    background: #fff !important;
+    z-index: 3 !important;
+    left: 12px !important;
+    top: 8px !important;
+}
+
+.number {
+    text-align: center !important;
+    text-transform: uppercase !important;
+}
+.number h3 {
+    color: #e84c3d !important;
+    margin: 0.9em 0 0 0 !important;
+    font-size: 2.5em !important;
+}
+.number span {
+    display: block !important;
+    color: #a2aeae !important;
+}
+
+.barcode {
+    height: 2em !important;
+    width: 0 !important;
+    margin: 1.2em 0 0 0.8em !important;
+    box-shadow: 1px 0 0 1px #343434, 5px 0 0 1px #343434, 10px 0 0 1px #343434, 11px 0 0 1px #343434, 15px 0 0 1px #343434, 18px 0 0 1px #343434, 22px 0 0 1px #343434, 23px 0 0 1px #343434, 26px 0 0 1px #343434, 30px 0 0 1px #343434, 35px 0 0 1px #343434, 37px 0 0 1px #343434, 41px 0 0 1px #343434, 44px 0 0 1px #343434, 47px 0 0 1px #343434, 51px 0 0 1px #343434, 56px 0 0 1px #343434, 59px 0 0 1px #343434, 64px 0 0 1px #343434, 68px 0 0 1px #343434, 72px 0 0 1px #343434, 74px 0 0 1px #343434, 77px 0 0 1px #343434, 81px 0 0 1px #343434 !important;
+}
