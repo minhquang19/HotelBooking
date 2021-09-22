@@ -115,19 +115,21 @@
             $("#inp_exercise_id").change(function(){
                 var opt = $('.langselect').find(":selected");
                 var divid = opt.data('divid');
-                var value = opt.val();
                 $('.image-swap').removeAttr('src');
                 $('.image-swap').attr("src",divid);
-                localStorage.setItem('src', divid);
-                localStorage.setItem('value', value);
                 location = opt.data('link');
             });
 
-
         });
-        var img = localStorage.getItem('src');
-        var id = localStorage.getItem('value');
-        $(".langselect").val(id);
-        $('.image-swap').attr("src",img);
+        var locale = '{{ config('app.locale') }}';
+       console.log(locale)
+        if(locale =='en')
+        {
+            $(".langselect").val(1);
+            $('.image-swap').attr("src","/frontEnd/img/icons/flag.png");
+        }else{
+            $(".langselect").val(2);
+            $('.image-swap').attr("src","/frontEnd/img/icons/vi.png");
+        }
     </script>
 @endsection
