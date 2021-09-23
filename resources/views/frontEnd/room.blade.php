@@ -49,7 +49,6 @@
                                                             </li>
                                                         </ul>
                                                         <div class="room-price"><p>{{$item->roomPrice->Weekly}}</p></div>
-
                                             </div>
                                         </div>
                                     </div>

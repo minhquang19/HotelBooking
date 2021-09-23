@@ -9,7 +9,7 @@
     <link rel="icon" href="/frontEnd/img/logo.png" sizes="20x20" type="image/png" />
     <link rel="stylesheet" href="/frontEnd/css/Lib/jquery-ui.min.css" />
     <link rel="stylesheet" href="/frontEnd/css/Lib/all.min.css" />
-    <link rel="stylesheet" href="{{asset('/frontEnd/css/Lib/bootstrap-4.4.1.min.css')}}" />
+    <link rel="stylesheet" href="frontEnd/css/Lib/bootstrap-4.4.1.min.css" />
     <link rel="stylesheet" href="/frontEnd/css/Lib/animate.css" />
     <link rel="stylesheet" href="/frontEnd/css/Lib/magnific-popup-1.1.0.css" />
     <link rel="stylesheet" href="/frontEnd/css/Lib/nice-select-1.0.css" />
