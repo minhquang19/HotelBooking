@@ -25,6 +25,7 @@ class UpdatePostRequest extends FormRequest
     {
         return [
            'name'=>'required',
+           'name_vi'=>'required',
         ];
     }
 }

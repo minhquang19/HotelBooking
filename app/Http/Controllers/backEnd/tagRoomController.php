@@ -3,29 +3,14 @@
 namespace App\Http\Controllers\backEnd;
 
 use App\Http\Controllers\Controller;
+use App\Models\TagRoom;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class tagRoomController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -35,42 +20,22 @@ class tagRoomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(TagRoom::where('room_id',$request->room_id))
+        {
+            TagRoom::where('room_id',$request->room_id)->delete();
+        }
+        $arr = $request->input('tag_id');
+        for($i=0;$i< count($arr);$i++)
+        {
+           $tag = new TagRoom;
+           $tag->room_id = $request->room_id;
+           $tag->tag_id =$arr[$i];
+           $tag->save();
+        }
+        return back()->with('success','Cập nhật thành công');
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

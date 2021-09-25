@@ -2,6 +2,66 @@
 @section('title', 'Room Detail')
 @section('manager', 'active')
 @section('room','active')
+@section('style')
+    <style>
+
+        input[type="checkbox"]{
+            display:none;
+        }
+
+        input[type="checkbox"]:hover + label:before{
+            opacity: .5;
+        }
+
+        .checkbox{
+            display:inline-block;
+            position:relative;
+            padding-left:40px;
+            line-height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #111;
+            font-weight: 600;
+        }
+
+        .checkbox:before{
+            z-index:15;
+            content: '';
+            position:absolute;
+            left:0;
+            top: 6px;
+            transition:all 0.3s ease;
+            cursor:pointer;
+            width:20px;
+            border-width: 4px;
+            border-style: solid;
+            border-color: #444;
+            height:20px;
+        }
+        input[type="checkbox"]:checked + label{
+            color:#000;
+        }
+
+        input[type="checkbox"]:checked +  label:before{
+            border-color: transparent;
+            border-left-color: #2ecc71;
+            border-bottom-color: #2ecc71;
+            transform:rotate(-50deg);
+            width:22px;
+            height:12px;
+            top: 3px;
+        }
+        h1.tagroom{
+            text-align: center;
+            margin-bottom: 25px;
+            background: #2CC185;
+            color: white;
+            font-size: 30px;
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+@endsection
 @section('block','display: block;')
 @section('tabcontrol')
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/tab/css/normalize.css') }}" />
@@ -191,51 +251,33 @@
                         <section id="section-underline-5 Tag">
                             <div class="container-fluid pl-0 pr-0">
                                 <div class="row ">
-                                <div class="col-lg-5">
-                                    <div class="table-responsive table-responsive-data2">
-                                        <table class="table table-data2">
-                                            <thead>
-                                                <tr style="background: #2CC185;">
-                                                    <th>Tag in Room</th>
-                                                    <td></td>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="info_detail">
-                                                    @foreach($tag_room as $item)
-                                                    <tr>
-                                                        <td>{{$item->tag_name}}</td>
-                                                        <td>
-                                                        <div class="table-data-feature">
-                                                            <form id="deleteForm" action="{{ route('admin.tag_room.destroy',$item->id) }}" method="post">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button onclick="return confirm('Are you sure?')" class="item delete_btn" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i>
-                                                                </button>
-                                                            </form>
-                                                        </div>
-                                                       </td>
-                                                    </tr>
-                                                    @endforeach
-                                            </tbody>
-                                        </table>
+                                <div class="col-lg-10">
+                                    <div class="container" style="text-align: left;margin-left: 50px;width: 70%;background: white;padding: 50px;">
+                                        <h1 class="tagroom">Tags in Room</h1>
+                                        <div class="form-container">
+                                            <form action="{{route('admin.tag_room.store')}}" method="POST" enctype="multipart/form-data">
+                                             @csrf
+                                             @method('post')
+                                             <input type="hidden" name="room_id" value="{{$obj->id}}">
+                                            @forelse($tag as $item)
+                                            <div class="checkbox-container">
+                                                <input type="checkbox" id="{{$item->id}}" name="tag_id[]" value="{{$item->id}}"
+                                                @foreach($tag_room as $tagroom)
+                                                    @if($item->id == $tagroom->tag_id) checked @endif
+                                                @endforeach
+                                                />
+                                                <label class="checkbox" for="{{$item->id}}">{{$item->name}}</label>
+                                            </div>
+                                            @empty
+                                                <div class="checkbox-container">
+                                                    <label class="checkbox" for="apple">No tag belong this room</label>
+                                                </div>
+                                            @endforelse
+                                            <button style="float: right;position: absolute;top: 40px; right: -90px;height: 60px" class="btn btn-success btn-sm btn-radius"><i class="fas fa-angle-double-up"></i> Update tag in the room</button>
+                                            </form>
+
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <form action="{{ route('admin.tag_room.store') }}" method="post">
-                                        @csrf
-                                        <input type="hidden" name="room_id" value="{{$obj->id}}">
-                                        <input type="hidden" name="tag_id" value="" id="tag_id">
-                                        <input type="hidden" name="tag_name" value="" id="tag_name">
-                                        <button class="btn btn-success btn-sm btn-radius"><i class="fas fa-angle-double-left"></i> Insert</button>
-                                    </form>
-                                </div>
-                                <div class="col-lg-5">
-                                    <select class="form-control my-select-tag">
-                                    @foreach($tag as $item)
-                                      <option value="{{$item->id}}">{{$item->tagname}}</option>
-                                    @endforeach
-                                    </select>
                                 </div>
                         </section>
                         </div><!-- /content -->
@@ -336,17 +378,6 @@
 
 @section('scripts')
     {{-- Success --}}
-    @if(Session::has('success'))
-        <script>
-             toastr.success("{{ session("success") }}")
-        </script>
-     @endif
-     {{-- Error --}}
-     @if(Session::has('error'))
-        <script>
-             toastr.error("{{ session("error") }}")
-        </script>
-     @endif
     {{-- Tab Control --}}
     <script src="{{ asset('admin/tab/js/cbpFWTabs.js') }}"></script>
     <script>

@@ -200,16 +200,6 @@
     </div>
 @endsection
 @section('scripts')
-    @if(Session::has('success'))
-        <script>
-            toastr.success("{{ session("success") }}")
-        </script>
-    @endif
-    @if(Session::has('error'))
-        <script>
-            toastr.error("{{ session("error") }}")
-        </script>
-    @endif
     <script>
         $(document).ready(function () {
             tinymce.init({
@@ -248,18 +238,6 @@
                 $('#eicon').val( data_id[1]);
                 $('#editform').attr('action', '/admin/service/'+ data_id[0]);
             });
-        });
-    </script>
-    <script>
-        $('#chooseFile').bind('change', function () {
-            var filename = $("#chooseFile").val();
-            if (/^\s*$/.test(filename)) {
-                $(".file-upload").removeClass('active');
-                $("#noFile").text("No file chosen...");
-            } else {
-                $(".file-upload").addClass('active');
-                $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
-            }
         });
     </script>
 @endsection

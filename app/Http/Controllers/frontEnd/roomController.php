@@ -59,7 +59,7 @@ class roomController extends Controller
         $tag_data       = TagRoom::where('room_id',$id)->get();
         $room_3         = Room::all()->random(3);
         $temp           = DB::table('booking_details')->where('room_id',$id)->get();
-        $blog           = bLOG::all();
+        $blog           = Blog::all();
         return view('frontEnd.room-details',compact('room_detail','roomimages','roomPrice','tag_data','room_3','temp','blog'));
     }
 }

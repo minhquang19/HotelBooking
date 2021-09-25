@@ -16,14 +16,6 @@
                             <button class="btn btn-success btn-radius"  data-toggle="modal" data-target="#addModal">
                                 <i class="zmdi zmdi-plus"></i>add item
                             </button>
-                            <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                                <select class="js-select2" name="type">
-                                    <option selected="selected">Export</option>
-                                    <option value="">Option 1</option>
-                                    <option value="">Option 2</option>
-                                </select>
-                                <div class="dropDownSelect2"></div>
-                            </div>
                         </div>
                     </div>
                     {{-- list Item --}}
@@ -33,6 +25,7 @@
                                 <tr>
                                     <th>TT</th>
                                     <th>Name Tag</th>
+                                    <th>Name Tag by Vietnamese</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -42,6 +35,7 @@
                                     <input type="hidden" class="delete_val" value="{{ $item->id }}" name="">
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
+                                    <td>{{ $item->name_vi }}</td>
                                     <td>
                                         <div class="table-data-feature">
                                             <button class="item view_btn" data-toggle="tooltip" data-placement="top" title="View">
@@ -92,6 +86,10 @@
                         <label for="name">Tag Name</label>
                         <input name="name" id="Vname" type="text" class="form-control" placeholder="Maximun of People" required>
                     </div>
+                    <div class="form-group">
+                        <label for="name">Tag Name by Vietnamese</label>
+                        <input name="name_vi" id="Vname_vi" type="text" class="form-control" placeholder="Maximun of People" required>
+                    </div>
                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
                 </form>
@@ -115,6 +113,10 @@
                     <div class="form-group">
                         <label for="name">Tag Name</label>
                         <input name="name" type="text" class="form-control" placeholder="Tag Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Tag Name by Vietnamese</label>
+                        <input name="name_vi" type="text" class="form-control" placeholder="Tag Name  by Vietnamese" required>
                     </div>
                     <button type="submit" class="btn btn-primary">SAVE</button>
                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -141,11 +143,15 @@
                     <input type="hidden">
                     <div class="form-group">
                         <label for="id">Tag ID </label>
-                        <input name="id" id="Eid" type="text" class="form-control" placeholder="Category name" required>
+                        <input name="id" id="Eid" type="text" class="form-control" placeholder="Tag id" required readonly>
                     </div>
                     <div class="form-group">
                         <label for="name">Tag Name</label>
                         <input name="name" id="Ename" type="text" class="form-control" placeholder="Maximun of People" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Tag Name</label>
+                        <input name="name_vi" id="Ename_vi" type="text" class="form-control" placeholder="Maximun of People" required>
                     </div>
                     <button type="submit" class="btn btn-primary">SAVE</button>
                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -160,16 +166,6 @@
 @endsection
 
 @section('scripts')
-@if(Session::has('success'))
-  <script>
-     toastr.success("{{ session("success") }}")
- </script>
- @endif
- @if(Session::has('error'))
-  <script>
-     toastr.error("{{ session("error") }}")
- </script>
- @endif
 <script>
     $(document).ready(function()
     {
@@ -182,6 +178,7 @@
 
             $('#Eid').val(data[0]);
             $('#Ename').val(data[1]);
+            $('#Ename_vi').val(data[2]);
             $('#editform').attr('action', '/admin/tag/'+data[0]);
         });
 
@@ -194,6 +191,7 @@
 
             $('#Vid').val(data[0]);
             $('#Vname').val(data[1]);
+            $('#Vname_vi').val(data[2]);
         });
     });
 </script>

@@ -18,6 +18,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/home',[homeController::class,'index']);
         Route::resource('/category',categoryController::class);
         Route::resource('/room',roomController::class);
+        Route::post('/room/search/',[roomController::class,'filterRoom'])->name('room.search');
         Route::resource('/tag',tagController::class);
         Route::resource('/price',priceController::class);
         Route::resource('/tag_room',tagRoomController::class)->only('store','destroy');

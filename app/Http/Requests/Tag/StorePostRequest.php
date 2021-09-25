@@ -27,6 +27,7 @@ class StorePostRequest extends FormRequest
     {
         return [
             'name'=>'required',
+            'name_vi'=>'required',
         ];
     }
 

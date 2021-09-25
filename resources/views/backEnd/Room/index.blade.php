@@ -31,9 +31,6 @@
                                 </select>
                                 <div class="dropDownSelect2"></div>
                             </div>
-                            <button class="au-btn-filter">
-                                <i class="zmdi zmdi-filter-list"></i>filters
-                            </button>
                             </form>
                         </div>
                         <div class="table-data__tool-right">
@@ -44,7 +41,7 @@
                     </div>
                     {{-- List item --}}
                     <div class="table-responsive table-responsive-data2" style="overflow-x: auto">
-                        <table class="table table-data2">
+                        <table class="table table-data2" id="table">
                             <thead style="background-color: #333;color: #fff !important" >
                                 <tr>
                                     <th>Id</th>
@@ -292,16 +289,7 @@
     </div>
 @endsection
 @section('scripts')
-@if(Session::has('success'))
-  <script>
-     toastr.success("{{ session("success") }}")
- </script>
- @endif
- @if(Session::has('error'))
-  <script>
-     toastr.error("{{ session("error") }}")
- </script>
- @endif
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script>
     $(document).ready(function()
     {
@@ -341,5 +329,9 @@
         $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
       }
     });
+    $('#search').change(function()
+    {
+
+    })
  </script>
  @endsection

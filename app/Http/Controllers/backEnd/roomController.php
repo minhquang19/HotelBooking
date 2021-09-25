@@ -153,4 +153,10 @@ class roomController extends Controller
             abort(500);
         }
     }
+    public function filterRoom(Request $request){
+        $state = $request->cur;
+        $data = Room::where('category_id','=',$state);
+        $category = Category::all();
+        return  view('backEnd.Room.index', compact('data','category'));
+    }
 }
