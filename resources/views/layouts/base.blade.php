@@ -32,7 +32,7 @@
             <main>
                 @yield('content')
             </main>
-            @include('parital\frontEnd\footer')
+            @include('parital.frontEnd.footer')
         </div>
     </div>
 </div>
