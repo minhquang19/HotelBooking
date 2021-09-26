@@ -653,6 +653,10 @@
 
     .lag-select {
         display: block !important;
+
+    }
+    select{
+        font-size: 12px !important;
     }
 
     .lag-img {
@@ -660,15 +664,15 @@
     }
 
     .menu-right-area {
-        right: 130px;
+        right: 90px;
     }
 
     .search-wrap {
-        left: 150px;
+        left: 100px;
     }
 
     .lag-option {
-        left: 40px !important;
+        left: 30px !important;
     }
   .header-menu-area .menu-right-area .quote-btn,
   .header-menu-area .menu-right-area .lag-select,
