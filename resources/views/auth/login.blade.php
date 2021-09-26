@@ -15,7 +15,9 @@
                         @csrf
                         <div class="form-group">
                             <label class="label" for="exampleInputEmail1">{{ __('email') }}</label>
-                            <input value="" name="email" type="email" class="form-control form-control-sm @error('email') is-invalid @enderror" id="email" required autocomplete="email" >
+                            <input value="" name="email" type="email"
+                                   class="form-control form-control-sm @error('email') is-invalid @enderror" id="email"
+                                   required autocomplete="email">
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -25,7 +27,9 @@
                         <div class="form-group">
                             <label class="label" for="exampleInputPassword1">{{__('password')}}</label>
                             <a href="#" style="float:right;font-size:15px;">{{__('forgotpass')}}</a>
-                            <input value="hjk1234567" name="password" type="password" class="form-control form-control-sm @error('password') is-invalid @enderror" id="password">
+                            <input value="hjk1234567" name="password" type="password"
+                                   class="form-control form-control-sm @error('password') is-invalid @enderror"
+                                   id="password">
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
