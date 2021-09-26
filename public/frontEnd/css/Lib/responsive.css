@@ -378,9 +378,6 @@
     padding-left: 60px;
     margin: 0;
   }
-  .header-menu-area .logo img {
-    max-width: 220px;
-  }
   .header-menu-area.sticky .logo img {
     max-width: 220px;
   }
@@ -629,25 +626,50 @@
 /* Style For Small dDevice
 ============================================================================================ */
 @media (max-width: 767px) {
-  .header-top-area {
-    display: none;
-  }
-  .col-12.no-position {
-    position: initial !important;
-  }
-  .header-menu-area {
-    padding: 10px 0;
-  }
-  .header-menu-area .logo {
-    margin: 0;
-    padding: 0;
-  }
-  .header-menu-area .logo img {
-    max-width: 135px;
-  }
-  .header-menu-area.sticky .logo img {
-    max-width: 135px;
-  }
+    .header-top-area {
+        display: none;
+    }
+
+    .col-12.no-position {
+        position: initial !important;
+    }
+
+    .header-menu-area {
+        padding: 5px 0;
+    }
+
+    .header-menu-area .logo {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-menu-area .logo img {
+        max-width: 135px;
+    }
+
+    .header-menu-area.sticky .logo img {
+        max-width: 135px;
+    }
+
+    .lag-select {
+        display: block !important;
+    }
+
+    .lag-img {
+        display: none;
+    }
+
+    .menu-right-area {
+        right: 130px;
+    }
+
+    .search-wrap {
+        left: 150px;
+    }
+
+    .lag-option {
+        left: 40px !important;
+    }
   .header-menu-area .menu-right-area .quote-btn,
   .header-menu-area .menu-right-area .lag-select,
   .header-menu-area .menu-right-area .btn {
@@ -697,7 +719,7 @@
     margin-top: 0;
   }
   .mean-container a.meanmenu-reveal {
-    top: 12px;
+    top: 13px;
     left: auto;
     right: 0;
   }
@@ -1057,6 +1079,9 @@
     margin-left: 0;
     padding-left: 20px;
   }
+  .hero-section{
+      height: 400px !important;
+  }
   .single-blog-wrap .post-desc h3 {
     font-size: 20px;
     line-height: 30px;
@@ -1163,7 +1188,6 @@
     max-width: 165px;
   }
   .mean-container a.meanmenu-reveal {
-    top: 8px;
   }
   .header-two a.meanmenu-reveal {
     top: 0px;

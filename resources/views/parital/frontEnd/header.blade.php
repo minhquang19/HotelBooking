@@ -35,8 +35,8 @@
                   <div class="menu-right-area text-right">
                      <div class="lag-select">
                         <div class="lag-img"><img src="/frontEnd/img/icons/flag.png" alt="Flug" class="image-swap"></div>
-                        <div class="lag-option">
-                            <select class="langselect" name="inp_exercise_id" id="inp_exercise_id" style="padding: 0">
+                        <div class="lag-option" style="height: 100%">
+                            <select class="langselect" name="inp_exercise_id" id="inp_exercise_id" style="padding: 0;height: 100%">
                                 @if(App()->getLocale()=='en')
                                     <option data-divid="/frontEnd/img/icons/flag.png" data-link="{{route('lang',['en'])}}" value="1" selected>EngLish</option>
                                     <option data-divid="/frontEnd/img/icons/vi.png" data-link="{{route('lang',['vi'])}}" value="2"> Tiếng Việt</option>
@@ -67,7 +67,7 @@
                         </ul>
                      </nav>
                      <div class="search-wrap">
-                        <a class="search-icon"><i class="fas fa-search" style="padding-top: 37px;"></i></a><a class="search-icon icon-close"><i class="fas fa-times"></i>  </a>
+                        <a class="search-icon"><i class="fas fa-search" ></i></a><a class="search-icon icon-close"><i class="fas fa-times"></i>  </a>
                         <div class="search-form">
                            <form><input type="search" placeholder="TYPE AND PRESS ENTER....."></form>
                         </div>
