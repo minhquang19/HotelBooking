@@ -21,7 +21,7 @@ trait AuthenticatesUsers
     public function showLoginForm()
     {
         $blog = Blog::all();
-        return view('auth.register',compact('blog'));
+        return view('auth.login',compact('blog'));
     }
 
     /**
