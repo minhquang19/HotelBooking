@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title')</title>
     <link rel="icon" href="/frontEnd/img/logo.png" sizes="20x20" type="image/png" />
-    <link rel="stylesheet" href="{{ asset('/frontEnd/css/Lib/jquery-ui.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontEnd/css/Lib/bootstrap-4.4.1.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/frontEnd/css/Lib/nice-select-1.0.css') }}">
-    <link rel="stylesheet" href="{{ asset('/frontEnd/css/Lib/bootstrap-datepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('/frontEnd/css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('/frontEnd/css/Lib/meanmenu-2.0.7.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/frontEnd/css/global.css') }}">
-    <link rel="stylesheet" href="{{ asset('/frontEnd/css/header.css') }}">
-    <link rel="stylesheet" href="{{ asset('/frontEnd/css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('/frontEnd/css/Lib/responsive.css') }}">
+    <link rel="stylesheet" href="{{ assets('/frontEnd/css/Lib/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ assets('frontEnd/css/Lib/bootstrap-4.4.1.min.css') }}">
+    <link rel="stylesheet" href="{{ assets('/frontEnd/css/Lib/nice-select-1.0.css') }}">
+    <link rel="stylesheet" href="{{ assets('/frontEnd/css/Lib/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ assets('/frontEnd/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ assets('/frontEnd/css/Lib/meanmenu-2.0.7.min.css') }}">
+    <link rel="stylesheet" href="{{ assets('/frontEnd/css/global.css') }}">
+    <link rel="stylesheet" href="{{ assets('/frontEnd/css/header.css') }}">
+    <link rel="stylesheet" href="{{ assets('/frontEnd/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ assets('/frontEnd/css/Lib/responsive.css') }}">
     @yield('style')
     <link rel="stylesheet" href="{{ asset('backEnd/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
