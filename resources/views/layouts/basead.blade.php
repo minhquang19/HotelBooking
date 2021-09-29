@@ -35,17 +35,17 @@
 <body class="">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
-        @include('parital\admin\headermobile')
+        @include('parital.admin.headermobile')
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
-        @include('parital\admin\menusidebar')
+        @include('parital.admin.menusidebar')
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
-            @include('parital\admin\headerdesktop')
+            @include('parital.admin.headerdesktop')
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
