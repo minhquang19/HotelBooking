@@ -126,7 +126,7 @@ class roomController extends Controller
                 $file_name = time().rand(100,999).$original_name;
                 $image_resize = Image::make($file->getRealPath());
                 $image_resize->resize(370,250);
-                $image_resize->save('upload/cover/'.$file_name);
+                $image_resize->save('storage/upload/cover/'.$file_name);
                 $validated['coverImages'] = $file_name;
             }
             $rs = Room::find($id)->update($validated);
