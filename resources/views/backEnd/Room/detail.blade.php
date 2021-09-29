@@ -64,11 +64,11 @@
 @endsection
 @section('block','display: block;')
 @section('tabcontrol')
-<link rel="stylesheet" type="text/css" href="{{ asset('admin/tab/css/normalize.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('backEnd/tab/css/normalize.css') }}" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="{{ asset('admin/tab/css/demo.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('admin/tab/css/tabs.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('admin/tab/css/tabstyles.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('backEnd/tab/css/demo.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('backEnd/tab/css/tabs.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('backEnd/tab/css/tabstyles.css') }}" />
 @endsection
 @section('content')
 
@@ -379,7 +379,7 @@
 @section('scripts')
     {{-- Success --}}
     {{-- Tab Control --}}
-    <script src="{{ asset('admin/tab/js/cbpFWTabs.js') }}"></script>
+    <script src="{{ asset('backEnd/tab/js/cbpFWTabs.js') }}"></script>
     <script>
         (function() {
             [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {

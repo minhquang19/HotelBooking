@@ -8,6 +8,8 @@
                 <ol class="carousel-indicators" style="bottom: 100px;z-index: 1001">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -46,6 +48,42 @@
                             <h1 class="big-text">Moon</h1>
                         </div>
                     </div>
+                    <div class="carousel-item">
+                        <div class="single-hero-slide bg-img-center d-flex align-items-center text-center"
+                             style="background-image: url(&quot;/frontEnd/img/bg/bg-03.jpg&quot;); width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
+                             data-slick-index="0" aria-hidden="false" tabindex="0">
+                            <div class="container">
+                                <div class="slider-text">
+                                    <span class="small-text" data-animation="fadeInDown" data-delay=".3s"
+                                          style="animation-delay: 0.3s;">Welcome to MoonLight</span>
+                                    <h1 data-animation="fadeInLeft" data-delay=".6s" style="animation-delay: 0.6s;"
+                                        class="">Another day in paradise</h1>
+                                    <a class="btn filled-btn" data-animation="fadeInUp" data-delay=".9s"
+                                       href="/room" style="animation-delay: 0.9s;" tabindex="0">get started <i
+                                            class="far fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                            <h1 class="big-text">Moon</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="single-hero-slide bg-img-center d-flex align-items-center text-center"
+                             style="background-image: url(&quot;/frontEnd/img/bg/bg-04.jpg&quot;); width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
+                             data-slick-index="0" aria-hidden="false" tabindex="0">
+                            <div class="container">
+                                <div class="slider-text">
+                                    <span class="small-text" data-animation="fadeInDown" data-delay=".3s"
+                                          style="animation-delay: 0.3s;">Welcome to MoonLight</span>
+                                    <h1 data-animation="fadeInLeft" data-delay=".6s" style="animation-delay: 0.6s;"
+                                        class="">Another day in paradise</h1>
+                                    <a class="btn filled-btn" data-animation="fadeInUp" data-delay=".9s"
+                                       href="/room-list" style="animation-delay: 0.9s;" tabindex="0">get started <i
+                                            class="far fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                            <h1 class="big-text">Moon</h1>
+                        </div>
+                    </div>
                     <a class="carousel-control-prev" href="#slide1" role="button" data-slide="prev"
                        style="z-index: 1002">
       <span class="prev slick-arrow" style="display: block;">
@@ -67,14 +105,12 @@
                     <form id="bookIng-form" method="GET">
                         <div class="row">
                             <div class="col-lg-4 col-md-6">
-                                <div class="input-wrap"><input type="text" name="checkin" placeholder="{{__('arrive')}}"
-                                                               id="arrive-date"/><i class="far fa-calendar-alt"></i>
+                                <div class="input-wrap"><input type="text" name="checkin" placeholder="{{__('arrive')}}" id="arrive-date"/><i class="far fa-calendar-alt"></i>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
-                                <div class="input-wrap"><input type="text" name="checkout"
-                                                               placeholder="{{__('depart')}}" id="depart-date"/><i
-                                        class="far fa-calendar-alt"></i></div>
+                                <div class="input-wrap"><input type="text" name="checkout" placeholder="{{__('depart')}}" id="depart-date"/>
+                                    <i class="far fa-calendar-alt"></i></div>
                             </div>
                             <div class="col-lg-4 col-md-6">
                                 <div class="input-wrap">
@@ -102,9 +138,10 @@
                             </div>
                             <div class="col-lg-4 col-md-6">
                                 <div class="input-wrap">
-                                    <button formaction="/room-list" type="submit"
-                                            class="btn filled-btn btn-block">{{__('booking')}} <i
-                                            class="fas fa-long-arrow-alt-right"></i></button>
+                                    <button formaction="/room" type="submit"
+                                            class="btn filled-btn btn-block">{{__('booking')}}
+                                        <i class="fas fa-long-arrow-alt-right"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -195,27 +232,31 @@
                                                 <div class="room-desc">
                                                     @if(App()->getLocale()=='en')
                                                         <div class="room-cat"><p>{{$item->category->name}}</p></div>
-                                                        <h4 class="avson-go-top"><a href="" tabindex="-1">{{$item->name}}</a></h4>
+                                                        <h4 class="avson-go-top"><a href=""
+                                                                                    tabindex="-1">{{$item->name}}</a>
+                                                        </h4>
                                                         <p class="des_text">{{$item->description}}</p>
                                                     @else
-                                                       <div class="room-cat"><p>{{$item->category->name_vi}}</p></div>
-                                                       <h4 class="avson-go-top"><a href="" tabindex="-1">{{$item->name_vi}} </a></h4>
+                                                        <div class="room-cat"><p>{{$item->category->name_vi}}</p></div>
+                                                        <h4 class="avson-go-top"><a href=""
+                                                                                    tabindex="-1">{{$item->name_vi}} </a>
+                                                        </h4>
                                                         <p class="des_text">{{$item->description_vi}}</p>
                                                     @endif
 
-                                                                <ul class="room-info list-inline">
-                                                                    <li><i class="fas fa-bed"></i>{{$item->bad}} Bads
-                                                                    </li>
-                                                                    <li><i class="fas fa-bath"></i>{{$item->bath}} Baths
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fas fa-ruler-combined"></i>{{$item->area}}
-                                                                        m
-                                                                    </li>
-                                                                </ul>
-                                                                <div class="room-price">
-                                                                    {{--                                      <p>{{$item->room_prices[0]->Weekends}}</p>--}}
-                                                                </div>
+                                                    <ul class="room-info list-inline">
+                                                        <li><i class="fas fa-bed"></i>{{$item->bad}} Bads
+                                                        </li>
+                                                        <li><i class="fas fa-bath"></i>{{$item->bath}} Baths
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-ruler-combined"></i>{{$item->area}}
+                                                            m
+                                                        </li>
+                                                    </ul>
+                                                    <div class="room-price">
+                                                        {{--                                      <p>{{$item->room_prices[0]->Weekends}}</p>--}}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -332,7 +373,9 @@
             <div class="container">
                 <div class="row align-items-center no-gutters">
                     <div class="col-lg-6">
-                        <iframe style="display: block !important;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.0060158206306!2d105.85210081408836!3d21.032445293030282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abc044f3fa91%3A0x67a19a82b90dde0!2zOTBiIE5ndXnhu4VuIEjhu691IEh1w6JuLCBIw6BuZyBC4bqhYywgSG_DoG4gS2nhur9tLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1632202930690!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe style="display: block !important;"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.0060158206306!2d105.85210081408836!3d21.032445293030282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abc044f3fa91%3A0x67a19a82b90dde0!2zOTBiIE5ndXnhu4VuIEjhu691IEh1w6JuLCBIw6BuZyBC4bqhYywgSG_DoG4gS2nhur9tLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1632202930690!5m2!1svi!2s"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <div class="section-title">

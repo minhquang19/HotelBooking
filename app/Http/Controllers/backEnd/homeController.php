@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use DB;
+use Illuminate\Support\Facades\Hash;
 
 class homeController extends Controller
 {
@@ -49,5 +50,15 @@ class homeController extends Controller
     {
         Auth::guard('admin')->logout();
         return redirect()->intended('/admin/login');
+    }
+    public function createAdminAccount(){
+        $password = Hash::make('12345678');
+        DB::table('admins')->insert([
+            'email' => 'admin@gmail.com',
+            'name' => 'Admin',
+            'password' => $password,
+        ]);
+
+        return 'Done';
     }
 }

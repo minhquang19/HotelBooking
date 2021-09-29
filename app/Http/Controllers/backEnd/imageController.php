@@ -48,7 +48,7 @@ class imageController extends Controller
                 foreach ($files as $file){
                     $original_name = strtolower(trim($file->getClientOriginalName()));
                     $room = Room::find($request->room_id);
-                    $room_name = $room->name;
+                    $room_name = str_replace(' ','',$room->name);
                     $file_name = $room_name.'-'.time().rand(100,999).$original_name;
                     $image_resize = Image::make($file->getRealPath());
                     $image_resize->resize(770,430);

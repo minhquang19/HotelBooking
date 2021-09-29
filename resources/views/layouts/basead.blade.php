@@ -9,7 +9,6 @@
     <title>@yield('title')</title>
     @yield('tabcontrol')
     @yield('style')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <!-- Fontfaces CSS-->
     <link href="{{ asset('backEnd/css/font-face.css" rel="stylesheet') }}" media="all">
     <link href="{{ asset('backEnd/vendor/font-awesome-4.7/css/font-awesome.min.css') }} " rel="stylesheet" media="all">
@@ -26,7 +25,7 @@
     <link href="{{ asset('backEnd/vendor/slick/slick.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('backEnd/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('backEnd/vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="{{ asset('admin/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backEnd/toastr/toastr.min.css') }}">
 
     <!-- Main CSS-->
     <link href="{{ asset('backEnd/css/theme.css') }}" rel="stylesheet" media="all">
@@ -61,12 +60,9 @@
     <!-- Jquery JS-->
     <script src="{{ asset('backEnd/vendor/jquery-3.2.1.min.js') }}"></script>
     <!-- Bootstrap JS-->
-    <script src="{{ asset('backEnd/vendor/bootstrap-4.1/popper.min.js') }}"></script>
     <script src="{{ asset('backEnd/vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
     <!-- Vendor JS       -->
-    <script src="{{ asset('backEnd/vendor/slick/slick.min.js') }}">
     </script>
-    <script src="{{ asset('backEnd/vendor/wow/wow.min.js') }}"></script>
     <script src="{{ asset('backEnd/vendor/animsition/animsition.min.js') }}"></script>
     <script src="{{ asset('backEnd/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}">
     </script>
@@ -81,8 +77,6 @@
     <script src="{{ asset('backEnd/toastr/toastr.min.js') }}"></script>
     <!-- Main JS-->
     <script src="{{ asset('backEnd/js/main.js') }}"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     @yield('scripts')
     @if(Session::has('success'))
         <script>

@@ -26,10 +26,16 @@ Route::prefix('')->group(function(){
     Route::resource('/blog',blogController::class)->only('index','show');
     Route::resource('/service',serviceController::class)->only('index','show');
     Route::get('lang/{locale}',[langController::class,'index'])->name('lang');
-    Route::resource('/booking',bookingController::class)->only(['index','store', 'destroy'])->middleware('auth:web');
-    Route::get('booking/add',[bookingController::class,'add'])->name('booking.add');
-    Route::post('booking/updateAvatar',[bookingController::class,'updateAvatar']);
     Route::get('/contact',[contactController::class,'index'])->name('contact.index');
+    Route::prefix('/booking')->name('booking.')->group(function(){
+        Route::resource('/',bookingController::class)->only(['index','store', 'destroy'])->middleware('auth:web');
+        Route::get('/add',[bookingController::class,'add'])->name('booking.add');
+        Route::post('/updateAvatar',[bookingController::class,'updateAvatar'])->name('updateAvatar');
+        Route::post('/updateInfo',[bookingController::class,'updateInfo'])->name('updateinfo');
+        Route::post('/payment',[bookingController::class,'payMent'])->name('payment');
+        Route::post('/payment/online',[bookingController::class,'createPayment'])->name('createPayment');
+        Route::get('/vnpay/return',[bookingController::class,'vnpayReturn'])->name('vnpay.return');
+    });
 });
 
 require __DIR__.'/admin.php';

@@ -123,7 +123,7 @@
     </div>
     {{-- Add Modal --}}
     <div class="modal fade bd-example-modal-lg" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" >
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Thêm Phòng</h5>
@@ -289,11 +289,11 @@
     </div>
 @endsection
 @section('scripts')
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script>
     $(document).ready(function()
     {
     $('.edit_btn').on('click',function(){
+        console.log($('#editModal'));
         $('#editModal').modal('show');
         $tr = $(this).closest('tr');
         var data = $tr.children('td').map(function(){

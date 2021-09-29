@@ -31,7 +31,7 @@
                      <ul class="recent-post avson-go-top">
                          @forelse($blog as $item)
                         <li>
-                           <div class="recent-post-img"><img src="upload/blog/{{$item->coverImage}}" alt="News"></div>
+                           <div class="recent-post-img"><img src="{{asset('upload/blog/'.$item->coverImage)}}" alt="News"></div>
                            @if(App()->getLocale() =='en')
                                 <h6><a href="">{{$item->title}}</a></h6>
                            @else

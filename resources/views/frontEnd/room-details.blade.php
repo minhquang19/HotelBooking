@@ -179,7 +179,7 @@
                                     <h5 class="tab-title">All Reviews</h5>
                                     <ul class="comment-list">
                                         <li>
-                                            <div class="comment-autor"><img src="/frontEnd/img/blog-details/04.jpg" alt="reviews" /></div>
+                                            <div class="comment-autor"><img src="{{asset('/frontEnd/img/blog-details/04.jpg')}}" alt="reviews" /></div>
                                             <div class="comment-desc">
                                                 <h6>Alexzeder Alex <span class="comment-date"> 25 Feb 2020</span></h6>
                                                 <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account</p>
@@ -257,7 +257,7 @@
                         <h4 class="widget-title">Category</h4>
                         <div class="single-cat bg-img-center" style="background-image: url('/frontEnd/img/blog/cat-01.jpg');"><a href="/room-details">{{$room_detail->category->name}}</a></div>
                     </div>
-                    <div class="widget banner-widget avson-go-top" style="background-image: url('frontEnd/img/blog/sidebar-banner.jpg');">
+                    <div class="widget banner-widget avson-go-top" style="background-image: url({{asset('frontEnd/img/blog/sidebar-banner.jpg')}});">
                         <h2>Booking Your Latest apartment</h2>
                         <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit sed do eiusmod tempor incididunt ut labore</p>
                     </div>
@@ -299,23 +299,13 @@
 </main>
 @endsection
 @section('scripts')
-<script type="text/javascript">
-   $(document).ready(function()
-   {
-     $('.carousel-inner .carousel-item:nth-child(1)').addClass('active');
-   });
-   @if(Session::has('success'))
-   <script>
-   toastr.success("{{ session("success") }}")
-</script>
-@endif
-    @if(Session::has('error'))
-    <script>
-        toastr.error("{{ session("error") }}")
-    </script>
-    @endif
-</script>
-    <script>
+<script>
+           $(document).ready(function()
+           {
+             $('.carousel-item:nth-child(1)').addClass('active');
+           });
+        </script>
+        <script>
         var checkin_arr =[];
         var checkout_arr =[];
         var checkin_val = document.getElementsByName('checkin[]');

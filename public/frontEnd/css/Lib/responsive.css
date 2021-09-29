@@ -674,6 +674,9 @@
     .lag-option {
         left: 30px !important;
     }
+    .carousel-indicators{
+        bottom: 10px !important;
+    }
   .header-menu-area .menu-right-area .quote-btn,
   .header-menu-area .menu-right-area .lag-select,
   .header-menu-area .menu-right-area .btn {

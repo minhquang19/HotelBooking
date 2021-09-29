@@ -158,4 +158,80 @@ class bookingController extends Controller
         }
 
     }
+    public function updateInfo(Request $request)
+    {
+        $validated = $request->validate([
+           'name'=> 'required',
+           'email'=> 'required',
+           'address'=> 'required',
+           'phonenumber'=> 'required',
+           'sex'=> 'required',
+        ]);
+        $rs =User::where('id',$request->id)->update($validated);
+        if($rs){
+            return redirect()->back()->with('success','Update Avatar Success');
+        }else{
+            return redirect()->back()->with('error','Update Avatar Unsuccess');
+        }
+
+    }
+
+    public function payMent(Request $request){
+        $totalPrice = $request->totalPrice;
+        return view('vnpay.index',compact('totalPrice'));
+    }
+    public function createPayment(Request $request){
+//        dd($request->toArray());
+        $vnp_TxnRef = $request->order_id;
+        $vnp_OrderInfo = $request->order_desc;
+        $vnp_OrderType = $request->order_type;
+        $vnp_Amount = str_replace(',', '', ($request->amount) * 100);
+        $vnp_Locale = $request->language;
+        $vnp_BankCode = $request->bank_code;
+        $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
+
+        $inputData = array(
+            "vnp_Version" => "2.0.0",
+            "vnp_TmnCode" => env('vnp_TmnCode'),
+            "vnp_Amount" => $vnp_Amount,
+            "vnp_Command" => "pay",
+            "vnp_CreateDate" => date('YmdHis'),
+            "vnp_CurrCode" => "VND",
+            "vnp_IpAddr" => $vnp_IpAddr,
+            "vnp_Locale" => $vnp_Locale,
+            "vnp_OrderInfo" => $vnp_OrderInfo,
+            "vnp_OrderType" => $vnp_OrderType,
+            "vnp_ReturnUrl" => route('booking.vnpay.return'),
+            "vnp_TxnRef" => $vnp_TxnRef,
+        );
+
+        if (isset($vnp_BankCode) && $vnp_BankCode != "") {
+            $inputData['vnp_BankCode'] = $vnp_BankCode;
+        }
+        ksort($inputData);
+        $query = "";
+        $i = 0;
+        $hashdata = "";
+        foreach ($inputData as $key => $value) {
+            if ($i == 1) {
+                $hashdata .= '&' . $key . "=" . $value;
+            } else {
+                $hashdata .= $key . "=" . $value;
+                $i = 1;
+            }
+            $query .= urlencode($key) . "=" . urlencode($value) . '&';
+        }
+
+        $vnp_Url = env('vnp_Url') . "?" . $query;
+        if (env('GFZHDSZBZJQESXZNMCUETHGSNUJCEXVN')) {
+            // $vnpSecureHash = md5($vnp_HashSecret . $hashdata);
+            $vnpSecureHash = hash('sha256', env('GFZHDSZBZJQESXZNMCUETHGSNUJCEXVN') . $hashdata);
+            $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
+        }
+        return redirect($vnp_Url);
+
+    }
+    public function vnpayReturn(Request $request){
+        dd($request->toArray());
+    }
 }

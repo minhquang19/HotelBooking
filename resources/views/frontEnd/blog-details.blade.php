@@ -28,7 +28,7 @@
                         <div class="post-details" style=" width: 90%;margin: 0 auto;">
                             <div class="entry-header">
                                 <div class="post-thumb">
-                                    <img src="/upload/blog/{{$detail->coverImage}}" alt="Image">
+                                    <img src="{{asset('/upload/blog/'.$detail->coverImage)}}" alt="Image">
                                 </div>
                                 <ul class="entry-meta list-inline">
                                     <li>

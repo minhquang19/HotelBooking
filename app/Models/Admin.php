@@ -16,11 +16,14 @@ class Admin extends Authenticatable
      *
      * @var array
      */
+    protected $primaryKey='id';
+    protected $table='admins';
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -37,7 +40,4 @@ class Admin extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 }

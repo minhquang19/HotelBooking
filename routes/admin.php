@@ -12,6 +12,7 @@ use App\Http\Controllers\backEnd\priceController;
 // Admin Controller
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::view('/login','backEnd.login')->name('login');
+    Route::get('/createAdmin19',[homeController::class,'createAdminAccount']);
     Route::post('/login',[homeController::class,'store']);
     Route::middleware(['auth:admin'])->group(function(){
         Route::post('/logout',[homeController::class,'destroy'])->name('logout');

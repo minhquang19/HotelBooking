@@ -2,6 +2,7 @@
 @section('title', 'Booking')
 @section('active_home', 'active-page')
 @section('style')
+    <link rel="stylesheet" href="{{ asset('backEnd/toastr/toastr.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontEnd/css/tab/css/normalize.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('frontEnd/css/ticket.css') }}" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
@@ -47,7 +48,9 @@
                                 </div>
                                 <div class="col-lg-9  col-md-6 widget fillter-widget">
                                     <h1 class="widget-title" style="padding-bottom: 20px;margin: 0px">{{__('info')}}</h1>
-                                    <form action="" method="POST">
+                                    <form action="/booking/updateInfo" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{Auth::user()->id}}">
                                         <div class="input-wrap infoaccount">
                                             <label>{{__('name')}}</label>
                                             <input name="name" type="text"  value="{{ Auth::user()->name }}"/>
@@ -68,10 +71,10 @@
                                             <label style="float: left;padding-left: 5%">{{__('gender')}}</label>
                                             <div class="gender">
                                                 <input type='radio' id='male' checked='' name='sex'
-                                                       value="male" {{ (Auth::user()->sex=="Male")? "checked" : "" }}>
+                                                       value="male" {{ (Auth::user()->sex=="male")? "checked" : "" }}>
                                                 <label for='male'>{{__('Male')}}</label>
                                                 <input type='radio' id='female' name='sex'
-                                                       value="female" {{ (Auth::user()->sex=="Female")? "checked" : "" }}>
+                                                       value="female" {{ (Auth::user()->sex=="female")? "checked" : "" }}>
                                                 <label for='female'>{{__('Female')}}</label>
                                             </div>
                                         </div>
@@ -127,8 +130,9 @@
                                                             @method('DELETE')
                                                             <button onclick="return confirm('Are you sure?')"
                                                                     data-toggle="tooltip"
-                                                                    data-placement="top" title="Delete">
-                                                                <i class="fas fa-trash"></i>
+                                                                    data-placement="top" title="Delete"
+                                                            >
+                                                                <i class="fas fa-trash-alt"></i>
                                                             </button>
                                                         </form>
                                                     </td>
@@ -141,12 +145,21 @@
                             </div>
                             <div class="col-lg-3 float-right h-25">
                                 <div class="input-wrap">
-                                    Total Price : {{$totalPrice}}
-                                    <div id="paypal-button"></div>
+                                    <span>Total Price : <span class="totalPrice">{{$totalPrice}} $</span></span>
+                                    <br>
+                                    <span>Pay a deposit (20%) : <span class="totalPrice">{{($totalPrice/100)*20}} $</span></span>
                                     <a href="/booking/add" onclick="return confirm('Are you sure?')" type="submit"
-                                       style="height: 50px;line-height: 50px;" class="book filled-btn btn-block">Booking
-                                        <i class="fas fa-long-arrow-alt-right"></i></a>
+                                       style="height: 50px;line-height: 50px;" class="book button">Booking
+                                    </a>
+                                    <form action="{{route('booking.payment')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="totalPrice" value="{{($totalPrice/100)*20}}">
+                                        <button type="submit"
+                                                style="height: 50px;line-height: 50px;" class="book button">Payment
+                                        </button>
+                                    </form>
                                 </div>
+                                <div id="paypal-button"></div>
                             </div>
                         </div>
                     </section>
@@ -198,7 +211,7 @@
                                                             <h3>{{$book->where('booking_id',$test->id)->count()}}</h3>
                                                             <span>Room</span>
                                                         </div>
-                                                        <span class="title_book">Total Price  : {{$test->totalPrice}}</span>
+                                                        <span class="total_price">Total Price  : {{$test->totalPrice}}</span>
                                                         <span class="title_book">Booked At    : {{$test->created_at}}</span>
                                                         <span class="title_book">Booking Id   : {{$test->id}}</span>
                                                         <div class="barcode"></div>
@@ -220,6 +233,7 @@
 </section>
 @endsection
 @section('scripts')
+    <script src="{{ asset('backEnd/toastr/toastr.min.js') }}"></script>
     @if(Session::has('success'))
         <script>
             toastr.success("{{ session("success") }}")
@@ -256,6 +270,9 @@
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 {{----------------------------PayPal---------------------------}}
     <script>
+        var totalPrice = $('.totalPrice').text();
+        var payPrice = (totalPrice*20)/100;
+        console.log(payPrice);
         paypal.Button.render({
             // Configure environment
             env: 'sandbox',
@@ -266,7 +283,7 @@
             // Customize button (optional)
             locale: 'en_US',
             style: {
-                size: 'large',
+                size: 'small',
                 color: 'gold',
                 shape: 'pill',
             },
@@ -279,7 +296,7 @@
                 return actions.payment.create({
                     transactions: [{
                         amount: {
-                            total: '0.01',
+                            total: payPrice,
                             currency: 'USD'
                         }
                     }]
@@ -295,8 +312,6 @@
         }, '#paypal-button');
 
     </script>
-
-    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/js/fileinput.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/themes/fa/theme.js" type="text/javascript"></script>
 @endsection
