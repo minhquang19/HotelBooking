@@ -19,17 +19,7 @@ class blogController extends Controller
     public function index()
     {
         $data = Blog::all();
-        return view('backEnd.blog.index',compact('data'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('backEnd.blog',compact('data'));
     }
 
     /**
@@ -42,46 +32,18 @@ class blogController extends Controller
     {
         try {
             $validated = $request->validated();
-            $file = $request->coverImage;
-            $original_name = strtolower(trim($file->getClientOriginalName()));
-            $file_name = time().rand(100,999).$original_name;
-            $image_resize = Image::make($file->getRealPath());
-//            $image_resize->resize(370,250);
-            $image_resize->save('upload/blog/'.$file_name);
-            $validated['coverImage'] = $file_name;
-            $rs = Blog::create($validated);
-            if ($rs){
-                return back()->with('success','Thêm mới Blog thành công');
-            }else{
-                return back()->with('error','Thêm không phòng thành công');
+            $filename = 'blogCover'.time();
+            if ($request->hasFile('avatar')) {
+                $result = $request->file('avatar')->storeOnCloudinaryAs('Blog',$filename);
             }
+            $validated['coverImage'] = $result->getSecurePath();
+            $rs = Blog::create($validated);
+            return $this->Redirect($rs,'Bài viết đã được tạo thành công !!!');
         }catch (\Exception $e){
-            dd($e);
             abort(500);
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -94,27 +56,20 @@ class blogController extends Controller
     {
         try {
             $validated = $request->validated();
+            $filename = 'blogCover'.time();
             if ($request->coverImage == null){
                 $validated['coverImage'] = Blog::find($id)->coverImage;
             }else{
-                $file = $request->coverImage;
-                $original_name = strtolower(trim($file->getClientOriginalName()));
-                $file_name = time().rand(100,999).$original_name;
-                $image_resize = Image::make($file->getRealPath());
-//                $image_resize->resize(370,250);
-                $image_resize->save('upload/blog/'.$file_name);
-                $validated['coverImage'] = $file_name;
+                if ($request->hasFile('coverImage')) {
+                    $result = $request->file('coverImage')->storeOnCloudinaryAs('Blog',$filename);
+                }
+                $validated['coverImage'] = $result->getSecurePath();
             }
             $rs = Blog::find($id)->update($validated);
-            if($rs)
-            {
-                return back()->with('success','Chỉnh sửa Blog thành công');
-            }else{
-                return back()->with('error','Chỉnh sửa Blog khong thành công');
-            }
+
+            return $this->Redirect($rs,'Bài viết được cập nhật thành công !!!');
 
         }catch (\Exception $e){
-            dd($e);
             abort(500);
         }
     }
@@ -136,8 +91,15 @@ class blogController extends Controller
                 return back()->with('error','Chỉnh sửa Blog khong thành công');
             }
         }catch (\Exception $e){
-            dd($e);
             abort(500);
+        }
+    }
+    public function Redirect($rs,$mess){
+        if($rs){
+            return back()->with('success',$mess);
+        }
+        else{
+            return back()->with('error','Opp!!! Có lỗi xảy ra');
         }
     }
 }

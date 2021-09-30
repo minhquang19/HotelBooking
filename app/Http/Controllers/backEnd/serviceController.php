@@ -42,48 +42,17 @@ class serviceController extends Controller
     {
         try {
             $validated = $request->validated();
-            $file = $request->image;
-            $original_name = strtolower(trim($file->getClientOriginalName()));
-            $file_name = time().rand(100,999).$original_name;
-            $image_resize = Image::make($file->getRealPath());
-//            $image_resize->resize(370,250);
-            $image_resize->save('upload/service/'.$file_name);
-            $validated['image'] = $file_name;
+            $file_name = 'service'.'_'.time();
+            if ($request->hasFile('image')) {
+                $result = $request->file('image')->storeOnCloudinaryAs('Service',$file_name);}
+            $validated['image'] = $result->getSecurePath();
             $rs = Service::create($validated);
-
-            if ($rs){
-                return back()->with('success','Thêm mới Service thành công');
-            }else{
-                dd($rs);
-                return back()->with('error','Thêm Service không  thành công');
-            }
+            return $this->Redirect($rs,'Thêm mới dịch vụ thành công !!!');
         }catch (\Exception $e){
-            dd($e);
             abort(500);
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -99,24 +68,15 @@ class serviceController extends Controller
             if ($request->image == null){
                 $validated['image'] = Service::find($id)->image;
             }else{
-                $file = $request->image;
-                $original_name = strtolower(trim($file->getClientOriginalName()));
-                $file_name = time().rand(100,999).$original_name;
-                $image_resize = Image::make($file->getRealPath());
-//                $image_resize->resize(370,250);
-                $image_resize->save('upload/service/'.$file_name);
-                $validated['image'] = $file_name;
+                $file_name = 'service'.'_'.time();
+                if ($request->hasFile('image')) {
+                    $result = $request->file('image')->storeOnCloudinaryAs('Service',$file_name);}
+                $validated['image'] = $result->getSecurePath();
             }
             $rs = Service::find($id)->update($validated);
-            if($rs)
-            {
-                return back()->with('success','Chỉnh sửa Service thành công');
-            }else{
-                return back()->with('error','Chỉnh sửa Service khong thành công');
-            }
+            return $this->Redirect($rs,'Cập nhật dịch vụ thành công !!!');
 
         }catch (\Exception $e){
-            dd($e);
             abort(500);
         }
     }
@@ -131,15 +91,18 @@ class serviceController extends Controller
     {
         try {
             $rs = Service::find($id)->delete();
-            if($rs)
-            {
-                return back()->with('success','Xoa Service thành công');
-            }else{
-                return back()->with('error','Xoa Service khong thành công');
-            }
+            return $this->Redirect($rs,'Xóa dịch vụ thành công !!!');
         }catch (\Exception $e)
         {
             dd($e);
+        }
+    }
+    public function Redirect($rs,$mess){
+        if($rs){
+            return back()->with('success',$mess);
+        }
+        else{
+            return back()->with('error','Opp!!! Có lỗi xảy ra');
         }
     }
 }

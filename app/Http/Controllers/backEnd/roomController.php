@@ -35,16 +35,6 @@ class roomController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -55,21 +45,15 @@ class roomController extends Controller
         try {
             $validated = $request->validated();
             $validated['visibility']=($request->visibility == null)?0:1;
-            $file = $request->coverImages;
-            $original_name = strtolower(trim($file->getClientOriginalName()));
-            $file_name = time().rand(100,999).$original_name;
-            $image_resize = Image::make($file->getRealPath());
-            $image_resize->resize(370,250);
-            $image_resize->save('upload/cover/'.$file_name);
-            $validated['coverImages'] = $file_name;
-            $rs= Room::create($validated);
-            if ($rs){
-                return back()->with('success','Thêm mới phòng thành công');
-            }else{
-                return back()->with('error','Thêm không phòng thành công');
+            $file_name = $request->name.'_cover_'.time();
+            if ($request->hasFile('coverImages')) {
+                $result = $request->file('coverImages')->storeOnCloudinaryAs('CoverRoom',$file_name);
             }
+            $validated['coverImages'] = $result->getSecurePath();
+            $rs= Room::create($validated);
+            return $this->Redirect($rs,'Phòng đã được tạo thành công !!!');
         }catch (\Exception $e){
-            dd($e);
+
             abort(500);
         }
     }
@@ -91,21 +75,9 @@ class roomController extends Controller
             $temp           = DB::table('booking_details')->where('room_id',$id)->get();
             return view('backEnd.Room.detail', compact('obj','roomimages','roomPrice','tag','tag_room','temp'));
         }catch (\Exception $e){
-            dd($e);
+            abort(500);
         }
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
     /**
      * Update the specified resource in storage.
      *
@@ -121,18 +93,15 @@ class roomController extends Controller
             if ($request->coverImages == null){
                 $validated['coverImages'] = Room::find($id)->coverImages;
             }else{
-                $file = $request->coverImages;
-                $original_name = strtolower(trim($file->getClientOriginalName()));
-                $file_name = time().rand(100,999).$original_name;
-                $image_resize = Image::make($file->getRealPath());
-                $image_resize->resize(370,250);
-                $image_resize->save('storage/upload/cover/'.$file_name);
-                $validated['coverImages'] = $file_name;
+                $file_name = $request->name.'_cover_'.time();
+                if ($request->hasFile('coverImages')) {
+                    $result = $request->file('coverImages')->storeOnCloudinaryAs('CoverRoom',$file_name);
+                }
+                $validated['coverImages'] = $result->getSecurePath();
             }
             $rs = Room::find($id)->update($validated);
-            return back()->with('success','Chỉnh sửa phòng thành công');
+            return $this->Redirect($rs,'Phòng đã được cập nhật !!!');
         }catch (\Exception $e){
-            dd($e);
             abort(500);
         }
     }
@@ -146,10 +115,9 @@ class roomController extends Controller
     public function destroy($id)
     {
         try {
-            Room::find($id)->delete(0);
-            return back()->with('success','Xóa phòng thành công');
+            $rs = Room::find($id)->delete(0);
+            return $this->Redirect($rs,'Phòng đã được xóa !!!');
         }catch (\Exception $e){
-            dd($e);
             abort(500);
         }
     }
@@ -158,5 +126,13 @@ class roomController extends Controller
         $data = Room::where('category_id','=',$state);
         $category = Category::all();
         return  view('backEnd.Room.index', compact('data','category'));
+    }
+    public function Redirect($rs,$mess){
+        if($rs){
+            return back()->with('success',$mess);
+        }
+        else{
+            return back()->with('error','Opp!!! Có lỗi xảy ra');
+        }
     }
 }

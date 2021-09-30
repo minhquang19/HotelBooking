@@ -33,8 +33,6 @@ class homeController extends Controller
         $list = DB::table('booking_details')->orderBy('created_at','DESC')->get();
         $blog = DB::table('blogs')->get()->count();
         return view('backEnd.index',compact('room','booking','user','list','blog'));
-
-
     }
     public function store(Request $request)
     {
@@ -58,7 +56,6 @@ class homeController extends Controller
             'name' => 'Admin',
             'password' => $password,
         ]);
-
         return 'Done';
     }
 }

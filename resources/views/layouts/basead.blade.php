@@ -88,6 +88,7 @@
             toastr.error("{{ session("error") }}")
         </script>
     @endif
+
 </body>
 
 </html>

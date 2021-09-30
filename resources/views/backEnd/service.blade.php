@@ -1,5 +1,5 @@
 @extends('layouts.basead')
-@section('title', 'Blog Manager')
+@section('title', 'Service Manager')
 @section('manager', 'active')
 @section('service','active')
 @section('block','display: block;')
@@ -54,7 +54,7 @@
                                         <td class="des_text">{{ $item->content}}</td>
                                         <td class="des_text">{{ $item->content_vi}}</td>
                                         <td>
-                                            <img src="/upload/service/{{ $item->image }}" style="max-width: 100px;"
+                                            <img src="{{ $item->image }}" style="max-width: 100px;"
                                                  class="img-thumbnail">
                                         </td>
                                         <td>
@@ -114,7 +114,7 @@
                             <div class="file-select">
                                 <div class="file-select-button" id="fileName">Choose File</div>
                                 <div class="file-select-name" id="noFile">No file chosen...</div>
-                                <input type="file" name="image" id="chooseFile">
+                                <input type="file" name="" id="chooseFile">
                             </div>
                         </div>
                         <div class="form-group">

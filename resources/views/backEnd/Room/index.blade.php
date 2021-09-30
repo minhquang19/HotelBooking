@@ -90,7 +90,7 @@
                                     <td class="des_text">{{ $item->description}}</td>
                                     <td class="des_text">{{ $item->description_vi}}</td>
                                     <td>
-                                        <img  src="/upload/cover/{{ $item->coverImages }}" style="width: 100px;" class="img-thumbnail">
+                                        <img  src="{{ $item->coverImages }}" style="width: 100px;" class="img-thumbnail">
                                     </td>
                                     <td>
                                     <div class="table-data-feature">

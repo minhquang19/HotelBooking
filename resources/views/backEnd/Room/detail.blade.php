@@ -3,6 +3,7 @@
 @section('manager', 'active')
 @section('room','active')
 @section('style')
+
     <style>
 
         input[type="checkbox"]{
@@ -165,7 +166,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <img  src="/upload/cover/{{ $obj->coverImages }}" style="" class="img-thumbnail">
+                                    <img  src="{{ $obj->coverImages }}" style="" class="img-thumbnail">
                                 </div>
                                 </div>
                             </div>
@@ -230,12 +231,15 @@
                                 <br>
                                 <h3>LIST IMAGES VIEW</h3>
                                 <br>
-                                <br>
                                 <div class="row pt-10">
+                                    @php
+                                        $room_name = str_replace(' ','',$obj->name);
+                                    @endphp
                                     @foreach($roomimages as $item)
                                     <div class="col s12 m6 l4 " >
+
                                         <div class="image-area" style="position: relative">
-                                        <img src="/upload/image/{{$item->name}}" alt="">
+                                        <img src="{{$item->name}}" alt="">
                                         <form id="deleteForm" action="{{ route('admin.image.destroy',$item->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')

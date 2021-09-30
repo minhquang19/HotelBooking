@@ -47,4 +47,12 @@ class tagRoomController extends Controller
     {
         //
     }
+    public function Redirect($rs,$mess){
+        if($rs){
+            return back()->with('success',$mess);
+        }
+        else{
+            return back()->with('error','Opp!!! Có lỗi xảy ra');
+        }
+    }
 }

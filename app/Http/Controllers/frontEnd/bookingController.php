@@ -145,12 +145,19 @@ class bookingController extends Controller
 
     }
     public function updateAvatar(Request $request){
-        $file =$request->avatar;
-        $original_name = strtolower(trim($file->getClientOriginalName()));
-        $file_name = $request->email.rand(100,999).$original_name;
-        $image_resize = Image::make($file->getRealPath());
-        $image_resize->save('upload/avatar/'.$file_name);
-        $rs = User::where('id',$request->id)->update(array('avatar'=>$file_name));
+        $file_name = $request->email;
+        $resizedImage = cloudinary()->upload($request->file('avatar')->getRealPath(), [
+            'folder' => 'avatarUser',
+            'use_filename' =>'true',
+            'filename_override'=>$file_name,
+            'transformation' => [
+                'width' => 300,
+                'height' => 300,
+                'gravity' => 'faces',
+                'crop' => 'fill'
+            ]
+        ])->getSecurePath();
+        $rs = User::where('id',$request->id)->update(array('avatar'=> $resizedImage));
         if($rs){
             return redirect()->back()->with('success','Update Avatar Success');
         }else{

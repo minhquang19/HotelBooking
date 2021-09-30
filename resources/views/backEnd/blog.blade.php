@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         {{-- List item --}}
-                        <div class="table-responsive table-responsive-data2">
+                        <div class="table-responsive table-responsive-data2" style="overflow-x: auto">
                             <table class="table table-data2">
                                 <thead style="background-color: #333;color: #fff !important">
                                 <tr>
@@ -53,7 +53,7 @@
                                         <td class="des_text">{{ $item->title }}</td>
                                         <td class="des_text">{{ $item->title_vi }}</td>
                                         <td>
-                                            <img src="/upload/blog/{{ $item->coverImage }}" style="max-width: 100px;"
+                                            <img src="{{ $item->coverImage }}" style="max-width: 100px;"
                                                  class="img-thumbnail">
                                         </td>
                                         <td class="des_text">{{ $item->content}}</td>

@@ -25,17 +25,6 @@ class categoryController extends Controller
             abort(500);
         }
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -46,35 +35,13 @@ class categoryController extends Controller
     {
         try {
             $validated = $request->validated();
-            Category::create($validated);
-            return back()->with('success','Thêm loại phòng thành Công');
+            $rs =Category::create($validated);
+            return $this->Redirect($rs,'Thêm loại phòng thành công !!!');
         }catch (\Exception $e){
-            dd($e);
-            return back()->with('success','Thêm loại phòng thành Công');
+            abort(500);
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -87,8 +54,8 @@ class categoryController extends Controller
     {
         try {
             $validated = $request->validated();
-            Category::find($id)->update($validated);
-            return back()->with('success','Sửa loại phòng thành Công');
+            $rs = Category::find($id)->update($validated);
+            return $this->Redirect($rs,'Cập nhật loại phòng thành công !!!');
         }catch (\Exception $e){
             abort(500);
         }
@@ -105,12 +72,20 @@ class categoryController extends Controller
 
         try {
             if (Room::where('category_id',$id)->count() > 0){
-                return back()->with('error','Không thể xóa loại phòng đang chứa phòng');
+                return back()->with('error','Không thể xóa loại phòng đang có phòng');
             }
             Category::find($id)->delete();
             return back()->with('success','Xóa loại phòng thành Công');;
         }catch (\Exception $e){
             abort(500);
+        }
+    }
+    public function Redirect($rs,$mess){
+        if($rs){
+            return back()->with('success',$mess);
+        }
+        else{
+            return back()->with('error','Opp!!! Có lỗi xảy ra');
         }
     }
 }

@@ -46,38 +46,14 @@ class tagController extends Controller
         try {
             $validated = $request->validated();
             $rs = Tag::create($validated);
-            if($rs)
-            { return back()->with('success','Thêm Tag Thành Công');}
-            else{
-                return back()->with('error','Xóa Tag thành công');
-            }
+            return $this->Redirect($rs,'Tag đã được tạo thành công !!!');
 
         }catch (\Exception $e){
             abort(500);
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -91,12 +67,7 @@ class tagController extends Controller
         try {
             $validated = $request->validated();
             $rs = Tag::find($id)->update($validated);
-            if($rs){
-                return back()->with('success','Sửa Tag Thành Công');
-            }
-            else{
-                return back()->with('error','Sửa Tag không Thành Công');
-            }
+            return $this->Redirect($rs,'Tag đã được cập nhật !!!');
         }catch (\Exception $e){
             abort(500);
         }
@@ -112,14 +83,17 @@ class tagController extends Controller
     {
         try {
             $rs = Tag::find($id)->delete();
-            if($rs){
-                return back()->with('success','Xóa Tag Thành Công');
-            }
-            else{
-                return back()->with('error','Xóa Tag không Thành Công');
-            }
+
         }catch (\Exception $e){
             abort(500);
+        }
+    }
+    public function Redirect($rs,$mess){
+        if($rs){
+            return back()->with('success',$mess);
+        }
+        else{
+            return back()->with('error','Opp!!! Có lỗi xảy ra');
         }
     }
 }

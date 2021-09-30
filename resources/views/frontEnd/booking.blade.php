@@ -28,7 +28,7 @@
                             <div class="row ">
                                 <div class="col-lg-3 col-md-6">
                                     <div class="circle">
-                                        <img class="image" src="/upload/avatar/{{Auth::user()->avatar}}">
+                                        <img class="image" src="{{Auth::user()->avatar}}">
                                     </div>
                                     <div class="upload-btn-wrapper">
                                         <form action="booking/updateAvatar" enctype="multipart/form-data" method="POST">
@@ -42,6 +42,7 @@
                                                     <input type="file" name="avatar" id="chooseFile">
                                                 </div>
                                             </div>
+                                            <input type="hidden" name="email" value="{{Auth::user()->email}}">
                                             <button class="btn button" type="submit">{{__('changeavt')}}</button>
                                         </form>
                                     </div>
