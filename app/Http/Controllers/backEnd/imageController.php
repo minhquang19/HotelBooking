@@ -24,11 +24,13 @@ class imageController extends Controller
         try
         {
             $validated = $request->validated();
+            $room = Room::find($request->room_id);
+            $room_name = str_replace(' ','',$room->name);
             $files =$request->file('name');
+
             if ($files){
                 foreach ($files as $file)
                 {
-                    $room_name = str_replace(' ','',$request->roomName);
                     $result = $file->storeOnCloudinaryAs('ImageRoom/'.$room_name,$room_name.rand(100,999).time());
                     $validated['name'] = $result->getSecurePath();
                     RoomImage::create($validated);

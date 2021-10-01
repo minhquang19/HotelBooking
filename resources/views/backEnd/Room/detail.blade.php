@@ -221,7 +221,7 @@
                             <form id="file-upload-form" class="uploader" action="{{route('admin.image.store')}}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
                                 @csrf
                                 @method('POST')
-                                <input type="hidden" value="{{$obj->name}}" name="roomName">
+                                <input type="hidden" value="{{$obj->id}}" name="room_id">
                                 <input type="file" id="file-input" name="name[]" multiple/>
                                 <div id="thumb-output"></div>
                                 <br>
