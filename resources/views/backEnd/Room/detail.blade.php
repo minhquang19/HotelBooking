@@ -221,7 +221,7 @@
                             <form id="file-upload-form" class="uploader" action="{{route('admin.image.store')}}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
                                 @csrf
                                 @method('POST')
-                                <input type="hidden" value="{{$obj->id}}" name="room_id">
+                                <input type="hidden" value="{{$obj->name}}" name="roomName">
                                 <input type="file" id="file-input" name="name[]" multiple/>
                                 <div id="thumb-output"></div>
                                 <br>
@@ -232,12 +232,8 @@
                                 <h3>LIST IMAGES VIEW</h3>
                                 <br>
                                 <div class="row pt-10">
-                                    @php
-                                        $room_name = str_replace(' ','',$obj->name);
-                                    @endphp
                                     @foreach($roomimages as $item)
                                     <div class="col s12 m6 l4 " >
-
                                         <div class="image-area" style="position: relative">
                                         <img src="{{$item->name}}" alt="">
                                         <form id="deleteForm" action="{{ route('admin.image.destroy',$item->id) }}" method="post">

@@ -280,7 +280,7 @@
                                 <div class="room-desc">
                                     <div class="room-cat"><p>{{$room->category->name}}</p></div>
                                     <h4><a href="{{ route('room.show',$room->id) }}">{{$room->name}}</a></h4>
-                                    <p>{{$room->description}}</p>
+                                    <p class="des_text">{{$room->description}}</p>
                                     <ul class="room-info list-inline">
                                         <li><i class="fas fa-bed"></i>{{$room->bad}} Bed</li>
                                         <li><i class="fas fa-bath"></i>{{$room->bath}} Bath</li>
