@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('title', 'Login')
 @section('style')
-    <link rel="stylesheet" href="/frontEnd/css/login.css" />
+    <link rel="stylesheet" href="{{asset("/frontEnd/css/login.css")}}" />
 @endsection
 @section('content')
     <div class="global-container container">

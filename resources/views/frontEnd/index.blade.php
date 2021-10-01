@@ -227,7 +227,7 @@
                                     @forelse($room_data as $item)
                                         <div class="item col-lg-4">
                                             <div class="pad15 single-room">
-                                                <div class="room-thumb"><img src="/upload/cover/{{$item->coverImages}}"
+                                                <div class="room-thumb"><img src="{{$item->coverImages}}"
                                                                              alt="Room"></div>
                                                 <div class="room-desc">
                                                     @if(App()->getLocale()=='en')
@@ -287,7 +287,7 @@
                                  data-wow-delay="400ms"
                                  style="visibility: visible; animation-duration: 1500ms; animation-delay: 400ms; animation-name: fadeIn;">
                                 <span class="service-counter">{{$loop->index+1}}</span>
-                                <img class="cover_Image" src="/upload/service/{{$item->image}}" alt="">
+                                <img class="cover_Image" src="{{$item->image}}" alt="">
                                 @if(App()->getLocale()=='en')
                                     <h4>{{$item->name}}</h4>
                                     <p class="des_text">{{$item->description}}</p>

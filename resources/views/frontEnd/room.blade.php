@@ -28,7 +28,7 @@
                                 <div class="single-room list-style avson-go-top">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col-lg-6">
-                                            <div class="room-thumb"><img src="upload/cover/{{$item->coverImages}}" alt="Room"/></div>
+                                            <div class="room-thumb"><img src="{{$item->coverImages}}" alt="Room"/></div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="room-desc">

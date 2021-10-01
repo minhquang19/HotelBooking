@@ -28,7 +28,7 @@
                         <div class="post-details">
                             <div class="entry-header">
                                 <div class="post-thumb">
-                                    <img src="/upload/service/{{$detail->image}}" alt="Image">
+                                    <img src="{{$detail->image}}" alt="Image">
                                 </div>
                                 <h2 class="entry-title">{{$detail->name}} </h2>
                             </div>

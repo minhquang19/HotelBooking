@@ -30,8 +30,8 @@ class imageController extends Controller
                 {
                     $room = Room::find($request->room_id);
                     $room_name = str_replace(' ','',$room->name);
-                    $result = $file->storeOnCloudinaryAs('ImageRoom/'.$room_name,$room_name.time());
-                    $validated['name'] = $result->getSecurePath();
+                    $result = $file->storeOnCloudinaryAs('ImageRoom/'.$room_name,$room_name.rand(100,999).time());
+                    $validated['name'] = $result->getPath();
                     RoomImage::create($validated);
                 }
                 return  back()->with('success','Thêm ảnh chi tiết phòng thành công');

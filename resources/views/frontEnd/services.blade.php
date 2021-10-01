@@ -106,7 +106,7 @@
                          data-wow-duration="1500ms" data-wow-delay="400ms"
                          style="visibility: visible; animation-duration: 1500ms; animation-delay: 400ms;">
                         <span class="service-counter">{{$loop->index+1}}</span>
-                        <img class="cover_Image" src="/upload/service/{{$item->image}}" alt="">
+                        <img class="cover_Image" src="{{$item->image}}" alt="">
                         <h4>{{$item->name}}</h4>
                         <p style="height: 200px; overflow: hidden;">{{$item->description}}</p>
                         <a class="read-more" href="{{route('service.show',$item->id)}}">{{__('readmore')}} <i class="fas fa-long-arrow-alt-right"></i></a>

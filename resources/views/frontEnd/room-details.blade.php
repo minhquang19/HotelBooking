@@ -31,7 +31,7 @@
                           <div class="carousel-inner">
                             @foreach($roomimages as $item)
                             <div class="carousel-item single-img"aria-hidden="true" style="width: 770px;">
-                              <img src="/upload/image/{{$item->name}}" alt="Image" />
+                              <img src="{{$item->name}}" alt="Image" />
                             </div>
                             @endforeach
                             <a href="#slide2" data-slide="prev">
@@ -276,7 +276,7 @@
                       @forelse($room_3 as $room)
                         <div class="col-lg-4 col-md-6">
                             <div class="single-room">
-                                <div class="room-thumb"><img src="/upload/cover/{{$room->coverImages}}" alt="Room" /></div>
+                                <div class="room-thumb"><img src="{{$room->coverImages}}" alt="Room" /></div>
                                 <div class="room-desc">
                                     <div class="room-cat"><p>{{$room->category->name}}</p></div>
                                     <h4><a href="{{ route('room.show',$room->id) }}">{{$room->name}}</a></h4>

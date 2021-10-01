@@ -28,7 +28,7 @@
                         <div class="post-details" style=" width: 90%;margin: 0 auto;">
                             <div class="entry-header">
                                 <div class="post-thumb">
-                                    <img src="{{asset('/upload/blog/'.$detail->coverImage)}}" alt="Image">
+                                    <img src="{{asset($detail->coverImage)}}" alt="Image">
                                 </div>
                                 <ul class="entry-meta list-inline">
                                     <li>
@@ -86,7 +86,7 @@
                     <div class="col-lg-4 col-md-6" style="margin-top: 50px">
                         <div class="single-blog-wrap">
                             <div class="post-thumbnail"style="width: 100%;height: 200px;">
-                                <img src="/upload/blog/{{$item->coverImage}}" alt="Image" /></div>
+                                <img src="{{$item->coverImage}}" alt="Image" /></div>
                             <div class="post-desc">
                                 <ul class="blog-meta list-inline">
                                     <li>

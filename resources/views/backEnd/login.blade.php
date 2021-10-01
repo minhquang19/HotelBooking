@@ -70,20 +70,14 @@
 <!-- Bootstrap JS-->
 <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
 <!-- Vendor JS       -->
-</script>
 
 <!-- Main JS-->
-<script src="js/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Jquery JS-->
 <script src="{{ asset('admin/vendor/jquery-3.2.1.min.js') }}"></script>
 <!-- Bootstrap JS-->
 <script src="{{ asset('admin/vendor/bootstrap-4.1/popper.min.js') }}"></script>
 <script src="{{ asset('admin/vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
-</script>
-</script>
-</script>
-
 <script src="{{ asset('admin/toastr/toastr.min.js') }}"></script>
 <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@10') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js') }}" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>

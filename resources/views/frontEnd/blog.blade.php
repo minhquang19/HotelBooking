@@ -24,7 +24,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-blog-wrap">
                             <div class="post-thumbnail"style="width: 100%;height: 200px;">
-                                <img src="/upload/blog/{{$item->coverImage}}" alt="Image" /></div>
+                                <img src="{{$item->coverImage}}" alt="Image" /></div>
                             <div class="post-desc">
                                 <ul class="blog-meta list-inline">
                                     <li>
