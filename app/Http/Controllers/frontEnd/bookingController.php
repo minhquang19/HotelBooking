@@ -189,7 +189,7 @@ class bookingController extends Controller
     }
     public function createPayment(Request $request){
 //        dd($request->toArray());
-        $vnp_TxnRef = $request->order_id;
+        $vnp_TxnRef = date("YmdHis");
         $vnp_OrderInfo = $request->order_desc;
         $vnp_OrderType = $request->order_type;
         $vnp_Amount = str_replace(',', '', ($request->amount) * 100);
