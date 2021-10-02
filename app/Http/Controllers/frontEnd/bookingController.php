@@ -213,7 +213,6 @@ class bookingController extends Controller
             "vnp_ReturnUrl" => route('booking.vnpay.return'),
             "vnp_TxnRef" => $vnp_TxnRef,
         );
-        dd($inputData);
         if (isset($vnp_BankCode) && $vnp_BankCode != "") {
             $inputData['vnp_BankCode'] = $vnp_BankCode;
         }
