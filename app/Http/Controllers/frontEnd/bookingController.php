@@ -188,17 +188,19 @@ class bookingController extends Controller
         return view('vnpay.index',compact('totalPrice'));
     }
     public function createPayment(Request $request){
-//        dd($request->toArray());
-        $vnp_TxnRef = date("YmdHis");
-        $vnp_OrderInfo = $request->order_desc;
-        $vnp_OrderType = $request->order_type;
-        $vnp_Amount = str_replace(',', '', ($request->amount) * 100);
-        $vnp_Locale = $request->language;
-        $vnp_BankCode = $request->bank_code;
-        $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
+        session(['cost_id' => $request->id]);
+        session(['url_prev' => url()->previous()]);
         $vnp_TmnCode = "DH1XIPAE"; //Mã website tại VNPAY
         $vnp_HashSecret = "LAXPYCUMJDISRINTXKEMZWVHLOAKXSRF"; //Chuỗi bí mật
-        $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+        $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+        $vnp_Returnurl = route('booking.vnpay.return');
+        $vnp_TxnRef = date("YmdHis"); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+        $vnp_OrderInfo = "Thanh toán hóa đơn phí dich vụ";
+        $vnp_OrderType = 'billpayment';
+        $vnp_Amount = $request->input('amount') * 100;
+        $vnp_Locale = 'vn';
+        $vnp_IpAddr = request()->ip();
+
         $inputData = array(
             "vnp_Version" => "2.0.0",
             "vnp_TmnCode" => $vnp_TmnCode,
@@ -210,9 +212,10 @@ class bookingController extends Controller
             "vnp_Locale" => $vnp_Locale,
             "vnp_OrderInfo" => $vnp_OrderInfo,
             "vnp_OrderType" => $vnp_OrderType,
-            "vnp_ReturnUrl" => route('booking.vnpay.return'),
+            "vnp_ReturnUrl" => $vnp_Returnurl,
             "vnp_TxnRef" => $vnp_TxnRef,
         );
+
         if (isset($vnp_BankCode) && $vnp_BankCode != "") {
             $inputData['vnp_BankCode'] = $vnp_BankCode;
         }
@@ -230,7 +233,7 @@ class bookingController extends Controller
             $query .= urlencode($key) . "=" . urlencode($value) . '&';
         }
 
-        $vnp_Url = env('vnp_Url') . "?" . $query;
+        $vnp_Url = $vnp_Url . "?" . $query;
         if (isset($vnp_HashSecret)) {
             // $vnpSecureHash = md5($vnp_HashSecret . $hashdata);
             $vnpSecureHash = hash('sha256', $vnp_HashSecret . $hashdata);
