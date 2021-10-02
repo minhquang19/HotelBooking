@@ -196,10 +196,12 @@ class bookingController extends Controller
         $vnp_Locale = $request->language;
         $vnp_BankCode = $request->bank_code;
         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
-
+        $vnp_TmnCode = "DH1XIPAE"; //Mã website tại VNPAY
+        $vnp_HashSecret = "LAXPYCUMJDISRINTXKEMZWVHLOAKXSRF"; //Chuỗi bí mật
+        $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         $inputData = array(
             "vnp_Version" => "2.0.0",
-            "vnp_TmnCode" => env('vnp_TmnCode'),
+            "vnp_TmnCode" => $vnp_TmnCode,
             "vnp_Amount" => $vnp_Amount,
             "vnp_Command" => "pay",
             "vnp_CreateDate" => date('YmdHis'),
@@ -230,9 +232,9 @@ class bookingController extends Controller
         }
 
         $vnp_Url = env('vnp_Url') . "?" . $query;
-        if (env('GFZHDSZBZJQESXZNMCUETHGSNUJCEXVN')) {
+        if (isset($vnp_HashSecret)) {
             // $vnpSecureHash = md5($vnp_HashSecret . $hashdata);
-            $vnpSecureHash = hash('sha256', env('GFZHDSZBZJQESXZNMCUETHGSNUJCEXVN') . $hashdata);
+            $vnpSecureHash = hash('sha256', $vnp_HashSecret . $hashdata);
             $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
         }
         return redirect($vnp_Url);
