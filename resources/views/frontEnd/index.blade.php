@@ -258,9 +258,9 @@
                                                     </ul>
                                                     <div class="room-price">
                                                         @if(App()->getLocale()=='en')
-                                                            <p class="price">{{$item->roomPrice->Weekly}} $</p>
+                                                            <p class="price">{{$item->RoomPrice->Weekly}} $</p>
                                                         @else
-                                                            <p class="price">{{number_format($item->roomPrice->Weekly_vi)}} VNĐ</p>
+                                                            <p class="price">{{number_format($item->RoomPrice->Weekly_vi)}} VNĐ</p>
                                                         @endif
 
                                                     </div>
