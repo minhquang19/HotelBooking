@@ -100,7 +100,7 @@
                 </h1>
             </div>
             <div class="row">
-                @forelse($service as $item)
+                @forelse($listService as $item)
                 <div class="col-lg-4 col-md-6">
                     <div class="single-service-box service-white-bg text-center wow fadeIn animated"
                          data-wow-duration="1500ms" data-wow-delay="400ms"

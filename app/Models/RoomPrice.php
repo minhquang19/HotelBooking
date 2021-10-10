@@ -10,7 +10,7 @@ class RoomPrice extends Model
     use HasFactory;
     protected $table='room_prices';
     protected $primaryKey='id';
-    protected $fillable=['room_id','Weekends','Weekly','Moonly','Nightly'];
+    protected $fillable=['room_id','Weekends','Weekly','Weekends_vi','Weekly_vi'];
     public function room()
     {
         return $this->belongsTo(Room::class);

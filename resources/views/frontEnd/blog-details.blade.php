@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('title',$detail->title)
+@section('title',$detailBlog->title)
 @section('active_blog', 'active-page')
 @section('content')
     <main>
@@ -28,31 +28,31 @@
                         <div class="post-details" style=" width: 90%;margin: 0 auto;">
                             <div class="entry-header">
                                 <div class="post-thumb">
-                                    <img src="{{asset($detail->coverImage)}}" alt="Image">
+                                    <img src="{{asset($detailBlog->coverImage)}}" alt="Image">
                                 </div>
                                 <ul class="entry-meta list-inline">
                                     <li>
                                         <a href="">
-                                            <i class="fas fa-user-alt"></i>{{$detail->creator}}
+                                            <i class="fas fa-user-alt"></i>{{$detailBlog->creator}}
                                         </a>
                                     </li>
                                     <li>
                                         <a href="single-blog.html">
-                                            <i class="far fa-calendar-alt"></i>{{$detail->created_at}}
+                                            <i class="far fa-calendar-alt"></i>{{$detailBlog->created_at}}
                                         </a>
                                     </li>
                                 </ul>
                                 @if(App()->getLocale() =='en')
-                                    <h2 class="entry-title">{{$detail->title}} </h2>
+                                    <h2 class="entry-title">{{$detailBlog->title}} </h2>
                                 </div>
                                 <div class="entry-content">
-                                    {!! $detail->content !!}
+                                    {!! $detailBlog->content !!}
                                 </div>
                                 @else
-                                    <h2 class="entry-title">{{$detail->title_vi}} </h2>
+                                    <h2 class="entry-title">{{$detailBlog->title_vi}} </h2>
                                 </div>
                                 <div class="entry-content">
-                                    {!! $detail->content_vi !!}
+                                    {!! $detailBlog->content_vi !!}
                                 </div>
                                 @endif
                             <div class="entry-footer d-flex justify-content-md-between">
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                @foreach($random as $item)
+                @foreach($randomBlog as $item)
                     <div class="col-lg-4 col-md-6" style="margin-top: 50px">
                         <div class="single-blog-wrap">
                             <div class="post-thumbnail"style="width: 100%;height: 200px;">

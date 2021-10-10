@@ -27,8 +27,8 @@ class UpdatePostRequest extends FormRequest
             'room_id'=>'required',
             'Weekends'=>'required',
             'Weekly'=>'required',
-            'Mothly'=>'required',
-            'Nightly'=>'required',
+            'Weekends_vi'=>'required',
+            'Weekly_vi'=>'required',
         ];
     }
 }

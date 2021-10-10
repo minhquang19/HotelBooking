@@ -32,13 +32,24 @@
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{asset('/frontEnd/js/jquery-1.12.4.min.js')}}"></script>
 <script src="{{asset('/frontEnd/js/bootstrap-4.4.1.min.js')}}"></script>
 <script src="{{asset('/frontEnd/js/meanmenu-2.0.7.min.js')}}"></script>
 <script src="{{asset('/frontEnd/js/bootstrap-datepicker.js')}}"></script>
 <script src="{{asset('/frontEnd/js/jquery-ui.min.js')}}"></script>
 <script src="{{asset('/frontEnd/js/test.js')}}"></script>
-
+<script src="{{ asset('backEnd/toastr/toastr.min.js') }}"></script>
+@if(Session::has('success'))
+    <script>
+        toastr.success("{{ session("success") }}")
+    </script>
+@endif
+@if(Session::has('error'))
+    <script>
+        toastr.error("{{ session("error") }}")
+    </script>
+@endif
 @yield('scripts')
 @yield('scripts_lang')
 </body>

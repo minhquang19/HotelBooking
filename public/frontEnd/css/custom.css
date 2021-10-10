@@ -20,9 +20,11 @@
     color: white;
 }
 .title_book{
-    padding: 0 20px;
+    font-size: 18px;
+    margin-top: 15px;
     color : black;
     font-weight: 600;
+    text-align: left;
 }
 .cover_Image{
     width: 300px;

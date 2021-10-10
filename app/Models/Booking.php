@@ -10,7 +10,7 @@ class Booking extends Model
     use HasFactory;
     protected $primaryKey = 'id';
     protected $table='bookings';
-    protected $fillable = ['user_id','totalPrice'];
+    protected $fillable = ['user_id','totalPrice','totalPrice_vi','payment'];
     public function bookingDetail()
     {
         return $this->hasMany(BookingDetail::class);

@@ -4,57 +4,55 @@ namespace App\Http\Controllers\backEnd;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Price\StorePostRequest;
-use App\Models\RoomPrice;
-use Illuminate\Http\Request;
+use App\Repositories\Admins\RoomPrice\RoomPriceRepo;
 use App\Http\Requests\Price\UpdatePostRequest;
 
 class priceController extends Controller
 {
+    protected $priceRepo;
+    public function __construct(RoomPriceRepo $priceRepo)
+    {
+        $this->priceRepo = $priceRepo;
+    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StorePostRequest $request)
     {
         try {
-        $validated = $request->validated();
-        $rs = RoomPrice::create($validated);
-        if ($rs) {
-            return back()->with('success','Thêm Thành Công');
+            $validated  = $request->validated();
+            $rs         = $this->priceRepo->create($validated);
+            return      $this->priceRepo->redirect($rs,'Giá phòng đã được tạo!');
+
         }
-        else
+        catch (Exception $e)
         {
-            return back()->with('error','khong thanh cong');
+            abort(500);
         }
-
-    } catch (Exception $e) {
-        abort(500);
-    }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(UpdatePostRequest $request, $id)
     {
-        //
+        try
+        {
+            $validated  = $request->validated();
+            $rs         = $this->priceRepo->update($validated);
+            return $this->priceRepo->redirect($rs,'Giá phòng đã được cập nhật !');
+        }
+        catch (Exception $e)
+        {
+            abort(500);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        try
+        {
+            $rs         = $this->priceRepo->delete($id);
+            return $this->priceRepo->redirect($rs,'Giá phòng đã được xóa !');
+        }
+        catch (Exception $e)
+        {
+            abort(500);
+        }
     }
 }

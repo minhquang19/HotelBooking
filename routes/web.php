@@ -29,12 +29,13 @@ Route::prefix('')->group(function(){
     Route::get('/contact',[contactController::class,'index'])->name('contact.index');
     Route::prefix('/booking')->name('booking.')->group(function(){
         Route::resource('/',bookingController::class)->only(['index','store', 'destroy'])->middleware('auth:web');
-        Route::get('/add',[bookingController::class,'add'])->name('booking.add');
+        Route::get('/add',[bookingController::class,'add'])->name('add');
         Route::post('/updateAvatar',[bookingController::class,'updateAvatar'])->name('updateAvatar');
         Route::post('/updateInfo',[bookingController::class,'updateInfo'])->name('updateinfo');
         Route::post('/payment',[bookingController::class,'payMent'])->name('payment');
         Route::post('/payment/online',[bookingController::class,'createPayment'])->name('createPayment');
-        Route::get('/vnpay/return',[bookingController::class,'vnpayReturn'])->name('vnpay.return');
+        Route::get('/payment/return',[bookingController::class,'payMentReturn'])->name('payment.return');
+        Route::get('/detail/',[bookingController::class,'bookingDetail'])->name('detail');
     });
 });
 

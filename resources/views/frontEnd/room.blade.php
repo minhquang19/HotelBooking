@@ -21,10 +21,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        @if($room_data == null)
+                        @if($listRoom == null)
                             <p>No Room</p>
                         @else
-                            @foreach($room_data as $item)
+                            @foreach($listRoom as $item)
                                 <div class="single-room list-style avson-go-top">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col-lg-6">
@@ -45,10 +45,16 @@
                                                         <ul class="room-info list-inline">
                                                             <li><i class="fas fa-bed"></i>{{$item->bad}} Bads</li>
                                                             <li><i class="fas fa-bath"></i>{{$item->bath}} Baths</li>
-                                                            <li><i class="fas fa-ruler-combined"></i>{{$item->area}} m
-                                                            </li>
+                                                            <li><i class="fas fa-ruler-combined"></i>{{$item->area}} m</li>
+                                                            <li><i class="fas fa-user"></i>{{$item->category->maxPeople}}</li>
                                                         </ul>
-                                                        <div class="room-price"><p>{{$item->roomPrice->Weekly}}</p></div>
+                                                        <div class="room-price">
+                                                            @if(App()->getLocale()=='en')
+                                                                <p class="price">{{$item->roomPrice->Weekly}} $</p>
+                                                            @else
+                                                                <p class="price">{{number_format($item->roomPrice->Weekly_vi)}} VNĐ</p>
+                                                            @endif
+                                                        </div>
                                             </div>
                                         </div>
                                     </div>
@@ -70,7 +76,7 @@
                                     <div class="input-wrap">
                                         <select name="category" id="rooms" class="nice-select">
                                             <option disabled="" value="DEFAULT" selected="">{{__('category')}}</option>
-                                            @forelse($category_data as $item)
+                                            @forelse($listCategory as $item)
                                                 <option value="{{$item->id}}">{{$item->name}}</option>
                                             @empty
                                                 <option value="">No Category Here</option>
@@ -97,7 +103,7 @@
                                     </div>
                                     <div class="input-wrap">
                                         <div class="checkboxes">
-                                            @forelse($tag as $item)
+                                            @forelse($listTag as $item)
                                                 @php
                                                     $checked =[];
                                                     if(isset($_GET['filtertag']))
@@ -128,7 +134,7 @@
                             </div>
                         </div>
                     </div>
-                    {{$room_data->links('vendor.pagination.bootstrap-4')}}
+                    {{$listRoom->links('vendor.pagination.bootstrap-4')}}
                 </div>
         </section>
     </main>

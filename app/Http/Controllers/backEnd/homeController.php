@@ -3,36 +3,28 @@
 namespace App\Http\Controllers\backEnd;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\Admins\Admin\AdminRepo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-use DB;
 use Illuminate\Support\Facades\Hash;
 
 class homeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    protected $adminRepo;
+    public function __construct(AdminRepo $adminRepo)
     {
+        $this->adminRepo = $adminRepo;
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        $room = DB::table('rooms')->get()->count();
-        $booking = DB::table('bookings')->get()->count();
-        $user = DB::table('users')->get()->count();
-        $list = DB::table('booking_details')->orderBy('created_at','DESC')->get();
-        $blog = DB::table('blogs')->get()->count();
-        return view('backEnd.index',compact('room','booking','user','list','blog'));
+        $roomAmount     = $this->adminRepo->countRoom();
+        $bookingAmount  = $this->adminRepo->countBooking();
+        $userAmount     = $this->adminRepo->countUser();
+        $blogAmount     = $this->adminRepo->countBlog();
+        $listBooking    = $this->adminRepo->getListBookingDESC();
+
+        return view('backEnd.index',compact('roomAmount','bookingAmount','userAmount','listBooking','blogAmount'));
     }
     public function store(Request $request)
     {

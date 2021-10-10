@@ -18,8 +18,8 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        $blog = Models\Blog::all();
-        return view('auth.register',compact('blog'));
+        $listBlog = Models\Blog::all();
+        return view('auth.register',compact('listBlog'));
     }
 
     /**

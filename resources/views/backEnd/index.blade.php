@@ -14,7 +14,7 @@
                                     <i class="zmdi zmdi-account-o"></i>
                                 </div>
                                 <div class="text">
-                                    <h2>{{$user}}</h2>
+                                    <h2>{{$userAmount}}</h2>
                                     <span>User Account</span>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </div>
                                 <div class="text">
-                                    <h2>{{$booking}}</h2>
+                                    <h2>{{$bookingAmount}}</h2>
                                     <span>Booking</span>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                     <i class="far fa-building"></i>
                                 </div>
                                 <div class="text">
-                                    <h2>{{$room}}</h2>
+                                    <h2>{{$roomAmount}}</h2>
                                     <span>Room</span>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                                     <i class="far fa-newspaper"></i>
                                 </div>
                                 <div class="text">
-                                    <h2>{{$blog}}</h2>
+                                    <h2>{{$blogAmount}}</h2>
                                     <span>Blogs</span>
                                 </div>
                             </div>
@@ -98,10 +98,10 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if($list == null)
+                            @if($listBooking == null)
                                 <p>No room booked</p>
                             @else
-                                @forelse($list as $item)
+                                @forelse($listBooking as $item)
                                     <tr>
                                         <td>{{$loop->index+1}}</td>
                                         <td>{{$item->room_name}}</td>

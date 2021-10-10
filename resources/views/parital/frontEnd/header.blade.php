@@ -80,7 +80,7 @@
                                     <i class="fas fa-2x fa-sort-down"></i>
                                        <!-- Authentication -->
                                        <form action="" class="logout" >
-                                       <a href="/booking" style="color: black;">{{__('profile')}}</a>
+                                       <a href="/booking/#section-info" style="color: black;">{{__('profile')}}</a>
                                        ></form>
                                        <form  class="logout" method="POST" action="{{ route('logout') }}">
                                            @csrf

@@ -17,9 +17,9 @@ class CreateRoomPricesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('room_id');
             $table->decimal('Weekends',9,2);
+            $table->decimal('Weekends_vi',9);
             $table->decimal('Weekly',9,2);
-            $table->decimal('Moonly',9,2);
-            $table->decimal('Nightly',9,2);
+            $table->decimal('Weekly_vi',9);
             $table->timestamps();
             $table->foreign('room_id')->references('id')->on('rooms');
         });

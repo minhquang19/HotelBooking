@@ -60,7 +60,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @forelse($data as $item)
+                            @forelse($room as $item)
                                 <tr class="tr-shadow">
                                     <input type="hidden" class="visibility" name="visibility" value="{{$item->visibility}}">
                                     <input type="hidden" class="category_id" value="{{$item->category_id}}">
@@ -293,7 +293,6 @@
     $(document).ready(function()
     {
     $('.edit_btn').on('click',function(){
-        console.log($('#editModal'));
         $('#editModal').modal('show');
         $tr = $(this).closest('tr');
         var data = $tr.children('td').map(function(){

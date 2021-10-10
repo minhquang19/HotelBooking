@@ -113,10 +113,10 @@
                                 <div class="col-lg-8">
                                     <div class="table-responsive table-responsive-data2">
                                         <table class="table table-data2">
-                                            @foreach($temp as $key => $item)
-                                                <input type="hidden" name="checkin[]"  value="{{$item->checkin}}">
-                                                <input type="hidden" name="checkout[]"  value="{{$item->checkout}}">
-                                            @endforeach
+{{--                                            @foreach($temp as $key => $item)--}}
+{{--                                                <input type="hidden" name="checkin[]"  value="{{$item->checkin}}">--}}
+{{--                                                <input type="hidden" name="checkout[]"  value="{{$item->checkout}}">--}}
+{{--                                            @endforeach--}}
                                             <thead>
                                                 <tr style="background: #2CC185;">
                                                     <th>Room Detail</th>
@@ -127,23 +127,23 @@
                                             <tbody class="info_detail">
                                                 <tr>
                                                     <td>ID :</td>
-                                                    <td>{{$obj->id}}</td>
+                                                    <td>{{$room->id}}</td>
                                                 </tr>
                                                  <tr>
                                                     <td>Name :</td>
-                                                    <td>{{$obj->name}}</td>
+                                                    <td>{{$room->name}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>CateGory :</td>
-                                                    <td>{{$obj->category->name}}</td>
+                                                    <td>{{$room->category->name}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Visibility :</td>
-                                                    <td>{{( $obj->visibility == 1)?"Display":"Hidden" }}</td>
+                                                    <td>{{( $room->visibility == 1)?"Display":"Hidden" }}</td>
                                                 </tr>
                                                  <tr>
                                                     <td>Status :</td>
-                                                    <td>@switch($obj->status)
+                                                    <td>@switch($room->status)
                                                         @case(0)
                                                             {{"Emty"}}
                                                             @break
@@ -159,14 +159,14 @@
                                                 </tr>
                                                  <tr>
                                                     <td>Description :</td>
-                                                    <td class="full-des">{{ $obj->description}}</td>
+                                                    <td class="full-des">{{ $room->description}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <img  src="{{ $obj->coverImages }}" style="" class="img-thumbnail">
+                                    <img  src="{{ $room->coverImages }}" style="" class="img-thumbnail">
                                 </div>
                                 </div>
                             </div>
@@ -182,8 +182,8 @@
                                                     <th>Room ID</th>
                                                     <th>Weekends</th>
                                                     <th>Weekly</th>
-                                                    <th>Mothly</th>
-                                                    <th>Nightly</th>
+                                                    <th>Weekends VN</th>
+                                                    <th>Weekly VN</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -192,10 +192,10 @@
                                                 <tr>
                                                     <input type="hidden" value="{{$item->room_id}}">
                                                    <td>{{$item->room->name}}</td>
-                                                   <td>{{$item->Weekends}}</td>
-                                                   <td>{{$item->Weekly}}</td>
-                                                   <td>{{$item->Moonly}}</td>
-                                                   <td>{{$item->Nightly}}</td>
+                                                   <td>{{$item->Weekends}} $</td>
+                                                   <td>{{$item->Weekly}} $</td>
+                                                   <td>{{$item->Weekends_vi}} VNĐ</td>
+                                                   <td>{{$item->Weekly_vi}} VNĐ</td>
                                                     <td>
                                                        <button class="item edit_btn" data-toggle="tooltip" data-placement="top" title="Edit">
                                                          <i class="zmdi zmdi-edit"></i>
@@ -221,7 +221,7 @@
                             <form id="file-upload-form" class="uploader" action="{{route('admin.image.store')}}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
                                 @csrf
                                 @method('POST')
-                                <input type="hidden" value="{{$obj->id}}" name="room_id">
+                                <input type="hidden" value="{{$room->id}}" name="room_id">
                                 <input type="file" id="file-input" name="name[]" multiple/>
                                 <div id="thumb-output"></div>
                                 <br>
@@ -232,7 +232,7 @@
                                 <h3>LIST IMAGES VIEW</h3>
                                 <br>
                                 <div class="row pt-10">
-                                    @foreach($roomimages as $item)
+                                    @foreach($roomImages as $item)
                                     <div class="col s12 m6 l4 " >
                                         <div class="image-area" style="position: relative">
                                         <img src="{{$item->name}}" alt="">
@@ -258,11 +258,11 @@
                                             <form action="{{route('admin.tag_room.store')}}" method="POST" enctype="multipart/form-data">
                                              @csrf
                                              @method('post')
-                                             <input type="hidden" name="room_id" value="{{$obj->id}}">
+                                             <input type="hidden" name="room_id" value="{{$room->id}}">
                                             @forelse($tag as $item)
                                             <div class="checkbox-container">
                                                 <input type="checkbox" id="{{$item->id}}" name="tag_id[]" value="{{$item->id}}"
-                                                @foreach($tag_room as $tagroom)
+                                                @foreach($tagRoom as $tagroom)
                                                     @if($item->id == $tagroom->tag_id) checked @endif
                                                 @endforeach
                                                 />
@@ -305,24 +305,24 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="categoryname">Room Name</label>
-                    <input type="hidden" name="room_id" value="{{$obj->id}}">
-                    <input  type="text" class="form-control" placeholder="Category name" value="{{$obj->name}}" readonly>
+                    <input type="hidden" name="room_id" value="{{$room->id}}">
+                    <input  type="text" class="form-control" placeholder="Category name" value="{{$room->name}}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="Weekends">Weekends</label>
-                    <input class="form-control" step="any" type="number" name="Weekends" >
+                    <input class="form-control" step="any" type="number" name="Weekends" id="Weekends" >
                 </div>
                 <div class="form-group ">
                     <label for="Weekly">Weekly</label>
-                    <input class="form-control"  step="any"type="number" name="Weekly" >
+                    <input class="form-control"  step="any"type="number" name="Weekly" id="Weekly" >
                 </div>
                 <div class="form-group">
-                    <label for="Moonly">Mothly</label>
-                    <input class="form-control" step="any" type="number" name="Moonly" >
+                    <label for="Moonly">Weekends by VN</label>
+                    <input class="form-control" step="any" type="number" name="Weekends_vi" id="Weekends_v" >
                 </div>
                 <div class="form-group">
-                    <label for="Nightly">Nightly</label>
-                   <input class="form-control" step="any" type="number" name="Nightly" >
+                    <label for="Nightly">Weekly by VN</label>
+                   <input class="form-control" step="any" type="number" name="Weekly_vi" id="Weekly_vi" >
                 </div>
                 <button type="submit" class="btn btn-primary">SAVE</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -348,24 +348,24 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="categoryname">Room Name</label>
-                    <input type="hidden" name="room_id" value="{{$obj->id}}">
-                    <input  type="text" class="form-control" placeholder="Category name" value="{{$obj->name}}" readonly>
+                    <input type="hidden" name="room_id" value="{{$room->id}}">
+                    <input  type="text" class="form-control" placeholder="Category name" value="{{$room->name}}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="Weekends">Weekends</label>
-                    <input class="form-control" id="Weekends" step="any" type="number" name="Weekends" >
+                    <input class="form-control" id="eWeekends"  type="number" name="Weekends" >
                 </div>
                 <div class="form-group ">
                     <label for="Weekly">Weekly</label>
-                    <input class="form-control" id="Weekly" step="any"type="number" name="Weekly" >
+                    <input class="form-control" id="eWeekly" step="any"type="number" name="Weekly" >
                 </div>
                 <div class="form-group">
-                    <label for="Mothly">Mothly</label>
-                    <input class="form-control" id="Mothly" step="any" type="number" name="Mothly" >
+                    <label for="Mothly">Weekends by VN</label>
+                    <input class="form-control" id="eWeekends_vi" step="any" type="number" name="Weekends_vi" >
                 </div>
                 <div class="form-group">
-                    <label for="Nightly">Nightly</label>
-                   <input class="form-control" id="Nightly" step="any" type="number" name="Nightly" >
+                    <label for="Nightly">Weekly by VN</label>
+                   <input class="form-control" id="eWeekly_vi" step="any" type="number" name="Weekly_vi" >
                 </div>
                 <button type="submit" class="btn btn-primary">SAVE</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -424,7 +424,26 @@
         })();
         inputNumber($('.input-number'));
     </script>
-    {{-- Update Modal --}}
+    {{-------------------------- Update Modal -------------------------}}
+    <script>
+        $('.edit_btn').on('click',function(){
+            $('#editModal').modal('show');
+            $tr = $(this).closest('tr');
+            var data = $tr.children('td').map(function(){
+                return $(this).text();
+            }).get();
+            var data_id = $tr.children('input').map(function(){
+                return $(this).val();
+            }).get();
+            console.log(data);
+            $('#eWeekends').val(data[1].split(" ")[0]);
+            $('#eWeekly').val(data[2].split(" ")[0]);
+            $('#eWeekends_vi').val(data[3].split(" ")[0]);
+            $('#eWeekly_vi').val(data[4]).split(" ")[0]);
+            $('#editform').attr('action', '/admin/price/'+data_id[0]);
+
+        });
+    </script>
      <script>
         $(document).ready(function()
         {
@@ -434,34 +453,14 @@
                  $('#tag_id').val(temp);
                  $('#tag_name').val(name);
             });
-
             $('.amount').change(function(){
                 var temp = $(this).val();
                 $('#amount').val(temp);
             });
-
-
             var rowCount = $('#mytable tr').length;
             if( rowCount > 1 ){
                 $('#add_btn').attr('disabled','disabled');
             }
-            $('.edit_btn').on('click',function(){
-                $('#editModal').modal('show');
-                $tr = $(this).closest('tr');
-                var data = $tr.children('td').map(function(){
-                    return $(this).text();
-                }).get();
-                var data_id = $tr.children('input').map(function(){
-                    return $(this).val();
-                }).get();
-                console.log(data);
-                console.log(data_id);
-                $('#Weekends').val(data[1]);
-                $('#Weekly').val(data[2]);
-                $('#Moonly').val(data[3]);
-                $('#Nightly').val(data[4]);
-                $('#editform').attr('action', '/admin/price/'+data_id[0]);
-            });
         });
     </script>
     {{-- Disnable Butoon Add --}}

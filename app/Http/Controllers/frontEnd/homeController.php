@@ -3,27 +3,27 @@
 namespace App\Http\Controllers\frontEnd;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Room;
-use App\Models\Category;
-use App\Models\Blog;
-use App\Models\Service;
-use App\Models;
+use App\Repositories\FrontEnd\Home\HomeRepo;
 class homeController extends Controller
 {
+    protected $homeRepo;
+    public function __construct(HomeRepo $homeRepo)
+    {
+        $this->homeRepo = $homeRepo;
+    }
+
     public function index()
     {
         try {
-            $room_data = Room::all();
-            $category_data = Category::all();
-            $blog = Blog::all();
-            $service = Service::all();
+            $listRoom       = $this->homeRepo->getAllRoom();
+            $listCategory   = $this->homeRepo->getAllCategory();
+            $listBlog       = $this->homeRepo->getAllBlog();
+            $listService    = $this->homeRepo->getAllService();
 //            $service =  Models\Service::all()->random(2);
-            return view('frontEnd.index',compact('room_data','category_data','blog','service'));
-
+            return view('frontEnd.index',compact('listRoom','listCategory','listBlog','listService'));
         }catch (Exception $e)
         {
-
+            abort(500);
         }
     }
 }

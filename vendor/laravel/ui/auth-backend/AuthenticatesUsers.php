@@ -20,8 +20,8 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        $blog = Blog::all();
-        return view('auth.login',compact('blog'));
+        $listBlog  = Blog::all();
+        return view('auth.login',compact('listBlog'));
     }
 
     /**

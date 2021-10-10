@@ -23,7 +23,7 @@
                                     <h1 data-animation="fadeInLeft" data-delay=".6s" style="animation-delay: 0.6s;"
                                         class="">Another day in paradise</h1>
                                     <a class="btn filled-btn" data-animation="fadeInUp" data-delay=".9s"
-                                       href="/room-list" style="animation-delay: 0.9s;" tabindex="0">get started <i
+                                       href="/room" style="animation-delay: 0.9s;" tabindex="0">{{__('booking')}}<i
                                             class="far fas fa-long-arrow-alt-right"></i></a>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                     <h1 data-animation="fadeInLeft" data-delay=".6s" style="animation-delay: 0.6s;"
                                         class="">Another day in paradise</h1>
                                     <a class="btn filled-btn" data-animation="fadeInUp" data-delay=".9s"
-                                       href="/room" style="animation-delay: 0.9s;" tabindex="0">get started <i
+                                       href="/room" style="animation-delay: 0.9s;" tabindex="0">{{__('booking')}}<i
                                             class="far fas fa-long-arrow-alt-right"></i></a>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                                     <h1 data-animation="fadeInLeft" data-delay=".6s" style="animation-delay: 0.6s;"
                                         class="">Another day in paradise</h1>
                                     <a class="btn filled-btn" data-animation="fadeInUp" data-delay=".9s"
-                                       href="/room-list" style="animation-delay: 0.9s;" tabindex="0">get started <i
+                                       href="/room" style="animation-delay: 0.9s;" tabindex="0"{{__('booking')}}<i
                                             class="far fas fa-long-arrow-alt-right"></i></a>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                                 <div class="input-wrap">
                                     <select name="category" id="adult" class="nice-select">
                                         <option disabled="" value="DEFAULT" selected="">{{__('category')}}</option>
-                                        @forelse($category_data as $item)
+                                        @forelse($listCategory as $item)
                                             <option value="{{$item->id}}" class="option">{{$item->name}}</option>
                                         @empty
                                             <h1>No Category</h1>
@@ -172,6 +172,9 @@
                             <p>
                                 {{__('introduceDes')}}
                             </p>
+                            <p>
+                                {{__('introduceDes2')}}
+                            </p>
                         </div>
                         <div class="counter">
                             <div class="row">
@@ -224,22 +227,20 @@
                             <div class="MultiCarousel" data-items="1,2,2,3" data-slide="1" id="MultiCarousel"
                                  data-interval="1000">
                                 <div class="MultiCarousel-inner">
-                                    @forelse($room_data as $item)
+                                    @forelse($listRoom as $item)
                                         <div class="item col-lg-4">
                                             <div class="pad15 single-room">
-                                                <div class="room-thumb"><img src="{{$item->coverImages}}"
-                                                                             alt="Room"></div>
+                                                <div class="room-thumb"><img src="{{$item->coverImages}}" alt="Room"></div>
                                                 <div class="room-desc">
                                                     @if(App()->getLocale()=='en')
                                                         <div class="room-cat"><p>{{$item->category->name}}</p></div>
-                                                        <h4 class="avson-go-top"><a href=""
-                                                                                    tabindex="-1">{{$item->name}}</a>
+                                                        <h4 class="avson-go-top">
+                                                            <a href="{{ route('room.show',$item->id) }}" tabindex="-1">{{$item->name}}</a>
                                                         </h4>
                                                         <p class="des_text">{{$item->description}}</p>
                                                     @else
                                                         <div class="room-cat"><p>{{$item->category->name_vi}}</p></div>
-                                                        <h4 class="avson-go-top"><a href=""
-                                                                                    tabindex="-1">{{$item->name_vi}} </a>
+                                                        <h4 class="avson-go-top"><a href="{{ route('room.show',$item->id) }}" tabindex="-1">{{$item->name_vi}} </a>
                                                         </h4>
                                                         <p class="des_text">{{$item->description_vi}}</p>
                                                     @endif
@@ -253,9 +254,15 @@
                                                             <i class="fas fa-ruler-combined"></i>{{$item->area}}
                                                             m
                                                         </li>
+                                                        <li><i class="fas fa-user"></i>{{$item->category->maxPeople}}</li>
                                                     </ul>
                                                     <div class="room-price">
-                                                        {{--                                      <p>{{$item->room_prices[0]->Weekends}}</p>--}}
+                                                        @if(App()->getLocale()=='en')
+                                                            <p class="price">{{$item->roomPrice->Weekly}} $</p>
+                                                        @else
+                                                            <p class="price">{{number_format($item->roomPrice->Weekly_vi)}} VNĐ</p>
+                                                        @endif
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -281,7 +288,7 @@
                     </h1>
                 </div>
                 <div class="row">
-                    @foreach($service as $item)
+                    @foreach($listService as $item)
                         <div class="avson-go-top col-lg-4 col-md-6">
                             <div class="single-service-box text-center wow fadeIn animated" data-wow-duration="1500ms"
                                  data-wow-delay="400ms"
@@ -400,4 +407,13 @@
         </section>
     </main>
 @endsection
-
+@section('scripts')
+    <script>
+        var arr = $('.price').text();
+        console.log(arr[0].val)
+        for (var i = 0; i < arr.length; i++) {
+            arr[i].value = arr[i].value.replace(/[($)\s\._\-]+/g, '');
+        };
+        console.log(arr);
+    </script>
+@endsection

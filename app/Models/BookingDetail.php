@@ -10,7 +10,7 @@ class BookingDetail extends Model
     use HasFactory;
     protected $primaryKey='id';
     protected $table='booking_details';
-    protected $fillable = ['room_id','booking_id','checkin','checkout','amount_date','amount','unit_price','price'];
+    protected $fillable = ['room_id','booking_id','checkin','checkout','amount_date','amount','unit_price','price','unit_price_vi','price_vi'];
     public function booking()
     {
         return $this->belongsTo(Booking::class);

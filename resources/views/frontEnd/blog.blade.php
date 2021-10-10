@@ -20,7 +20,7 @@
         <div class="container">
             <div class="post-loop avson-go-top">
                 <div class="row">
-                    @foreach($bloglist as $item)
+                    @foreach($listBlogPage as $item)
                     <div class="col-lg-4 col-md-6">
                         <div class="single-blog-wrap">
                             <div class="post-thumbnail"style="width: 100%;height: 200px;">
@@ -43,7 +43,7 @@
                     @endforeach
                 </div>
             </div>
-            {{$bloglist->links('vendor.pagination.bootstrap-4')}}
+            {{$listBlogPage->links('vendor.pagination.bootstrap-4')}}
         </div>
     </section>
 </main>

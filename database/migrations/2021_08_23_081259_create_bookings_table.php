@@ -16,7 +16,9 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->decimal('totalPrice','9','2');
+            $table->decimal('totalPrice','9','2')->nullable();
+            $table->decimal('totalPrice_vi')->nullable();
+            $table->string('payment');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

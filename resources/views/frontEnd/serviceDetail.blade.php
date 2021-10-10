@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('title', $detail->name)
+@section('title', $serviceDetail->name)
 @section('active_service', 'active-page')
 @section('content')
     <main>
@@ -24,19 +24,20 @@
         <section class="blog-details-wrapper section-padding section-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">
-                        <div class="post-details">
+                    <div class="col-lg-12">
+                        @if(App()->getLocale() =='en')
+                            <div class="post-details">
                             <div class="entry-header">
                                 <div class="post-thumb">
-                                    <img src="{{$detail->image}}" alt="Image">
+                                    <img src="{{$serviceDetail->image}}" alt="Image">
                                 </div>
-                                <h2 class="entry-title">{{$detail->name}} </h2>
+                                <h2 class="entry-title">{{$serviceDetail->name}} </h2>
                             </div>
                             <div class="entry-content">
-                                {!! $detail->content !!}
+                                {!! $serviceDetail->content !!}
                                 <div class="entry-gallery-img">
                                     <blockquote>
-                                        {{$detail->description}}
+                                        {{$serviceDetail->description}}
                                     </blockquote>
                                 </div>
                             </div>
@@ -66,27 +67,49 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="sidebar-wrap">
-                            <div class="widget search-widget">
-                                <h4 class="widget-title">Search Here</h4>
-                                <form>
-                                    <input type="text" placeholder="Seacrh Keywords">
-                                    <button>
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </form>
+                        @else
+                            <div class="post-details">
+                                <div class="entry-header">
+                                    <div class="post-thumb">
+                                        <img src="{{$serviceDetail->image}}" alt="Image">
+                                    </div>
+                                    <h2 class="entry-title">{{$serviceDetail->name_vi}} </h2>
+                                </div>
+                                <div class="entry-content">
+                                    {!! $serviceDetail->content_vi !!}
+                                    <div class="entry-gallery-img">
+                                        <blockquote>
+                                            {{$serviceDetail->description_vi}}
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="entry-footer d-flex justify-content-md-between">
+                                    <ul class="social-share list-inline">
+                                        <li class="title">Share</li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-google-plus-g"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="widget banner-widget avson-go-top"
-                                 style="background-image: url(&quot;/assets/img/blog/sidebar-banner.jpg&quot;);">
-                                <h2>Booking Your Latest apartment</h2>
-                                <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit sed do eiusmod tempor
-                                    incididunt ut labore </p>
-                                <a class="btn filled-btn" href="/room-details">BOOK NOW
-                                </a>
-                            </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -2,6 +2,8 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+    background-color: #e8ebef;
+    height: 100%;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -70,8 +72,16 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 40px;
   }
+  .header h3{
+      font-size: 24px;
+      color: #2188c9;
+  }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
@@ -119,4 +129,7 @@ body {
 	padding: 3px 5px;
 	text-align: center;
 	text-decoration: none;
+}
+.container{
+    background-color: white;
 }

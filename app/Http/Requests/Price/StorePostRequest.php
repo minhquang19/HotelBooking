@@ -29,8 +29,8 @@ class StorePostRequest extends FormRequest
             'room_id'=>'required',
             'Weekends'=>'required',
             'Weekly'=>'required',
-            'Moonly'=>'required',
-            'Nightly'=>'required',
+            'Weekends_vi'=>'required',
+            'Weekly_vi'=>'required',
         ];
     }
 

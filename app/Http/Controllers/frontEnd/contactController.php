@@ -10,7 +10,7 @@ class contactController extends Controller
 {
     public function index()
     {
-        $blog = Blog::all();
-        return view('frontEnd.contact',compact('blog'));
+        $listBlog = Blog::all();
+        return view('frontEnd.contact',compact('listBlog'));
     }
 }
