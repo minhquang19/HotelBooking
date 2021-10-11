@@ -33,7 +33,7 @@ Route::prefix('')->group(function(){
     Route::resource('/service',serviceController::class)->only('index','show');
     Route::get('lang/{locale}',[langController::class,'index'])->name('lang');
     Route::get('/contact',[contactController::class,'index'])->name('contact.index');
-    Route::prefix('/booking')->name('booking.')->group(function(){
+    Route::prefix('/booking')->name('booking.')->middleware('Cors')->group(function(){
         Route::resource('/',bookingController::class)->only(['index','store', 'destroy'])->middleware('auth:web');
         Route::get('/add',[bookingController::class,'add'])->name('add');
         Route::post('/updateAvatar',[bookingController::class,'updateAvatar'])->name('updateAvatar');
@@ -41,7 +41,7 @@ Route::prefix('')->group(function(){
         Route::post('/payment',[bookingController::class,'payMent'])->name('payment');
         Route::post('/payment/online',[bookingController::class,'createPayment'])->name('createPayment');
         Route::get('/payment/return',[bookingController::class,'payMentReturn'])->name('payment.return');
-        Route::get('/detail/',[bookingController::class,'bookingDetail'])->name('detail')->middleware('Cors');
+        Route::get('/detail/',[bookingController::class,'bookingDetail']);
     });
 });
 
