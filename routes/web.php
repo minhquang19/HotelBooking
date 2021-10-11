@@ -41,7 +41,7 @@ Route::prefix('')->group(function(){
         Route::post('/payment',[bookingController::class,'payMent'])->name('payment');
         Route::post('/payment/online',[bookingController::class,'createPayment'])->name('createPayment');
         Route::get('/payment/return',[bookingController::class,'payMentReturn'])->name('payment.return');
-        Route::get('/detail/',[bookingController::class,'bookingDetail']);
+        Route::get('/detail/',[bookingController::class,'bookingDetail'])->name('detail');
     });
 });
 
