@@ -17,11 +17,11 @@ class Room extends Model
     }
     public function roomPrice()
     {
-        return $this->hasOne(roomPrice::class);
+        return $this->hasOne(RoomPrice::class);
     }
     public function roomImage()
     {
-        return $this->hasMany(roomImage::class);
+        return $this->hasMany(RoomImage::class);
     }
     public function tags(){
         return $this->belongsToMany(Tag::class);
