@@ -65,11 +65,15 @@ abstract class BaseRepository implements RepositoryInterface
     }
     public function uploadImageOnCloudinary($image,$filename,$folder)
     {
-        if(!is_null($image))
+        if($image)
         {
             return $image->storeOnCloudinaryAs($folder,$filename);
         }
-        return false;
+        else{
+            return false;
+        }
+
+
 
     }
 }

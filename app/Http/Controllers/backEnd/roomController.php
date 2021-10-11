@@ -31,7 +31,7 @@ class roomController extends Controller
             $validated['visibility']=($request->visibility == null)?0:1;
             $file_name      = $request->name.'_cover_'.time();
             $folder         = 'CoverRoom';
-            $uploadImage    = $this->roomRepo->uploadImageOnCloudinary(file('coverImages'),$file_name,$folder);
+            $uploadImage    = $this->roomRepo->uploadImageOnCloudinary($request->file('coverImages'),$file_name,$folder);
             $validated['coverImages'] = $uploadImage->getSecurePath();
             $rs             = $this->roomRepo->create($validated);
             return          $this->roomRepo->redirect($rs,'Phòng đã được tạo thành công !!!');
@@ -68,7 +68,7 @@ class roomController extends Controller
             {
                 $file_name   = $request->name.'_cover_'.time();
                 $folder      = 'CoverRoom';
-                $uploadImage = $this->roomRepo->uploadImageOnCloudinary(file('coverImages'),$file_name,$folder);
+                $uploadImage = $this->roomRepo->uploadImageOnCloudinary($request->file('coverImages'),$file_name,$folder);
                 $validated['coverImages'] = $uploadImage->getSecurePath();
             }
             $rs         = $this->roomRepo->update($id,$validated);

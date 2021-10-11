@@ -45,12 +45,10 @@ class blogController extends Controller
         {
             $validated      = $request->validated();
             $filename       = 'blogCover'.time();
-            if ($request->coverImage == null)
-            {
+            if ($request->coverImage == null) {
                 $validated['coverImage'] = Blog::find($id)->coverImage;
             }
-            else
-            {
+            else {
                 $result      = $this->blogRepo->uploadImageOnCloudinary($request->file('avatar'),$filename,$this->folder);
                 $validated['coverImage'] = $result->getSecurePath();
             }

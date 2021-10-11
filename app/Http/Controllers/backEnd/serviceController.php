@@ -26,8 +26,7 @@ class serviceController extends Controller
         try {
             $validated          = $request->validated();
             $file_name          = 'service'.'_'.time();
-            $file               = $request->hasFile('image');
-            $uploadImage        = $this->serviceRepo->uploadImageOnCloudinary($file,$file_name,'Service');
+            $uploadImage        = $this->serviceRepo->uploadImageOnCloudinary($request->file('image'),$file_name,'Service');
             $validated['image'] = $uploadImage->getSecurePath();
             $rs                 = $this->serviceRepo->create($validated);
             return $this->serviceRepo->redirect($rs,'Dịch vụ đã được tạo !');
