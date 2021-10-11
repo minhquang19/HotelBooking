@@ -375,7 +375,8 @@
             $.ajax({
                 url: '{{route('booking.detail')}}',
                 type: 'GET',
-                encode  : true,
+                crossDomain: true,
+                dataType: 'jsonp',
                 data: { id: roomId },
 
                 success: function(response)
