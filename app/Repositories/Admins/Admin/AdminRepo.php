@@ -7,6 +7,7 @@ use App\Models\Room;
 use App\Models\User;
 use App\Models\Blog;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\Hash;
 
 class AdminRepo extends BaseRepository implements AdminRepoInterface
 {
@@ -39,5 +40,15 @@ class AdminRepo extends BaseRepository implements AdminRepoInterface
     public function getListBookingDESC()
     {
         return BookingDetail::orderBy('created_at','DESC')->get();
+    }
+    public function createAccountAdminDefault()
+    {
+        $password = Hash::make('12345678');
+        Admin::create([
+            'email' => 'admin@gmail.com',
+            'name' => 'Admin',
+            'password' => $password,
+        ]);
+        return "Done .........!";
     }
 }

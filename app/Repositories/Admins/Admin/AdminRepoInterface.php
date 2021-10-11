@@ -9,4 +9,5 @@ interface AdminRepoInterface extends RepositoryInterface
     public function countBooking();
     public function countBlog();
     public function getListBookingDESC();
+    public function createAccountAdminDefault();
 }
