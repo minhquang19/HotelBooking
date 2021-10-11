@@ -31,7 +31,6 @@ class roomController extends Controller
         $listPrice      = $this->roomRepo->getPriceByRoom();
         $listRoom       = $this->roomRepo->fillterRoom($listRoom);
         $listRoom       = $listRoom->paginate(5);
-        dd($listRoom->toArray());
         return view('frontEnd.room',compact('listRoom','listTag','listCategory','listBlog','listPrice'));
     }
     public function show($id)
