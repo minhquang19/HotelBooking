@@ -33,7 +33,7 @@ Route::prefix('')->group(function(){
     Route::resource('/service',serviceController::class)->only('index','show');
     Route::get('lang/{locale}',[langController::class,'index'])->name('lang');
     Route::get('/contact',[contactController::class,'index'])->name('contact.index');
-    Route::prefix('/booking')->name('booking.')->middleware('cors')->group(function(){
+    Route::prefix('/booking')->name('booking.')->group(function(){
         Route::resource('/',bookingController::class)->only(['index','store', 'destroy'])->middleware('auth:web');
         Route::get('/add',[bookingController::class,'add'])->name('add');
         Route::post('/updateAvatar',[bookingController::class,'updateAvatar'])->name('updateAvatar');
