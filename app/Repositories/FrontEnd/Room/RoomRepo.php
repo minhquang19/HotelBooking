@@ -50,7 +50,7 @@ class RoomRepo extends BaseFrontRepo implements RoomRepoInterface
         {
             $listRoom = $listRoom->where('category_id',request()->category);
         }
-        return $listRoom = $listRoom->paginate(4);
+        return $listRoom;
     }
 
     public function findRoomById($id)

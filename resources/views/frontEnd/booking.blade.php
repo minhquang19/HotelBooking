@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('frontEnd/css/tab/css/tabstyles.css') }}" />
 @endsection
 @section('content')
+    @php header('Access-Control-Allow-Origin:  *'); @endphp
 <section class="rooms-warp list-view section-bg ">
     <div class="container-fluid pl-0 pr-0">
         <div class="row">
