@@ -371,7 +371,15 @@
                 return $(this).text();
             }).get();
             var roomId = data[0];
-
+            $.ajax({
+                url: {{route('booking.detail')}},
+                data: { id: roomId },
+                dataType: 'jsonp',
+                type: 'GET',
+            })
+                .done(function(response) {
+                    $('#results').html(response);
+                });
 
         });
     });
