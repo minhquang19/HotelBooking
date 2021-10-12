@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded",function(){
         //Date time picker
             var nowTemp = new Date();
             var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-
             var checkin = $('#arrive-date').datepicker({
 
                 beforeShowDay: function(date) {
@@ -80,6 +79,8 @@ document.addEventListener("DOMContentLoaded",function(){
                 autoclose: true
 
             }).on('changeDate', function(ev) {
+                renderCheckout();
+                $(this).datepicker('hide');
                 if (ev.date.valueOf() > checkout.datepicker("getDate").valueOf() || !checkout.datepicker("getDate").valueOf()) {
 
                     var newDate = new Date(ev.date);
@@ -89,18 +90,21 @@ document.addEventListener("DOMContentLoaded",function(){
                 }
                 $('#depart-date')[0].focus();
             });
+            function renderCheckout() {
+                var checkout = $('#depart-date').datepicker({
+                    beforeShowDay: function (date) {
+                        if (!checkin.datepicker("getDate").valueOf()) {
+                            return date.valueOf() >= new Date().valueOf();
+                        } else {
+                            return date.valueOf() > checkin.datepicker("getDate").valueOf();
+                        }
+                    },
+                    autoclose: true
 
-            var checkout = $('#depart-date').datepicker({
-                beforeShowDay: function(date) {
-                    if (!checkin.datepicker("getDate").valueOf()) {
-                        return date.valueOf() >= new Date().valueOf();
-                    } else {
-                        return date.valueOf() > checkin.datepicker("getDate").valueOf();
-                    }
-                },
-                autoclose: true
+                }).on('changeDate', function (ev) {
+                });
+            }
 
-            }).on('changeDate', function(ev) {});
 
 
             //this function define the size of the items

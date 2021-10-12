@@ -78,7 +78,7 @@
                                         class="">Another day in paradise</h1>
                                     <a class="btn filled-btn" data-animation="fadeInUp" data-delay=".9s"
                                        href="/room" style="animation-delay: 0.9s;" tabindex="0"{{__('booking')}}<i
-                                            class="far fas fa-long-arrow-alt-right"></i></a>
+                                        class="far fas fa-long-arrow-alt-right"></i></a>
                                 </div>
                             </div>
                             <h1 class="big-text">Moon</h1>
@@ -105,11 +105,13 @@
                     <form id="bookIng-form" method="GET">
                         <div class="row">
                             <div class="col-lg-4 col-md-6">
-                                <div class="input-wrap"><input type="text" name="checkin" placeholder="{{__('arrive')}}" id="arrive-date"/><i class="far fa-calendar-alt"></i>
+                                <div class="input-wrap"><input type="text" name="checkin" placeholder="{{__('arrive')}}"
+                                                               id="arrive-date"/><i class="far fa-calendar-alt"></i>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
-                                <div class="input-wrap"><input type="text" name="checkout" placeholder="{{__('depart')}}" id="depart-date"/>
+                                <div class="input-wrap"><input type="text" name="checkout"
+                                                               placeholder="{{__('depart')}}" id="depart-date"/>
                                     <i class="far fa-calendar-alt"></i></div>
                             </div>
                             <div class="col-lg-4 col-md-6">
@@ -230,17 +232,21 @@
                                     @forelse($listRoom as $item)
                                         <div class="item col-lg-4">
                                             <div class="pad15 single-room">
-                                                <div class="room-thumb"><img src="{{$item->coverImages}}" alt="Room"></div>
+                                                <div class="room-thumb"><img src="{{$item->coverImages}}" alt="Room">
+                                                </div>
                                                 <div class="room-desc">
                                                     @if(App()->getLocale()=='en')
                                                         <div class="room-cat"><p>{{$item->category->name}}</p></div>
                                                         <h4 class="avson-go-top">
-                                                            <a href="{{ route('room.show',$item->id) }}" tabindex="-1">{{$item->name}}</a>
+                                                            <a href="{{ route('room.show',$item->id) }}"
+                                                               tabindex="-1">{{$item->name}}</a>
                                                         </h4>
                                                         <p class="des_text">{{$item->description}}</p>
                                                     @else
                                                         <div class="room-cat"><p>{{$item->category->name_vi}}</p></div>
-                                                        <h4 class="avson-go-top"><a href="{{ route('room.show',$item->id) }}" tabindex="-1">{{$item->name_vi}} </a>
+                                                        <h4 class="avson-go-top"><a
+                                                                href="{{ route('room.show',$item->id) }}"
+                                                                tabindex="-1">{{$item->name_vi}} </a>
                                                         </h4>
                                                         <p class="des_text">{{$item->description_vi}}</p>
                                                     @endif
@@ -254,13 +260,15 @@
                                                             <i class="fas fa-ruler-combined"></i>{{$item->area}}
                                                             m
                                                         </li>
-                                                        <li><i class="fas fa-user"></i>{{$item->category->maxPeople}}</li>
+                                                        <li><i class="fas fa-user"></i>{{$item->category->maxPeople}}
+                                                        </li>
                                                     </ul>
                                                     <div class="room-price">
                                                         @if(App()->getLocale()=='en')
                                                             <p class="price">{{$item->RoomPrice->Weekly}} $</p>
                                                         @else
-                                                            <p class="price">{{number_format($item->RoomPrice->Weekly_vi)}} VNĐ</p>
+                                                            <p class="price">{{number_format($item->RoomPrice->Weekly_vi)}}
+                                                                VNĐ</p>
                                                         @endif
 
                                                     </div>
@@ -413,7 +421,8 @@
         console.log(arr[0].val)
         for (var i = 0; i < arr.length; i++) {
             arr[i].value = arr[i].value.replace(/[($)\s\._\-]+/g, '');
-        };
+        }
+        ;
         console.log(arr);
     </script>
 @endsection

@@ -378,7 +378,6 @@
 
             })
             .done(function(response) {
-                console.log(response);
                 $('.content').html(response);
                 });
 

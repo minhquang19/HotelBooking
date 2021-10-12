@@ -408,7 +408,7 @@
         },
         datesDisabled: test,
     }).on('changeDate', function (ev) {
-        fun();
+        renderCheckout();
         $(this).datepicker('hide');
         if (ev.date.valueOf() > checkout.datepicker("getDate").valueOf()
             || !checkout.datepicker("getDate").valueOf()) {
@@ -418,7 +418,7 @@
         }
 
     });
-     function fun()
+     function renderCheckout()
     {
         var checkout = $('.checkout').datepicker({
             beforeShowDay: function (date) {
