@@ -9,9 +9,6 @@ use App\Http\Controllers\backEnd\serviceController;
 use App\Http\Controllers\backEnd\tagController;
 use App\Http\Controllers\backEnd\tagRoomController;
 use App\Http\Controllers\backEnd\priceController;
-if (App::environment('production')) {
-    URL::forceScheme('https');
-}
 // Admin Controller
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::view('/login','backEnd.login')->name('login');

@@ -18,9 +18,6 @@ use App\Http\Controllers\frontEnd\contactController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-if (App::environment('production')) {
-    URL::forceScheme('https');
-}
 Auth::routes();
 
 Route::prefix('')->group(function(){
