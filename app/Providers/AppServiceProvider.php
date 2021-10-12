@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Repositories\Category\CategoryRepo;
 use App\Repositories\Category\CategoryRepoInterface;
+use http\Url;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
