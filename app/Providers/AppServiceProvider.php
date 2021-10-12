@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
-use App\Repositories\Category\CategoryRepo;
-use App\Repositories\Category\CategoryRepoInterface;
 use http\Url;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,10 +15,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(
-            CategoryRepoInterface::class,
-            CategoryRepo::class,
-        );
     }
 
     /**
@@ -29,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        if (App::environment('production')) {
+            URL::forceScheme('https');
+        }
     }
 }

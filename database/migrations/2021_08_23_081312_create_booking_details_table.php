@@ -25,7 +25,7 @@ class CreateBookingDetailsTable extends Migration
             $table->decimal('unit_price','9','2');
             $table->decimal('unit_price_vi',);
             $table->decimal('price','9','2');
-            $table->decimal('price_vi','10','0');
+            $table->decimal('price_vi',);
             $table->timestamps();
             $table->foreign('room_id')->references('id')->on('rooms');
             $table->foreign('booking_id')->references('id')->on('bookings');

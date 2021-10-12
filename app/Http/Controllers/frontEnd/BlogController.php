@@ -7,7 +7,7 @@ use App\Models\Blog;
 use App\Repositories\FrontEnd\Blog\BlogRepo;
 use Illuminate\Http\Request;
 
-class blogController extends Controller
+class BlogController extends Controller
 {
     protected $blogRepo;
     public function __construct(BlogRepo $blogRepo)

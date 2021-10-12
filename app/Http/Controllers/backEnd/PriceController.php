@@ -7,7 +7,7 @@ use App\Http\Requests\Price\StorePostRequest;
 use App\Repositories\Admins\RoomPrice\RoomPriceRepo;
 use App\Http\Requests\Price\UpdatePostRequest;
 
-class priceController extends Controller
+class PriceController extends Controller
 {
     protected $priceRepo;
     public function __construct(RoomPriceRepo $priceRepo)

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Images\StorePostRequest;
 use App\Repositories\Admins\RoomImage\RoomImageRepo;
 
-class imageController extends Controller
+class ImageController extends Controller
 {
     protected $imageRepo;
     public function __construct(RoomImageRepo $imageRepo)

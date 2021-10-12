@@ -7,7 +7,7 @@ use App\Http\Requests\Category\StorePostRequest;
 use App\Http\Requests\Category\UpdatePostRequest;
 use App\Repositories\Admins\Category\CategoryRepo;
 
-class categoryController extends Controller
+class CategoryController extends Controller
 {
     protected $categoryRepo;
     public function __construct(CategoryRepo $categoryRepo)

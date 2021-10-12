@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\Admins\TagRoom\TagRoomRepo;
 use Illuminate\Http\Request;
 
-class tagRoomController extends Controller
+class TagRoomController extends Controller
 {
     protected $tagRoomRepo;
     public function __construct(TagRoomRepo $tagRoomRepo)

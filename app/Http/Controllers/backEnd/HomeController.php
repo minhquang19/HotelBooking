@@ -5,12 +5,10 @@ namespace App\Http\Controllers\backEnd;
 use App\Http\Controllers\Controller;
 use App\Repositories\Admins\Admin\AdminRepo;
 use Illuminate\Http\Request;
-use DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Support\Facades\Hash;
 
-class homeController extends Controller
+class HomeController extends Controller
 {
     protected $adminRepo;
     public function __construct(AdminRepo $adminRepo)

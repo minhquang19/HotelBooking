@@ -4,7 +4,7 @@ namespace App\Http\Controllers\frontEnd;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\FrontEnd\Home\HomeRepo;
-class homeController extends Controller
+class HomeController extends Controller
 {
     protected $homeRepo;
     public function __construct(HomeRepo $homeRepo)

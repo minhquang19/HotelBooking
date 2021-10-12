@@ -7,7 +7,7 @@ use App\Repositories\Admins\Room\RoomRepo;
 use App\Http\Requests\Room\StorePostRequest;
 use App\Http\Requests\Room\UpdatePostRequest;
 
-class roomController extends Controller
+class RoomController extends Controller
 {
     public $roomRepo;
     public function __construct(RoomRepo $roomRepo)

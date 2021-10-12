@@ -7,7 +7,7 @@ use App\Repositories\FrontEnd\Booking\BookingRepo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class bookingController extends Controller
+class BookingController extends Controller
 {
     protected $bookingRepo;
     public function __construct(BookingRepo $bookingRepo)

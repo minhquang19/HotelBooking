@@ -7,7 +7,7 @@ use App\Repositories\Admins\Service\ServiceRepo;
 use App\Http\Requests\Service\StorePostRequest;
 use App\Http\Requests\Service\UpdatePostRequest;
 
-class serviceController extends Controller
+class ServiceController extends Controller
 {
     protected $serviceRepo;
     public function __construct(ServiceRepo $serviceRepo)

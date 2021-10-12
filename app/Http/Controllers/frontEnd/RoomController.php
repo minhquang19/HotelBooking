@@ -15,7 +15,7 @@ use App\Repositories\FrontEnd\Room\RoomRepo;
 use Illuminate\Http\Request;
 use DB;
 
-class roomController extends Controller
+class RoomController extends Controller
 {
     protected $roomRepo;
     public function __construct(RoomRepo $roomRepo)

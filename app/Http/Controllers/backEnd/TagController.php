@@ -9,7 +9,7 @@ use App\Http\Requests\Tag\StorePostRequest;
 use App\Repositories\Admins\Tag\TagRepo;
 use Illuminate\Http\Request;
 
-class tagController extends Controller
+class TagController extends Controller
 {
     protected $tagRepo;
     public function __construct(TagRepo $tagRepo)

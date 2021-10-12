@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Service;
 
-class serviceController extends Controller
+class ServiceController extends Controller
 {
     protected $serviceRepo;
     public function __construct(ServiceRepo $serviceRepo)
