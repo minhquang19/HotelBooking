@@ -99,10 +99,7 @@ class bookingController extends Controller
                 {
                     $html =$html.'<tr><td>' . $final['weekEnds'][$j] . '</td>' . '<td>' . $week. ' $</td>' . '<td>' . $weekVi . ' VNĐ</td>' . '<td>' .'Weekends'. ' </td>'. '</tr>';
                 }
-
             }
-
-
         }
         return $html;
     }
