@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use App\Repositories\Category\CategoryRepo;
 use App\Repositories\Category\CategoryRepoInterface;
-use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,9 +28,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(UrlGenerator $url)
     {
-        if(env('APP_ENV') !== 'local')
-        {
-            $url->forceSchema('https');
-        }
+
     }
 }
