@@ -376,9 +376,11 @@
                 data: { id: roomId },
                 dataType: 'jsonp',
                 type: 'GET',
+
             })
-                .done(function(response) {
-                    $('#results').html(response);
+            .done(function(response) {
+                console.log(response);
+                $('.content').html(response);
                 });
 
         });
