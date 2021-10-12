@@ -372,7 +372,7 @@
             }).get();
             var roomId = data[0];
             $.ajax({
-                url: {{route('booking.detail')}},
+                url: '{{route('booking.detail')}}',
                 data: { id: roomId },
                 dataType: 'jsonp',
                 type: 'GET',
