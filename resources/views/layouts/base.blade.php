@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title')</title>
     <link rel="icon" href="/frontEnd/img/logo.png" sizes="20x20" type="image/png" />
-    <link rel="stylesheet" href="'{{secure_asset('/frontEnd/css/Lib/jquery-ui.min.css')}})">
+    <link rel="stylesheet" href="{{secure_asset('/frontEnd/css/Lib/jquery-ui.min.css')}}">
     <link rel="stylesheet" href="{{ secure_asset('frontEnd/css/Lib/bootstrap-4.4.1.min.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('/frontEnd/css/Lib/nice-select-1.0.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('/frontEnd/css/Lib/bootstrap-datepicker.css') }}">
