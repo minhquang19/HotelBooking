@@ -48,7 +48,7 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
     public function getStatisticalByDay($listDay)
     {
         $revenues = Booking::whereMonth('created_at',date('m'))
-                                 ->select(DB::raw('sum(totalPrice_vi) as totalMoney'),DB::raw('DATE(created_at) as day'))
+                                 ->select(DB::raw('sum(totalprice_vi) as totalMoney'),DB::raw('DATE(created_at) as day'))
                                  ->groupBy('day')
                                  ->get()->toArray();
         $arrRevenue = [];
@@ -87,8 +87,8 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
 //            'password' => $password,
 //        ]);
         $rs = Booking::create([
-            'totalPrice'=>30,
-            'totalPrice_vi'=>10000,
+            'total_price'=>30,
+            'total_price_vi'=>10000,
             'payment' =>'paypal',
             'user_id'=>1,
         ]);
