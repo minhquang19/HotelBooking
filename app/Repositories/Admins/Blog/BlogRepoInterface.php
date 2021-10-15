@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories\Admins\Blog;
-use App\Repositories\RepositoryInterface;
+use App\Repositories\Admins\RepoAdminInterface;
 
-interface BlogRepoInterface extends RepositoryInterface
+interface BlogRepoInterface extends RepoAdminInterface
 {
 
 }

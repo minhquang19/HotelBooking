@@ -74,7 +74,7 @@ var cls = {
 };
 
 /*
- * Helper methods
+ * Helpers methods
  */
 var scrollingClassTimeout = { x: null, y: null };
 

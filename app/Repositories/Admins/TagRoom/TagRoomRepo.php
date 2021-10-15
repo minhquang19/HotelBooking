@@ -1,10 +1,11 @@
 <?php
 namespace App\Repositories\Admins\TagRoom;
 use App\Models\TagRoom;
+use App\Repositories\Admins\BaseAdminRepo;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 
-class TagRoomRepo extends BaseRepository implements TagRoomRepoInterface
+class TagRoomRepo extends BaseAdminRepo implements TagRoomRepoInterface
 {
 
     public function getModel()

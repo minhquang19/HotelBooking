@@ -1,5 +1,6 @@
 @extends('layouts.basead')
 @section('title', 'Tag Manager')
+@section('titlePage', 'Tag Manager')
 @section('manager', 'active')
 @section('tag','active')
 @section('block','display: block;')
@@ -10,7 +11,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- DATA TABLE -->
-                    <h3 class="title-5" style="font-family: 'Baloo Tamma', cursive;text-align: center;width: 100%;    font-size: 60px;letter-spacing: 5px;">Tag MANAGER</h3>
+
                      <div class="table-data__tool">
                         <div class="table-data__tool-right">
                             <button class="btn btn-success btn-radius"  data-toggle="modal" data-target="#addModal">

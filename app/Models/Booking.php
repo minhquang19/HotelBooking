@@ -15,4 +15,9 @@ class Booking extends Model
     {
         return $this->hasMany(BookingDetail::class);
     }
+    public function users()
+    {
+        return $this->hasOne(User::class,'id','user_id');
+    }
+
 }

@@ -387,3 +387,24 @@ input:checked + .slider:before {
         background-position:0% 31%
     }
 }
+
+.title-5{
+    font-family: 'Baloo Tamma', cursive;
+    text-align: center;
+    font-size: 35px;
+    width: 100%;
+    position: relative;
+    left: 128px;
+}
+.img-thumbnail{
+    max-width: 100px;
+    max-height: 50px;
+}
+.invalid-feedback{
+    color: red;
+    text-align: center;
+}
+.textbooking{
+    margin: 20px;
+}
+

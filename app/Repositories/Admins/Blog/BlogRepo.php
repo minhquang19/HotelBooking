@@ -1,9 +1,9 @@
 <?php
 namespace App\Repositories\Admins\Blog;
 use App\Models\Blog;
-use App\Repositories\BaseRepository;
+use App\Repositories\Admins\BaseAdminRepo;
 
-class BlogRepo extends BaseRepository implements BlogRepoInterface
+class BlogRepo extends BaseAdminRepo implements BlogRepoInterface
 {
     public function getModel()
     {

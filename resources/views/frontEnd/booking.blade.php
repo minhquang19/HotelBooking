@@ -216,12 +216,12 @@
                             <div class="col-lg-12">
                                 <div class="sidebar-wrap">
                                     <div class="widget fillter-widget" style="height: 100%;">
-                                        <h1 class="widget-title">{{__('booked')}}</h1>
+                                        <h2 style="padding: 0" class="widget-title">{{__('booked')}}</h2>
                                         @if($bookedRoom == null)
                                             <p>You no book any room</p>
                                         @else
                                             @foreach($bookedRoom as $booked)
-                                                <div class="cardWrap row ">
+                                                <div class="cardWrap row mb-5">
                                                     <div class="card cardLeft col-lg-9 ">
                                                         <h1>{{__('booked')}}</h1>
                                                         <table class="table">
@@ -239,6 +239,7 @@
                                                             </thead>
                                                             <tbody>
                                                             @foreach($bookingDetail as $item)
+                                                                @if($item->booking_id == $booked->id )
                                                                 <tr style="font-size: 19px">
                                                                     <td scope="col">{{$loop->index+1}}</td>
                                                                     <td>{{$item->room_name}}</td>
@@ -254,14 +255,14 @@
                                                                     <th>{{number_format($item->price_vi)}}</th>
                                                                     @endif
                                                                 </tr>
+                                                                @endif
                                                             @endforeach
                                                             </tbody>
                                                         </table>
                                                     </div>
-
                                                     <div class="card cardRight col-lg-3">
                                                         <div class="number">
-                                                            <h1 style="">0{{$bookingDetail->count()}} Room</h1>
+                                                            <h1 style="font-size: 20px !important;">{{__('infobooking')}}</h1>
                                                         </div>
                                                         <span class="title_book">
                                                             {{__('totalPrice')}} :
@@ -272,10 +273,10 @@
                                                         <span class="title_book">{{__('payment')}}  : {{$booked->payment}}</span>
                                                         <div class="barcode"></div>
                                                     </div>
-
                                                 </div>
-                                        </div>
+
                                             @endforeach
+                                    </div>
                                         @endif
                                     </div>
                                 </div>

@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories\Admins\RoomPrice;
-use App\Repositories\RepositoryInterface;
+use App\Repositories\Admins\RepoAdminInterface;
 
-interface RoomPriceRepoInterface extends RepositoryInterface
+interface RoomPriceRepoInterface extends RepoAdminInterface
 {
 
 }

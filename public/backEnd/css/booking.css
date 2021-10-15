@@ -1,0 +1,10 @@
+.fc-button{
+    background: #00a2e3;
+    color: white;
+    border:1px solid white;
+}
+.fc-toolbar{
+    margin-top: 20px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lobster);

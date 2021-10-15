@@ -4,7 +4,6 @@
 Project:  CoolAdmin
 Version:	1.0
 Last change:	08/10/2018 [Add Define a table of contents Link]
-Assigned to:	Hau Nguyen
 Primary use:	Open Source
 -------------------------------------------------------------------*/
 /*------------------------------------------------------------------
@@ -284,7 +283,7 @@ section {
 }
 .page-container {
     background: #F4F6F9;
-    padding-left: 250px;
+    padding-left: 210px;
 }
 
 @media (max-width: 991px) {
@@ -1185,7 +1184,7 @@ section {
     position: fixed;
     top: 0;
     right: 0;
-    left: 250px;
+    left: 210px;
     height: 50px;
     z-index: 3;
 }
@@ -1208,7 +1207,6 @@ section {
         position: relative;
         top: 0;
         left: 0;
-        height: 170px;
     }
 }
 
@@ -1573,7 +1571,7 @@ section {
 }
 
 .menu-sidebar {
-    width: 250px;
+    width: 210px;
     position: fixed;
     left: 0;
     top: 0;
@@ -3135,7 +3133,6 @@ section {
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
 }
 
 @media (min-width: 992px) and (max-width: 1519px) {
@@ -3176,7 +3173,7 @@ section {
 }
 
 .overview-box .icon i {
-    font-size: 60px;
+    font-size: 45px;
     color: #fff;
 }
 
@@ -4251,6 +4248,7 @@ section {
     color: #808080;
     padding: 12px 40px;
     white-space: nowrap;
+    vertical-align: middle;
 }
 
 .table-earning tbody td.text-right {
@@ -4488,7 +4486,7 @@ section {
     text-transform: uppercase;
     border: none;
     font-weight: 600;
-    vertical-align: top;
+    vertical-align: middle;
     padding-right: 10px;
 }
 

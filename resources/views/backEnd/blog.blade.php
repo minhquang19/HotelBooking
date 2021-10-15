@@ -1,5 +1,6 @@
 @extends('layouts.basead')
 @section('title', 'Blog Manager')
+@section('titlePage', 'Blog Manager')
 @section('manager', 'active')
 @section('blog','active')
 @section('block','display: block;')
@@ -10,13 +11,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <!-- DATA TABLE -->
-                        <h3 class="title-5"
-                            style="
-                    font-family: 'Baloo Tamma', cursive;
-                    text-align: center;
-                    width: 100%;
-                    font-size: 70px;
-                    letter-spacing: 5px;">Blog Manager</h3>
+
                         <div class="table-data__tool">
                             <div class="table-data__tool-right">
                                 <button class="btn btn-success btn-radius" data-toggle="modal" data-target="#addModal">
@@ -53,7 +48,7 @@
                                         <td class="des_text">{{ $item->title }}</td>
                                         <td class="des_text">{{ $item->title_vi }}</td>
                                         <td>
-                                            <img src="{{ $item->coverImage }}" style="max-width: 100px;"
+                                            <img src="{{ $item->coverImage }}" style="max-width: 100px;max-height: 50px;"
                                                  class="img-thumbnail">
                                         </td>
                                         <td class="des_text">{{ $item->content}}</td>

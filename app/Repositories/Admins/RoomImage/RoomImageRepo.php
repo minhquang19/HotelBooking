@@ -2,10 +2,10 @@
 namespace App\Repositories\Admins\RoomImage;
 use App\Models\Room;
 use App\Models\RoomImage;
-use App\Repositories\BaseRepository;
+use App\Repositories\Admins\BaseAdminRepo;
 use App\Repositories\Admins\RoomPrice\RoomPriceRepoInterface;
 
-class RoomImageRepo extends BaseRepository implements RoomPriceRepoInterface
+class RoomImageRepo extends BaseAdminRepo implements RoomPriceRepoInterface
 {
 
     public function getModel()

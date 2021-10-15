@@ -1,10 +1,10 @@
 <?php
 namespace App\Repositories\Admins\RoomPrice;
 use App\Models\RoomPrice;
+use App\Repositories\Admins\BaseAdminRepo;
 use App\Repositories\BaseRepository;
-use App\Repositories\Admins\RoomPrice\RoomPriceRepoInterface;
 
-class RoomPriceRepo extends BaseRepository implements RoomPriceRepoInterface
+class RoomPriceRepo extends BaseAdminRepo implements RoomPriceRepoInterface
 {
 
     public function getModel()

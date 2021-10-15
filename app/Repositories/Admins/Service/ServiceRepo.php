@@ -1,9 +1,9 @@
 <?php
 namespace App\Repositories\Admins\Service;
 use App\Models\Service;
-use App\Repositories\BaseRepository;
+use App\Repositories\Admins\BaseAdminRepo;
 
-class ServiceRepo extends BaseRepository implements ServiceRepoInterface
+class ServiceRepo extends BaseAdminRepo implements ServiceRepoInterface
 {
 
     public function getModel()

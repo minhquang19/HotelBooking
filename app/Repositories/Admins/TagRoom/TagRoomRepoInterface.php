@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories\Admins\TagRoom;
-use App\Repositories\RepositoryInterface;
+use App\Repositories\Admins\RepoAdminInterface;
 
-interface TagRoomRepoInterface extends RepositoryInterface
+interface TagRoomRepoInterface extends RepoAdminInterface
 {
     public function deleteTagByRoomId($id);
     public function createMultiTag($id,$arr);

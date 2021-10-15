@@ -37,6 +37,7 @@ return array(
     'a8d3953fd9959404dd22d3dfcd0a79f0' => $vendorDir . '/google/apiclient/src/aliases.php',
     '6124b4c8570aa390c21fafd04a26c69f' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     'b6b991a57620e2fb6b2f66f03fe9ddc2' => $vendorDir . '/symfony/string/Resources/functions.php',
-    'ed962a97bd972bc82007176b647d4e36' => $vendorDir . '/facade/ignition/src/helpers.php',
+    '17d016dc52a631c1e74d2eb8fdd57342' => $vendorDir . '/laravel/helpers/src/helpers.php',
     '746bb4ebbdf3585f3e2e85fffd4a5f43' => $vendorDir . '/cloudinary-labs/cloudinary-laravel/src/Support/helpers.php',
+    'ed962a97bd972bc82007176b647d4e36' => $vendorDir . '/facade/ignition/src/helpers.php',
 );

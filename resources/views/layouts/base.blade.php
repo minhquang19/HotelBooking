@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title')</title>
@@ -39,7 +40,7 @@
 <script src="{{asset('/frontEnd/js/bootstrap-datepicker.js')}}"></script>
 <script src="{{asset('/frontEnd/js/jquery-ui.min.js')}}"></script>
 <script src="{{asset('/frontEnd/js/test.js')}}"></script>
-<script src="{{ asset('backEnd/toastr/toastr.min.js') }}"></script>
+<script src="{{asset('backEnd/toastr/toastr.min.js') }}"></script>
 @if(Session::has('success'))
     <script>
         toastr.success("{{ session("success") }}")

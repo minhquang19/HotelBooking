@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories\Admins\Admin;
-use App\Repositories\RepositoryInterface;
+use App\Repositories\Admins\RepoAdminInterface;
 
-interface AdminRepoInterface extends RepositoryInterface
+interface AdminRepoInterface extends RepoAdminInterface
 {
     public function countRoom();
     public function countUser();
@@ -10,4 +10,5 @@ interface AdminRepoInterface extends RepositoryInterface
     public function countBlog();
     public function getListBookingDESC();
     public function createAccountAdminDefault();
+    public function getStatisticalByDay($listDay);
 }

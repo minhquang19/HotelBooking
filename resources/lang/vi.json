@@ -85,7 +85,9 @@
     "totalPrice" : "Tổng Tiền",
     "payment" : "Thanh toán",
     "bookat" : "Đặt lúc",
+    "infobooking" : "Thông tin đặt phòng",
 
+    "loginfailed" : "Tài khoản hoặc mật khẩu chưa chính xác, vui lòng thử lại !",
     "text01": "Lựa chọn tinh tế giữa trung tâm thủ đô",
     "text02a": "Khách sạn hiện đại ",
     "text02b": "Cuộc sống sang trọng",

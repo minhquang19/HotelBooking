@@ -1,5 +1,4 @@
-
-    <aside class="menu-sidebar d-none d-lg-block">
+<aside class="menu-sidebar d-none d-lg-block">
                 <div class="logo">
                     <a href="#">
                         <img src="{{ asset('frontEnd/img/logo.png') }} " alt="Cool Admin" />
@@ -9,7 +8,7 @@
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
                             <li class="@yield('index')">
-                                <a class="" href="/admin/home">
+                                <a class="" href="/admin">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             </li>
                             <li class="has-sub @yield('manager')">
@@ -17,25 +16,22 @@
                                     <i class="fas fa-copy"></i>Manager</a>
                                     <ul class="list-unstyled navbar__sub-list js-sub-list" style="@yield('block')">
                                         <li class="@yield('room')">
-                                            <a href="{{ route('admin.room.index') }}">Room</a>
+                                            <a href="{{ route('admin.room.index') }}"><i class="fas fa-building"></i>Room</a>
                                         </li>
                                         <li class="@yield('category')">
-                                            <a href="{{ route('admin.category.index') }}">Category</a>
+                                            <a href="{{ route('admin.category.index') }}"><i class="fas fa-clipboard-list"></i>Category</a>
                                         </li>
                                         <li class="@yield('booking')">
-                                            <a href="/admin/booking">Booking</a>
+                                            <a href="/admin/booking"><i class="fas fa-table"></i>Booking</a>
                                         </li>
                                         <li class="@yield('blog')">
-                                            <a href="/admin/blog">Blog</a>
-                                        </li>
-                                        <li class="@yield('facility')">
-{{--                                            <a href="{{ route('admin.facility.index') }}">Facility</a>--}}
+                                            <a href="/admin/blog"><i class="fas fa-newspaper"></i>Blog</a>
                                         </li>
                                         <li class="@yield('tag')">
-                                            <a href="{{ route('admin.tag.index') }}">Tag</a>
+                                            <a href="{{ route('admin.tag.index') }}"><i class="fas fa-tag"></i>Tag</a>
                                         </li>
                                         <li class="@yield('service')">
-                                            <a href="{{ route('admin.service.index') }}">Service</a>
+                                            <a href="{{ route('admin.service.index') }}"><i class="fas fa-utensils"></i>Service</a>
                                         </li>
                                     </ul>
                             </li>

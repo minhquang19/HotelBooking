@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories\Admins\Tag;
-use App\Repositories\RepositoryInterface;
+use App\Repositories\Admins\RepoAdminInterface;
 
-interface TagRepoInterface extends RepositoryInterface
+interface TagRepoInterface extends RepoAdminInterface
 {
 
 }

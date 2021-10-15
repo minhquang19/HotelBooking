@@ -1,7 +1,9 @@
 <?php
 namespace App\Repositories\Admins\Booking;
 
-interface BookingRepoInterface extends Resoito
+use App\Repositories\Admins\RepoAdminInterface;
+
+interface BookingRepoInterface extends RepoAdminInterface
 {
 
 }

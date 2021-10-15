@@ -6,8 +6,8 @@ use App\Models\RoomImage;
 use App\Models\RoomPrice;
 use App\Models\Tag;
 use App\Models\TagRoom;
-use App\Repositories\BaseRepository;
-class RoomRepo extends BaseRepository implements RoomRepoInterface
+use App\Repositories\Admins\BaseAdminRepo;
+class RoomRepo extends BaseAdminRepo implements RoomRepoInterface
 {
 
     public function getModel()

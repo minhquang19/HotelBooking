@@ -1,9 +1,8 @@
 <?php
 namespace App\Repositories\Admins\Room;
-use App\Repositories\BaseRepository;
-use App\Repositories\RepositoryInterface;
+use App\Repositories\Admins\RepoAdminInterface;
 
-interface RoomRepoInterface extends RepositoryInterface
+interface RoomRepoInterface extends RepoAdminInterface
 {
     public function getImageByRoom($id);
     public function getPriceByRoom($id);

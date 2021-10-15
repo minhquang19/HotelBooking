@@ -27,13 +27,13 @@
                         <div class="form-group">
                             <label class="label" for="exampleInputPassword1">{{__('password')}}</label>
                             <a href="#" style="float:right;font-size:15px;">{{__('forgotpass')}}</a>
-                            <input value="hjk1234567" name="password" type="password"
+                            <input value="12345678" name="password" type="password"
                                    class="form-control form-control-sm @error('password') is-invalid @enderror"
                                    id="password">
                             @error('password')
                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
                         </div>
                         <button type="submit" class="btn-login btn-block">{{__('login')}}</button>

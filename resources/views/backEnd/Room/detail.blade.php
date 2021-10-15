@@ -1,11 +1,10 @@
 @extends('layouts.basead')
 @section('title', 'Room Detail')
 @section('manager', 'active')
+@section('titlePage', 'Room Detail')
 @section('room','active')
 @section('style')
-
     <style>
-
         input[type="checkbox"]{
             display:none;
         }
@@ -65,11 +64,11 @@
 @endsection
 @section('block','display: block;')
 @section('tabcontrol')
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('backEnd/tab/css/normalize.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('backEnd/tab/css/normalize.css') }}" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('backEnd/tab/css/demo.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('backEnd/tab/css/tabs.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('backEnd/tab/css/tabstyles.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('backEnd/tab/css/demo.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('backEnd/tab/css/tabs.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('backEnd/tab/css/tabstyles.css') }}" />
 @endsection
 @section('content')
 
@@ -79,14 +78,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- DATA TABLE -->
-                    <h3 class="title-5"
-                    style="
-                    font-family: 'Baloo Tamma', cursive;
-                    text-align: center;
-                    width: 100%;
-                    font-size: 70px;
-                    letter-spacing: 5px;">Room Detail</h3>
-                    <div class="table-data__tool">
+                    <div class="table-data__tool" style="margin-bottom: 50px;">
                         <div class="table-data__tool-left">
                         </div>
                         <div class="table-data__tool-right" style=" position: absolute;top: 0px;">
@@ -166,7 +158,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <img  src="{{ $room->coverImages }}" style="" class="img-thumbnail">
+                                    <img  src="{{ $room->coverImages }}" style="" class="">
                                 </div>
                                 </div>
                             </div>
@@ -379,7 +371,7 @@
 @section('scripts')
     {{-- Success --}}
     {{-- Tab Control --}}
-    <script src="{{ secure_asset('backEnd/tab/js/cbpFWTabs.js') }}"></script>
+    <script src="{{ asset('backEnd/tab/js/cbpFWTabs.js') }}"></script>
     <script>
         (function() {
             [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
@@ -439,7 +431,7 @@
             $('#eWeekends').val(data[1].split(" ")[0]);
             $('#eWeekly').val(data[2].split(" ")[0]);
             $('#eWeekends_vi').val(data[3].split(" ")[0]);
-            $('#eWeekly_vi').val(data[4]).split(" ")[0]);
+            $('#eWeekly_vi').val(data[4].split(" ")[0]);
             $('#editform').attr('action', '/admin/price/'+data_id[0]);
 
         });

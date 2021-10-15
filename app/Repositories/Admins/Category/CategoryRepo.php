@@ -3,9 +3,9 @@ namespace App\Repositories\Admins\Category;
 
 use App\Models\Category;
 use App\Models\Room;
-use App\Repositories\BaseRepository;
+use App\Repositories\Admins\BaseAdminRepo;
 
-class CategoryRepo extends BaseRepository implements CategoryRepoInterface
+class CategoryRepo extends BaseAdminRepo implements CategoryRepoInterface
 {
 
     public function getModel()

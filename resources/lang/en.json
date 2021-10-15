@@ -82,7 +82,9 @@
     "totalPrice" : "Total Price",
     "payment" : "Payment By",
     "bookat" : "Booking At",
+    "infobooking" : "Booking Info",
 
+    "loginfailed" : "Login Failed: Your user ID or password is incorrect",
     "text01": "AMONG THE BEST 5-STAR LUXURY HOTELS IN HANOi",
     "text02a": "Modern Hotel & Room",
     "text02b": "Luxury Living",

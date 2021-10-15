@@ -1,5 +1,6 @@
 @extends('layouts.basead')
 @section('title', 'Category Manager')
+@section('titlePage', 'Category Manager')
 @section('manager', 'active')
 @section('category','active')
 @section('block','display: block;')
@@ -10,7 +11,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- DATA TABLE -->
-                    <h3 class="title-5" style="font-family: 'Baloo Tamma', cursive;text-align: center;width: 100%;    font-size: 60px;letter-spacing: 5px;">CATEGORY MANAGER</h3>
+
                      <div class="table-data__tool">
                         <div class="table-data__tool-right">
                             <button class="btn btn-success btn-radius"  data-toggle="modal" data-target="#addModal">
