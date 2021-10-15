@@ -73,7 +73,7 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
         $revenue        = 0;
         $bookingToday   = Booking::whereDate('created_at',Carbon::today());
         if($bookingToday) {
-            $revenue    = $bookingToday->sum('totalPrice_vi');
+            $revenue    = $bookingToday->sum('totalprice_vi');
         }
         return $revenue;
     }
