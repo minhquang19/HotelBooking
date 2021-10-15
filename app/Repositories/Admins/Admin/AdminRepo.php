@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Blog;
 use App\Repositories\Admins\BaseAdminRepo;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
@@ -47,7 +48,7 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
     public function getStatisticalByDay($listDay)
     {
         $revenues = Booking::whereMonth('created_at',date('m'))
-                                 ->select(\DB::raw('sum(totalPrice_vi) as totalMoney'),\DB::raw('DATE(created_at) as day'))
+                                 ->select(DB::raw('sum(totalPrice_vi) as totalMoney'),DB::raw('DATE(created_at) as day'))
                                  ->groupBy('day')
                                  ->get()->toArray();
         $arrRevenue = [];
