@@ -51,7 +51,6 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
                                  ->select(DB::raw('sum(totalprice_vi) as totalmoney'),DB::raw('DATE(created_at) as day'))
                                  ->groupBy('day')
                                  ->get()->toArray();
-        dd($revenues);
         $arrRevenue = [];
         foreach($listDay as $day)
         {
