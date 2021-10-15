@@ -47,7 +47,7 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
     public function getStatisticalByDay($listDay)
     {
         $revenues = Booking::whereMonth('created_at',date('m'))
-                                 ->select(\DB::raw('sum(totalPrice) as totalMoney'),\DB::raw('DATE(created_at) as day'))
+                                 ->select(\DB::raw('sum(totalPrice_vi) as totalMoney'),\DB::raw('DATE(created_at) as day'))
                                  ->groupBy('day')
                                  ->get()->toArray();
         $arrRevenue = [];
@@ -79,11 +79,17 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
 
     public function createAccountAdminDefault()
     {
-        $password = Hash::make('12345678');
-        Admin::create([
-            'email' => 'admin@gmail.com',
-            'name' => 'Admin',
-            'password' => $password,
+//        $password = Hash::make('12345678');
+//        Admin::create([
+//            'email' => 'admin@gmail.com',
+//            'name' => 'Admin',
+//            'password' => $password,
+//        ]);
+        Booking::created([
+            'totalPrice'=>30,
+            'totalPrice_vi'=>1000000,
+            'payment' =>'paypal',
+            'user_id'=>1,
         ]);
         return "Done .........!";
     }
