@@ -85,12 +85,13 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
 //            'name' => 'Admin',
 //            'password' => $password,
 //        ]);
-        Booking::created([
-            'totalPrice'=>30,
-            'totalPrice_vi'=>1000000,
-            'payment' =>'paypal',
-            'user_id'=>1,
-        ]);
+//        Booking::created([
+//            'totalPrice'=>30,
+//            'totalPrice_vi'=>1000000,
+//            'payment' =>'paypal',
+//            'user_id'=>1,
+//        ]);
+        dd(Booking::all());
         return "Done .........!";
     }
 }
