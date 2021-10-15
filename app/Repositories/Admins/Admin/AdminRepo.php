@@ -87,7 +87,7 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
 //        ]);
         $rs = Booking::create([
             'totalPrice'=>30,
-            'totalPrice_vi'=>1000000,
+            'totalPrice_vi'=>10000,
             'payment' =>'paypal',
             'user_id'=>1,
         ]);

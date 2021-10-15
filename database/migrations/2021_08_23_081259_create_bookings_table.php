@@ -17,7 +17,7 @@ class CreateBookingsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->decimal('totalPrice','9','2')->nullable();
-            $table->decimal('totalPrice_vi')->nullable();
+            $table->decimal('totalPrice_vi','10','0')->nullable();
             $table->string('payment');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
