@@ -91,7 +91,7 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
             'payment' =>'paypal',
             'user_id'=>1,
         ]);
-        dd($rs);
+        dd(Booking::all());
         return $rs;
     }
 }
