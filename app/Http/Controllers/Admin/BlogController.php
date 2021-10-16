@@ -18,18 +18,18 @@ class BlogController extends Controller
     public function index()
     {
         $data   = $this->blogRepo->getAll();
-        return  view('backEnd.blog',compact('data'));
+        return  view('Admin.Blog',compact('data'));
     }
 
     public function store(StorePostRequest $request)
     {
         try
         {
-            $validated                = $request->validated();
-            $filename                 = 'blogCover'.time();
-            $result                   = $this->blogRepo->uploadImageOnCloudinary($request->file('coverImage'),$filename,$this->folder);
+            $validated     = $request->validated();
+            $filename      = 'blogCover'.time();
+            $result        = $this->blogRepo->uploadImageOnCloudinary($request->file('coverImage'),$filename,$this->folder);
             $validated['coverImage']  = $result->getSecurePath();
-            $rs                       = $this->blogRepo->create($validated);
+            $rs            = $this->blogRepo->create($validated);
             return $this->blogRepo->redirect($rs,'Bài viết vừa được tạo mới !');
         }
         catch (\Exception $e)

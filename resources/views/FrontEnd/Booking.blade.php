@@ -2,13 +2,13 @@
 @section('title', 'Booking')
 @section('active_home', 'active-page')
 @section('style')
-    <link rel="stylesheet" href="{{ asset('backEnd/toastr/toastr.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontEnd/css/tab/css/normalize.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontEnd/css/ticket.css') }}" />
+    <link rel="stylesheet" href="{{ asset('Admin/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('FrontEnd/css/tab/css/normalize.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('FrontEnd/css/ticket.css') }}" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontEnd/css/tab/css/demo.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontEnd/css/tab/css/tabs.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontEnd/css/tab/css/tabstyles.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('FrontEnd/css/tab/css/demo.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('FrontEnd/css/tab/css/tabs.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('FrontEnd/css/tab/css/tabstyles.css') }}" />
 @endsection
 @section('content')
 <section class="rooms-warp list-view section-bg ">
@@ -291,7 +291,7 @@
 @endsection
 @section('scripts')
 {{----------------------------Tab Select---------------------------}}
-    <script src="{{ asset('frontEnd/css/tab/js/cbpFWTabs.js') }}"></script>
+    <script src="{{ asset('FrontEnd/css/tab/js/cbpFWTabs.js') }}"></script>
     <script>
         (function() {
             [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {

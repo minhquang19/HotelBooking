@@ -18,7 +18,7 @@ class ServiceController extends Controller
     public function index()
     {
         $data   = $this->serviceRepo->getAll();
-        return  view('backEnd.service',compact('data'));
+        return  view('Admin.Service',compact('data'));
     }
 
     public function store(StorePostRequest $request)

@@ -4,7 +4,7 @@
 @section('content')
 <main>
     <section class="breadcrumb-area d-flex align-items-center position-relative bg-img-center"
-             style="background-image: url('/frontEnd/img/bg//breadcrumb-01.jpg');">
+             style="background-image: url('/FrontEnd/img/bg//breadcrumb-01.jpg');">
         <div class="container">
             <div class="breadcrumb-content text-center">
                 <h1>{{__('service')}}</h1>
@@ -81,10 +81,10 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="feature-accordion-img text-right">
-                        <img src="/frontEnd/img/tile-gallery/03.jpg" alt="Image"/>
+                        <img src="/FrontEnd/img/tile-gallery/03.jpg" alt="Image"/>
                         <div class="degin-shape">
-                            <div class="shape-one"><img src="/frontEnd/img/shape/11.png" alt="Shape"/></div>
-                            <div class="shape-two"><img src="/frontEnd/img/shape/12.png" alt="Shape"/></div>
+                            <div class="shape-one"><img src="/FrontEnd/img/shape/11.png" alt="Shape"/></div>
+                            <div class="shape-two"><img src="/FrontEnd/img/shape/12.png" alt="Shape"/></div>
                         </div>
                     </div>
                 </div>

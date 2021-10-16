@@ -1,13 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FrontEnd\HomeController;
-use App\Http\Controllers\FrontEnd\RoomController;
 use App\Http\Controllers\FrontEnd\BlogController;
 use App\Http\Controllers\FrontEnd\BookingController;
-use App\Http\Controllers\FrontEnd\ServiceController;
-use App\Http\Controllers\FrontEnd\LangController;
+use App\Http\Controllers\FrontEnd\HomeController;
 use App\Http\Controllers\FrontEnd\ContactController;
+use App\Http\Controllers\FrontEnd\LangController;
+use App\Http\Controllers\FrontEnd\RoomController;
+use App\Http\Controllers\FrontEnd\ServiceController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

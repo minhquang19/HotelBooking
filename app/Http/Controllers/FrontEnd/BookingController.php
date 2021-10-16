@@ -32,7 +32,7 @@ class BookingController extends Controller
             'bookingDetail' => $bookingDetail,
 
         ];
-        return view('frontEnd.booking',$viewData);
+        return view('FrontEnd.Booking',$viewData);
 
     }
 

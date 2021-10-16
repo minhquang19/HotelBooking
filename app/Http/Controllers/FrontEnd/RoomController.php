@@ -31,7 +31,7 @@ class RoomController extends Controller
             'listPrice'     => $listPrice,
             'listRoom'      => $listRoom,
         ];
-        return view('frontEnd.room',$viewData);
+        return view('FrontEnd.Room',$viewData);
     }
     public function show($id)
     {
@@ -53,6 +53,6 @@ class RoomController extends Controller
             'listBlog'       =>$listBlog,
             'listCheckInOut' =>$listCheckInOut,
         ];
-        return view('frontEnd.room-details',$viewData);
+        return view('FrontEnd.RoomDetails',$viewData);
     }
 }

@@ -3,7 +3,7 @@
 @section('active_blog', 'active-page')
 @section('content')
 <main>
-    <section class="breadcrumb-area d-flex align-items-center position-relative bg-img-center" style="background-image: url('/frontEnd/img/blog/blog-breadcrumb.jpg');">
+    <section class="breadcrumb-area d-flex align-items-center position-relative bg-img-center" style="background-image: url('/FrontEnd/img/blog/blog-breadcrumb.jpg');">
                 <div class="container">
                     <div class="breadcrumb-content text-center">
                         <h1>{{__('blog')}}</h1>

@@ -19,7 +19,7 @@ class RoomController extends Controller
         try {
             $room       = $this->roomRepo->getAll();
             $category   = $this->roomRepo->getAllCategory();
-            return  view('backEnd.Room.index', compact('room','category'));
+            return  view('Admin.Room.index', compact('room','category'));
         } catch (\Exception $e) {
             abort(500);
         }
@@ -56,7 +56,7 @@ class RoomController extends Controller
                 'tag'  => $tag,
                 'tagRoom'  => $tagRoom,
             ];
-            return view('backEnd.Room.detail',$viewData);
+            return view('Admin.Room.detail',$viewData);
         }
         catch (\Exception $e){
             abort(500);

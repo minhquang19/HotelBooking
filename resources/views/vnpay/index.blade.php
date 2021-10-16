@@ -9,10 +9,10 @@
         <meta name="author" content="">
         <title>Tạo mới giao dịch</title>
         <!-- Bootstrap core CSS -->
-        <link href="{{asset('frontEnd/vnpay/assets/bootstrap.min.css')}}" rel="stylesheet"/>
+        <link href="{{asset('FrontEnd/vnpay/assets/bootstrap.min.css')}}" rel="stylesheet"/>
         <!-- Custom styles for this template -->
-        <link href="{{asset('frontEnd/vnpay/assets/jumbotron-narrow.css')}}" rel="stylesheet">
-        <script src="{{asset('frontEnd/vnpay/assets/jquery-1.11.3.min.js')}}"></script>
+        <link href="{{asset('FrontEnd/vnpay/assets/jumbotron-narrow.css')}}" rel="stylesheet">
+        <script src="{{asset('FrontEnd/vnpay/assets/jquery-1.11.3.min.js')}}"></script>
     </head>
 
     <body>

@@ -9,20 +9,20 @@
     <title>Login to admin page</title>
     @yield('tabcontrol')
 <!-- Fontfaces CSS-->
-    <link href="{{ asset('backEnd/css/font-face.css" rel="stylesheet') }}" media="all">
-    <link href="{{ asset('backEnd/vendor/font-awesome-4.7/css/font-awesome.min.css') }} " rel="stylesheet" media="all">
-    <link href="{{ asset('backEnd/vendor/font-awesome-5/css/fontawesome-all.min.css') }} " rel="stylesheet" media="all">
+    <link href="{{ asset('Admin/css/font-face.css" rel="stylesheet') }}" media="all">
+    <link href="{{ asset('Admin/vendor/font-awesome-4.7/css/font-awesome.min.css') }} " rel="stylesheet" media="all">
+    <link href="{{ asset('Admin/vendor/font-awesome-5/css/fontawesome-all.min.css') }} " rel="stylesheet" media="all">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap-datepicker.css')}}" />
     <!-- Bootstrap CSS-->
     <link href="{{ asset('admin/vendor/bootstrap-4.1/bootstrap.min.css') }} " rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
-    <link href="{{ asset('backEnd/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }} " rel="stylesheet" media="all">
+    <link href="{{ asset('Admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }} " rel="stylesheet" media="all">
     <link rel="stylesheet" href="{{ asset('admin/toastr/toastr.min.css') }}">
 
     <!-- Main CSS-->
-    <link href="{{ asset('backEnd/css/theme.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('backEnd/css/custom.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('Admin/css/theme.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('Admin/css/custom.css') }}" rel="stylesheet" media="all">
 </head>
 
 <body class="animsition">
@@ -84,15 +84,15 @@
 <!-- Main JS-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Jquery JS-->
-<script src="{{ asset('admin/vendor/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ asset('Admin/vendor/jquery-3.2.1.min.js') }}"></script>
 <!-- Bootstrap JS-->
-<script src="{{ asset('admin/vendor/bootstrap-4.1/popper.min.js') }}"></script>
-<script src="{{ asset('admin/vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
-<script src="{{ asset('admin/toastr/toastr.min.js') }}"></script>
+<script src="{{ asset('Admin/vendor/bootstrap-4.1/popper.min.js') }}"></script>
+<script src="{{ asset('Admin/vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
+<script src="{{ asset('Admin/toastr/toastr.min.js') }}"></script>
 <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@10') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js') }}" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
 <!-- Main JS-->
-<script src="{{ asset('backEnd/js/main.js') }}"></script>
+<script src="{{ asset('Admin/js/main.js') }}"></script>
 <script src="https://cdn.tiny.cloud/1/30bff92iyitr99sd2d33td5ist5pzk1bta8ygh5u79slj1re/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 @yield('scripts')
 </body>

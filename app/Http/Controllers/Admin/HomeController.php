@@ -37,7 +37,7 @@ class HomeController extends Controller
                 'listDayOfMonth'   => json_encode($listDayOfMonth),
                 'arrRevenue'       => json_encode($arrRevenue),
         ];
-        return view('backEnd.index',$viewData);
+        return view('Admin.Index',$viewData);
     }
 
     public function store(Request $request)

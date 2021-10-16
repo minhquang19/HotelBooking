@@ -14,7 +14,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="single-hero-slide bg-img-center d-flex align-items-center text-center"
-                             style="background-image: url(&quot;/frontEnd/img/bg/hero-bg-1.jpg&quot;); width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
+                             style="background-image: url(&quot;/FrontEnd/img/bg/hero-bg-1.jpg&quot;); width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
                              data-slick-index="0" aria-hidden="false" tabindex="0">
                             <div class="container">
                                 <div class="slider-text">
@@ -32,7 +32,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="single-hero-slide bg-img-center d-flex align-items-center text-center"
-                             style="background-image: url(&quot;/frontEnd/img/bg/hero-bg-2.jpg&quot;); width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
+                             style="background-image: url(&quot;/FrontEnd/img/bg/hero-bg-2.jpg&quot;); width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
                              data-slick-index="0" aria-hidden="false" tabindex="0">
                             <div class="container">
                                 <div class="slider-text">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="single-hero-slide bg-img-center d-flex align-items-center text-center"
-                             style="background-image: url(&quot;/frontEnd/img/bg/bg-03.jpg&quot;); width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
+                             style="background-image: url(&quot;/FrontEnd/img/bg/bg-03.jpg&quot;); width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
                              data-slick-index="0" aria-hidden="false" tabindex="0">
                             <div class="container">
                                 <div class="slider-text">
@@ -68,7 +68,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="single-hero-slide bg-img-center d-flex align-items-center text-center"
-                             style="background-image: url(&quot;/frontEnd/img/bg/bg-04.jpg&quot;); width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
+                             style="background-image: url(&quot;/FrontEnd/img/bg/bg-04.jpg&quot;); width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
                              data-slick-index="0" aria-hidden="false" tabindex="0">
                             <div class="container">
                                 <div class="slider-text">
@@ -148,9 +148,9 @@
                             </div>
                         </div>
                     </form>
-                    <div class="booking-shape-1"><img src="/frontEnd/img/shape/01.png" alt="shape"/></div>
-                    <div class="booking-shape-2"><img src="/frontEnd/img/shape/02.png" alt="shape"/></div>
-                    <div class="booking-shape-3"><img src="/frontEnd/img/shape/03.png" alt="shape"/></div>
+                    <div class="booking-shape-1"><img src="/FrontEnd/img/shape/01.png" alt="shape"/></div>
+                    <div class="booking-shape-2"><img src="/FrontEnd/img/shape/02.png" alt="shape"/></div>
+                    <div class="booking-shape-3"><img src="/FrontEnd/img/shape/03.png" alt="shape"/></div>
                 </div>
             </div>
         </section>
@@ -159,9 +159,9 @@
                 <div class="row align-items-center no-gutters">
                     <div class="col-lg-6">
                         <div class="tile-gallery">
-                            <img src="/frontEnd/img/tile-gallery/01.jpg" alt="Tile Gallery"/>
+                            <img src="/FrontEnd/img/tile-gallery/01.jpg" alt="Tile Gallery"/>
                             <div class="tile-gallery-content">
-                                <div class="tile-icon"><img src="/frontEnd/img/icons/hostel-hover.png" alt=""/></div>
+                                <div class="tile-icon"><img src="/FrontEnd/img/icons/hostel-hover.png" alt=""/></div>
                                 <h3>{{__('namehotel')}}</h3>
                                 <p>{{__('text01')}}</p>
                             </div>
@@ -184,7 +184,7 @@
                                     <div class="counter-box wow fadeInLeft animated" data-wow-duration="1500ms"
                                          data-wow-delay="400ms"
                                          style="visibility: visible; animation-duration: 1500ms; animation-delay: 400ms; animation-name: fadeInLeft;">
-                                        <img src="/frontEnd/img/icons/building.png" alt=""/><span
+                                        <img src="/FrontEnd/img/icons/building.png" alt=""/><span
                                             class="counter-number"></span>
                                         <p>Luxury Appartment</p>
                                     </div>
@@ -193,7 +193,7 @@
                                     <div class="counter-box wow fadeInUp animated" data-wow-duration="1500ms"
                                          data-wow-delay="600ms"
                                          style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: fadeInUp;">
-                                        <img src="/frontEnd/img/icons/hostel.png" alt=""/><span
+                                        <img src="/FrontEnd/img/icons/hostel.png" alt=""/><span
                                             class="counter-number"></span>
                                         <p>Modern Bedroom</p>
                                     </div>
@@ -202,7 +202,7 @@
                                     <div class="counter-box wow fadeInRight animated" data-wow-duration="1500ms"
                                          data-wow-delay="800ms"
                                          style="visibility: visible; animation-duration: 1500ms; animation-delay: 800ms; animation-name: fadeInRight;">
-                                        <img src="/frontEnd/img/icons/trophy.png" alt=""/><span
+                                        <img src="/FrontEnd/img/icons/trophy.png" alt=""/><span
                                             class="counter-number"></span>
                                         <p>Win Int Awards</p>
                                     </div>
@@ -318,7 +318,7 @@
                 </div>
             </div>
         </section>
-        <section class="cta-section bg-img-center" style="background-image:url('/frontEnd/img/bg/cta-01.jpg');">
+        <section class="cta-section bg-img-center" style="background-image:url('/FrontEnd/img/bg/cta-01.jpg');">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-10">
@@ -378,7 +378,7 @@
                                     <p>Popular Features</p>
                                 </div>
                             </div>
-                            <img src="/frontEnd/img/cover.jpg" alt="Image"/>
+                            <img src="/FrontEnd/img/cover.jpg" alt="Image"/>
                         </div>
                     </div>
                 </div>

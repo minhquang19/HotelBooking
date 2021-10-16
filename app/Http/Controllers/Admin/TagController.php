@@ -21,7 +21,7 @@ class TagController extends Controller
     {
         try {
             $data   = $this->tagRepo->getAll();
-            return  view('backEnd.tag', compact('data'));
+            return  view('Admin.Tag', compact('data'));
         }catch (\Exception $e){
             abort(500);
         }

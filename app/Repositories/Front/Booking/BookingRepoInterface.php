@@ -6,6 +6,7 @@ use App\Repositories\Front\RepoFrontInterface;
 interface BookingRepoInterface extends RepoFrontInterface
 {
     public function getBookedRoom();
+    public function getSessionCart();
     public function getTotalPrice($carts);
     public function getArrayDay($cart);
     public function storeCart($data);

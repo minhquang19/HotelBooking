@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
-use App\Models\Blog;
 use App\Repositories\Front\Blog\BlogRepo;
-use Illuminate\Support\Facades\Config;
 
 class BlogController extends Controller
 {
@@ -19,7 +17,7 @@ class BlogController extends Controller
     {
         $listBlogPage   = $this->blogRepo->getAllBlog();
         $listBlog       = $this->blogRepo->getLimitBlog();
-        return view('frontEnd.blog',compact('listBlog','listBlogPage'));
+        return view('FrontEnd.Blog',compact('listBlog','listBlogPage'));
     }
     public function show($id)
     {
@@ -31,6 +29,6 @@ class BlogController extends Controller
            'listBlog'       => $listBlog,
            'randomBlog'     => $randomBlog,
         ];
-        return view('frontEnd.blog-details',$viewData);
+        return view('FrontEnd.BlogDetail',$viewData);
     }
 }

@@ -6,7 +6,7 @@
 @section('style')
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet' />
-    <link rel="stylesheet" href="{{asset('backEnd/css/booking.css')}}">
+    <link rel="stylesheet" href="{{asset('Admin/css/booking.css')}}">
 @endsection
 @section('block','display: block;')
 @section('content')
@@ -159,7 +159,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
-
     {!! $calendar->script() !!}
 
     @endsection

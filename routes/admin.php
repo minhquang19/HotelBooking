@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\TagRoomController;
 use App\Http\Controllers\Admin\PriceController;
 // Admin Controller
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::view('/login','backEnd.login')->name('login');
+    Route::view('/login','Admin.login')->name('login');
     Route::get('/createAdmin19',[HomeController::class,'createAdminAccount']);
     Route::post('/login',[HomeController::class,'store']);
     Route::middleware(['auth:admin'])->group(function(){

@@ -27,7 +27,7 @@ class BookingController extends Controller
             'calendar'   => $calendar,
             'listBooked' => $listBooked,
         ];
-        return view('backEnd.booking',$viewData);
+        return view('Admin.Booking',$viewData);
     }
 
     public function show($id)
@@ -38,7 +38,7 @@ class BookingController extends Controller
             'bookingdetail' => $bookingdetail,
             'booking'       => $booking,
         ];
-        return view('backEnd.bookingdetail',$viewData);
+        return view('Admin.BookingDetail',$viewData);
     }
 
 

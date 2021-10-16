@@ -17,11 +17,11 @@ class ServiceController extends Controller
     public function index(){
         $listBlog       = $this->serviceRepo->getLimitBlog();
         $listService    = $this->serviceRepo->getAllService();
-        return view('frontEnd.services',compact('listBlog','listService'));
+        return view('FrontEnd.Services',compact('listBlog','listService'));
     }
     public function show($id){
         $listBlog       = $this->serviceRepo->getAllBlog();
         $serviceDetail  = $this->serviceRepo->getServiceById($id);
-        return view('frontEnd.serviceDetail',compact('listBlog','serviceDetail'));
+        return view('FrontEnd.ServiceDetail',compact('listBlog','serviceDetail'));
     }
 }

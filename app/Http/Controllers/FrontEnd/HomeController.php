@@ -26,7 +26,7 @@ class HomeController extends Controller
                 'listBlog'      => $listBlog,
                 'listService'   => $listService,
             ];
-            return view('frontEnd.index',$viewData);
+            return view('FrontEnd.Index',$viewData);
         }catch (Exception $e)
         {
             abort(500);

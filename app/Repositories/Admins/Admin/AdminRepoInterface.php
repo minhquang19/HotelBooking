@@ -9,6 +9,7 @@ interface AdminRepoInterface extends RepoAdminInterface
     public function countBooking();
     public function countBlog();
     public function getListBookingDESC();
+    public function getRevenueInDay();
     public function createAccountAdminDefault();
     public function getStatisticalByDay($listDay);
 }

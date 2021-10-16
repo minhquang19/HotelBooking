@@ -23,7 +23,7 @@ class CategoryController extends Controller
             $viewData   = [
                 'data'  => $data,
             ];
-            return  view('backEnd.category', $viewData);
+            return  view('Admin.Category', $viewData);
         }
         catch (\Exception $e){
             abort(500);

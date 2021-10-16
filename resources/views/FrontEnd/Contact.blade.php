@@ -3,7 +3,7 @@
 @section('active_contact', 'active-page')
 @section('content')
 <main>
-<section class="breadcrumb-area d-flex align-items-center position-relative bg-img-center" style="background-image: url('/frontEnd/img/bg//breadcrumb-01.jpg');">
+<section class="breadcrumb-area d-flex align-items-center position-relative bg-img-center" style="background-image: url('FrontEnd/img/bg//breadcrumb-01.jpg');">
             <div class="container">
                 <div class="breadcrumb-content text-center">
                     <h1>{{__('contact')}}</h1>

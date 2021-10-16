@@ -83,7 +83,6 @@ class RoomRepo extends BaseFrontRepo implements RoomRepoInterface
         return Room::all()->random(3);
     }
 
-
     public function getListCheckInOut($id)
     {
         return BookingDetail::where('room_id',$id)->get();

@@ -3,7 +3,7 @@
 @section('active_room', 'active-page')
 @section('content')
 <main>
-  <section class="breadcrumb-area d-flex align-items-center position-relative bg-img-center" style="background-image: url('/frontEnd/img/blog/blog-breadcrumb.jpg');">
+  <section class="breadcrumb-area d-flex align-items-center position-relative bg-img-center" style="background-image: url('/FrontEnd/img/blog/blog-breadcrumb.jpg');">
               <div class="container">
                   <div class="breadcrumb-content text-center">
                       <h1>{{__('roomDetail')}}</h1>
@@ -200,7 +200,7 @@
                                     <h5 class="tab-title">All Reviews</h5>
                                     <ul class="comment-list">
                                         <li>
-                                            <div class="comment-autor"><img src="{{asset('/frontEnd/img/blog-details/04.jpg')}}" alt="reviews" /></div>
+                                            <div class="comment-autor"><img src="{{asset('/FrontEnd/img/blog-details/04.jpg')}}" alt="reviews" /></div>
                                             <div class="comment-desc">
                                                 <h6>Alexzeder Alex <span class="comment-date"> 25 Feb 2020</span></h6>
                                                 <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account</p>
@@ -276,9 +276,9 @@
                     </div>
                     <div class="widget category-widget avson-go-top">
                         <h4 class="widget-title">{{__('category')}}</h4>
-                        <div class="single-cat bg-img-center" style="background-image: url('/frontEnd/img/blog/cat-01.jpg');"><a href="/room-details">{{$roomDetail->category->name}}</a></div>
+                        <div class="single-cat bg-img-center" style="background-image: url('/FrontEnd/img/blog/cat-01.jpg');"><a href="/room-details">{{$roomDetail->category->name}}</a></div>
                     </div>
-                    <div class="widget banner-widget avson-go-top" style="background-image: url({{asset('frontEnd/img/blog/sidebar-banner.jpg')}});">
+                    <div class="widget banner-widget avson-go-top" style="background-image: url({{asset('FrontEnd/img/blog/sidebar-banner.jpg')}});">
                         <h2>Booking Your Latest apartment</h2>
                         <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit sed do eiusmod tempor incididunt ut labore</p>
                     </div>

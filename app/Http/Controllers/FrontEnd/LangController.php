@@ -4,6 +4,7 @@ namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Session;
 
 class LangController extends Controller
@@ -13,7 +14,8 @@ class LangController extends Controller
         if($locale){
             Session::put('locale',$locale);
         }
-        return redirect()->back();
+        return back();
+
     }
 
 }

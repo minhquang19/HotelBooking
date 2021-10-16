@@ -4,7 +4,7 @@
 @section('content')
     <main>
         <section class="breadcrumb-area d-flex align-items-center position-relative bg-img-center"
-                 style="background-image: url(/frontEnd/img/bg/breadcrumb-02.jpg);">
+                 style="background-image: url(/FrontEnd/img/bg/breadcrumb-02.jpg);">
             <div class="container">
                 <div class="breadcrumb-content text-center">
                     <h1>{{__('blogDetail')}}</h1>
