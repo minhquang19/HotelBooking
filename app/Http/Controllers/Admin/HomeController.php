@@ -19,6 +19,7 @@ class HomeController extends Controller
 
     public function index()
     {
+
         $roomAmount     = $this->adminRepo->countRoom();
         $bookingAmount  = $this->adminRepo->countBooking();
         $userAmount     = $this->adminRepo->countUser();
@@ -48,7 +49,7 @@ class HomeController extends Controller
                 'email'=> 'Invalid email or password'
             ]);
         }
-            return redirect()->intended('/admin');
+            return redirect()->intended('/admin/home');
     }
 
     public function destroy()

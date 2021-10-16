@@ -18,7 +18,7 @@
 
     <!-- Vendor CSS-->
     <link href="{{ asset('Admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }} " rel="stylesheet" media="all">
-    <link rel="stylesheet" href="{{ asset('admin/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('Admin/toastr/toastr.min.css') }}">
 
     <!-- Main CSS-->
     <link href="{{ asset('Admin/css/theme.css') }}" rel="stylesheet" media="all">

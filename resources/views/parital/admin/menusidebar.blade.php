@@ -8,7 +8,7 @@
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
                             <li class="@yield('index')">
-                                <a class="" href="/admin">
+                                <a class="" href="/admin/home">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             </li>
                             <li class="has-sub @yield('manager')">

@@ -2,7 +2,6 @@
 <div class="section__content section__content--p30">
 <div class="container-fluid">
 <div class="header-wrap">
-
     <p class="title-5">@yield('titlePage')</p>
     <div class="header-button">
         <div class="noti-wrap">
