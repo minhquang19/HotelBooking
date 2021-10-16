@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\BookingDetail;
+use App\Repositories\Admins\Booking\BookingRepo;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Http\Request;
@@ -11,43 +12,31 @@ use LaravelFullCalendar\Facades\Calendar;
 
 class BookingController extends Controller
 {
+    protected $bookingRepo;
+
+    public function __construct(BookingRepo $bookingRepo)
+    {
+        $this->bookingRepo = $bookingRepo;
+    }
 
     public function index()
     {
-        $events = [];
-        $data = BookingDetail::all();
-        if($data->count()) {
-            foreach ($data as $key => $value) {
-                $events[] = Calendar::event(
-                    $value->room_name,
-                    true,
-                    Carbon::parse($value->checkin),
-                    Carbon::parse($value->checkout)->addDay(),
-                    null,
-                    [
-                        'color' => '#f05050',
-                        'url'   => route('admin.booking.show',$value->booking_id)
-
-                    ]
-                );
-            }
-        }
-        $calendar   = Calendar::addEvents($events);
-        $list       = Booking::all();
-        $viewData = [
-            'calendar' => $calendar,
-            'list' => $list,
+        $calendar   = $this->bookingRepo->showFullCalendar();
+        $listBooked = $this->bookingRepo->getListBookingCreated();
+        $viewData   = [
+            'calendar'   => $calendar,
+            'listBooked' => $listBooked,
         ];
         return view('backEnd.booking',$viewData);
     }
 
     public function show($id)
     {
-        $booking       =  Booking::find($id);
-        $bookingdetail = BookingDetail::where('booking_id',$id)->get();
-        $viewData = [
+        $booking        =  $this->bookingRepo->find($id);
+        $bookingdetail  =  $this->bookingRepo->getBookingDetail($id);
+        $viewData       = [
             'bookingdetail' => $bookingdetail,
-            'booking' => $booking,
+            'booking'       => $booking,
         ];
         return view('backEnd.bookingdetail',$viewData);
     }

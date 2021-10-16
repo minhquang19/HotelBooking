@@ -51,10 +51,10 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @if($list == null)
+                                        @if($listBooked == null)
                                             <p>No room booked</p>
                                         @else
-                                            @foreach($list as $item)
+                                            @foreach($listBooked as $item)
                                                 <tr>
                                                     <td>{{$loop->index+1}}</td>
                                                     <td>{{$item->id}}</td>
