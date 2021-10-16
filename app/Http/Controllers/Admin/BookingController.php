@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\BookingDetail;
+use Carbon\Carbon;
 use DateTime;
 use Illuminate\Http\Request;
 use LaravelFullCalendar\Facades\Calendar;
@@ -20,8 +21,8 @@ class BookingController extends Controller
                 $events[] = Calendar::event(
                     $value->room_name,
                     true,
-                    new DateTime($value->checkin),
-                    new DateTime($value->checkout),
+                    Carbon::parse($value->checkin),
+                    Carbon::parse($value->checkout)->addDay(),
                     null,
                     [
                         'color' => '#f05050',
@@ -39,7 +40,6 @@ class BookingController extends Controller
         ];
         return view('backEnd.booking',$viewData);
     }
-
 
     public function show($id)
     {
