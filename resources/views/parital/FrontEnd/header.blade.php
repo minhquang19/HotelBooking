@@ -29,20 +29,20 @@
          <div class="container-fluid">
             <div class="row align-items-center">
                <div class="col-xl-3 col-lg-3 col-md-4 col-7">
-                  <div class="logo"><a href="/"><img src="/frontEnd/img/logo.png" alt="Avson"></a></div>
+                  <div class="logo"><a href="/"><img src="/FrontEnd/img/logo.png" alt="Avson"></a></div>
                </div>
                <div class="col-xl-9 col-lg-9 col-md-8 col-5">
                   <div class="menu-right-area text-right">
                      <div class="lag-select">
-                        <div class="lag-img"><img src="/frontEnd/img/icons/flag.png" alt="Flug" class="image-swap"></div>
+                        <div class="lag-img"><img src="/FrontEnd/img/icons/flag.png" alt="Flug" class="image-swap"></div>
                         <div class="lag-option" style="height: 100%">
                             <select class="langselect" name="inp_exercise_id" id="inp_exercise_id" style="padding: 0;height: 100%">
                                 @if(App()->getLocale()=='en')
-                                    <option data-divid="/frontEnd/img/icons/flag.png" data-link="{{route('lang',['en'])}}" value="1" selected>EngLish</option>
-                                    <option data-divid="/frontEnd/img/icons/vi.png" data-link="{{route('lang',['vi'])}}" value="2"> Tiếng Việt</option>
+                                    <option data-divid="/FrontEnd/img/icons/flag.png" data-link="{{route('lang',['en'])}}" value="1" selected>EngLish</option>
+                                    <option data-divid="/FrontEnd/img/icons/vi.png" data-link="{{route('lang',['vi'])}}" value="2"> Tiếng Việt</option>
                                 @else
-                                <option data-divid="/frontEnd/img/icons/flag.png" data-link="{{route('lang',['en'])}}" value="1">EngLish</option>
-                                <option data-divid="/frontEnd/img/icons/vi.png" data-link="{{route('lang',['vi'])}}" value="2" selected> Tiếng Việt</option>
+                                <option data-divid="/FrontEnd/img/icons/flag.png" data-link="{{route('lang',['en'])}}" value="1">EngLish</option>
+                                <option data-divid="/FrontEnd/img/icons/vi.png" data-link="{{route('lang',['vi'])}}" value="2" selected> Tiếng Việt</option>
                                 @endif
                             </select>
                         </div>
@@ -126,10 +126,10 @@
         if(locale =='en')
         {
             $(".langselect").val(1);
-            $('.image-swap').attr("src","/frontEnd/img/icons/flag.png");
+            $('.image-swap').attr("src","/FrontEnd/img/icons/flag.png");
         }else{
             $(".langselect").val(2);
-            $('.image-swap').attr("src","/frontEnd/img/icons/vi.png");
+            $('.image-swap').attr("src","/FrontEnd/img/icons/vi.png");
         }
     </script>
 @endsection

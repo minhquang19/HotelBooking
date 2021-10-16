@@ -4,7 +4,7 @@
             <div class="row">
                <div class="col-lg-3 col-md-6">
                   <div class="widget footer-widget">
-                     <div class="footer-logo"><img src="/frontEnd/img/logo.png" alt="Logo"></div>
+                     <div class="footer-logo"><img src="/FrontEnd/img/logo.png" alt="Logo"></div>
                      <p style="text-align: center">Another day in Paradise</p>
                      <ul class="social-icons">
                         <li><a href="https://www.facebook.com/webtend/"><i style="padding-top: 10px;" class="fab fa-facebook-f"></i></a></li>
