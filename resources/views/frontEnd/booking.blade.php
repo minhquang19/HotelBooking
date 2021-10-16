@@ -266,8 +266,8 @@
                                                         </div>
                                                         <span class="title_book">
                                                             {{__('totalPrice')}} :
-                                                            @if(App()->getLocale() =='en'){{$booked->totalPrice}} $
-                                                            @else {{number_format($booked->totalPrice_vi)}}VNĐ @endif
+                                                            @if(App()->getLocale() =='en'){{$booked->totalprice}} $
+                                                            @else {{number_format($booked->totalprice_vi)}}VNĐ @endif
                                                         </span>
                                                         <span class="title_book">{{__('bookat')}}: {{explode(" ",$booked->created_at)[0] }}</span>
                                                         <span class="title_book">{{__('payment')}}  : {{$booked->payment}}</span>

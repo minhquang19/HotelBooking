@@ -53,25 +53,30 @@ class BookingController extends Controller
     {
         return $this->bookingRepo->deleteSesion($id);
     }
+
     public function updateAvatar(Request $request)
     {
         return  $this->bookingRepo->updateAvatar($request);
 
     }
+
     public function updateInfo(Request $request)
     {
         return $this->bookingRepo->updateInfo($request);
 
     }
+
     public function payMent(Request $request)
     {
         return $this->bookingRepo->payment($request);
     }
+
     public function createPayment(Request $request)
     {
         return $this->bookingRepo->createPayment();
 
     }
+
     public function payMentReturn(Request $request)
     {
         $user_id        = Auth::user()->id;
@@ -84,6 +89,7 @@ class BookingController extends Controller
         return redirect()->route('booking.add')->with('paymentMethod',$payMent)
                                                      ->with('user_Id',$user_id)  ;
     }
+
     public function bookingDetail()
     {
         $html= '';

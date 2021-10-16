@@ -80,19 +80,12 @@ class AdminRepo extends BaseAdminRepo implements AdminRepoInterface
 
     public function createAccountAdminDefault()
     {
-//        $password = Hash::make('12345678');
-//        Admin::create([
-//            'email' => 'admin@gmail.com',
-//            'name' => 'Admin',
-//            'password' => $password,
-//        ]);
-        $rs = Booking::create([
-            'totalprice'=>30,
-            'totalprice_vi'=>10000,
-            'payment' =>'paypal',
-            'user_id'=>1,
+        $password = Hash::make('12345678');
+        Admin::create([
+            'email' => 'admin@gmail.com',
+            'name' => 'Admin',
+            'password' => $password,
         ]);
-        dd(Booking::all());
-        return $rs;
+        return 'Done.........';
     }
 }

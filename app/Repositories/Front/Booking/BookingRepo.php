@@ -274,8 +274,8 @@ class BookingRepo extends BaseFrontRepo implements BookingRepoInterface
 
         }
         $total = Booking::where('id', $booking->id)->update(
-            ['totalPrice'   => $totalPrice,
-            'totalPrice_vi' => $totalPrice_vi],
+            ['totalprice'   => $totalPrice,
+            'totalprice_vi' => $totalPrice_vi],
          );
         Session::forget('cart');
         return redirect('booking/#sectionbooked')->with('success','Đặt Phòng Thành Công');;
