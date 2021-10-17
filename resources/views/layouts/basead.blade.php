@@ -9,6 +9,7 @@
     @yield('tabcontrol')
     @yield('style')
     <!-- Fontfaces CSS-->
+    <link rel="icon" href="/FrontEnd/img/logo.png" sizes="20x20" type="image/png" />
     <link href="{{ asset('Admin/css/font-face.css" rel="stylesheet') }}" media="all">
     <link href="{{ asset('Admin/vendor/font-awesome-4.7/css/font-awesome.min.css') }} " rel="stylesheet" media="all">
     <link href="{{ asset('Admin/vendor/font-awesome-5/css/fontawesome-all.min.css') }} " rel="stylesheet" media="all">

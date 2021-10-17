@@ -45,7 +45,7 @@ class BlogController extends Controller
             $validated      = $request->validated();
             $filename       = 'blogCover'.time();
             if ($request->coverImage == null) {
-                $validated['coverImage'] = Blog::find($id)->coverImage;
+                $validated['coverImage'] = $this->blogRepo->find($id)->coverImage;
             }
             else {
                 $result      = $this->blogRepo->uploadImageOnCloudinary($request->file('coverImage'),$filename,$this->folder);

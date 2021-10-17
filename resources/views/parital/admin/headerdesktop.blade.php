@@ -35,7 +35,7 @@
                     <div class="info clearfix">
                         <div class="image">
                             <a href="#">
-                                <img src="{{ asset('Admin/images/icon/avatar-01.jpg') }}" alt="Minh Quang" />
+                                <img src="{{ asset('Admin/images/icon/.jpg') }}" alt="Minh Quang" />
                             </a>
                         </div>
                         <div class="content">

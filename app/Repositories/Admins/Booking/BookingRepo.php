@@ -48,7 +48,7 @@ class BookingRepo extends BaseAdminRepo implements BookingRepoInterface
 
     public function getBookingDetail($id)
     {
-        BookingDetail::where('booking_id',$id)->get();
+        return BookingDetail::where('booking_id',$id)->get();
     }
 
 
