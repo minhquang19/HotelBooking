@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('/FrontEnd/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('/FrontEnd/css/Lib/responsive.css') }}">
     @yield('style')
-    <link rel="stylesheet" href="{{ asset('backEnd/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('Admin/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 <body>
