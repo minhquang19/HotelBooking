@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('title', 'Login')
+@section('title',__('register'))
 @section('style')
     <link rel="stylesheet" href="{{asset('FrontEnd/css/register.css')}}" />
 @endsection

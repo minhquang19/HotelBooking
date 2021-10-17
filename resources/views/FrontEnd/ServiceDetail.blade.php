@@ -24,7 +24,7 @@
         <section class="blog-details-wrapper section-padding section-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-8">
                         @if(App()->getLocale() =='en')
                             <div class="post-details">
                             <div class="entry-header">
@@ -36,9 +36,9 @@
                             <div class="entry-content">
                                 {!! $serviceDetail->content !!}
                                 <div class="entry-gallery-img">
-                                    <blockquote>
+
                                         {{$serviceDetail->description}}
-                                    </blockquote>
+
                                 </div>
                             </div>
                             <div class="entry-footer d-flex justify-content-md-between">
@@ -77,11 +77,6 @@
                                 </div>
                                 <div class="entry-content">
                                     {!! $serviceDetail->content_vi !!}
-                                    <div class="entry-gallery-img">
-                                        <blockquote>
-                                            {{$serviceDetail->description_vi}}
-                                        </blockquote>
-                                    </div>
                                 </div>
                                 <div class="entry-footer d-flex justify-content-md-between">
                                     <ul class="social-share list-inline">
@@ -110,6 +105,18 @@
                                 </div>
                             </div>
                         @endif
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="sidebar-wrap">
+                            <div class="widget banner-widget avson-go-top"
+                                 style="background-image: url(&quot;/assets/img/blog/sidebar-banner.jpg&quot;);">
+                                <h2>Booking Your Latest apartment</h2>
+                                <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit sed do eiusmod tempor
+                                    incididunt ut labore </p>
+                                <a class="btn filled-btn" href="/room">BOOK NOW
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

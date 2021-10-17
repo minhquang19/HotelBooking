@@ -34,7 +34,7 @@
                 <div class="login-content">
                     <div class="login-logo">
                         <a href="#">
-                            <img src="/frontEnd/img/logo.png" alt="Admin Moon Light">
+                            <img src="{{asset('/FrontEnd/img/logo.png')}}" alt="Admin Moon Light">
                         </a>
                     </div>
                     <div class="login-form">

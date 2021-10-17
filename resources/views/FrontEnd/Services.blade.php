@@ -107,8 +107,13 @@
                          style="visibility: visible; animation-duration: 1500ms; animation-delay: 400ms;">
                         <span class="service-counter">{{$loop->index+1}}</span>
                         <img class="cover_Image" src="{{$item->image}}" alt="">
+                        @if(App()->getLocale() =='en')
                         <h4>{{$item->name}}</h4>
                         <p style="height: 200px; overflow: hidden;">{{$item->description}}</p>
+                        @else
+                        <h4>{{$item->name_vi}}</h4>
+                        <p style="height: 200px; overflow: hidden;">{{$item->description_vi}}</p>
+                        @endif
                         <a class="read-more" href="{{route('service.show',$item->id)}}">{{__('readmore')}} <i class="fas fa-long-arrow-alt-right"></i></a>
                     </div>
                 </div>

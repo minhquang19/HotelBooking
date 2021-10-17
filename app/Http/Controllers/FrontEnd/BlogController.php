@@ -29,6 +29,6 @@ class BlogController extends Controller
            'listBlog'       => $listBlog,
            'randomBlog'     => $randomBlog,
         ];
-        return view('FrontEnd.BlogDetail',$viewData);
+        return view('FrontEnd.BlogDetails',$viewData);
     }
 }
